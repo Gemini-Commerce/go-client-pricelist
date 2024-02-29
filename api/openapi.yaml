@@ -1,0 +1,1651 @@
+openapi: 3.0.1
+info:
+  title: pricelist/service.proto
+  version: version not set
+servers:
+- url: /
+tags:
+- name: PriceList
+paths:
+  /pricelist.PriceList/CreatePriceList:
+    post:
+      operationId: PriceList_CreatePriceList
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/pricelistCreatePriceListRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/pricelistCreatePriceListResponse'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - PriceList
+      x-codegen-request-body-name: body
+  /pricelist.PriceList/DeletePriceListItems:
+    post:
+      operationId: PriceList_DeletePriceListItems
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/pricelistDeletePriceListItemsRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/pricelistDeletePriceListItemsResponse'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - PriceList
+      x-codegen-request-body-name: body
+  /pricelist.PriceList/GetFullPriceItemsByPricelistId:
+    post:
+      operationId: PriceList_GetFullPriceItemsByPricelistId
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/pricelistGetFullPriceItemsRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/pricelistGetFullPriceItemsResponse'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - PriceList
+      x-codegen-request-body-name: body
+  /pricelist.PriceList/GetPriceItemsByPriceListItemIds:
+    post:
+      operationId: PriceList_GetPriceItemsByPriceListItemIds
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/pricelistGetPriceItemsByPriceListItemIdsRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/pricelistGetPriceItemsByPriceListItemIdsResponse'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - PriceList
+      x-codegen-request-body-name: body
+  /pricelist.PriceList/GetPriceList:
+    post:
+      operationId: PriceList_GetPriceList
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/pricelistGetPriceListRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/pricelistGetPriceListResponse'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - PriceList
+      x-codegen-request-body-name: body
+  /pricelist.PriceList/GetPriceListByCode:
+    post:
+      operationId: PriceList_GetPriceListByCode
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/pricelistGetPriceListByCodeRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/pricelistGetPriceListByCodeResponse'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - PriceList
+      x-codegen-request-body-name: body
+  /pricelist.PriceList/GetPriceListItems:
+    post:
+      operationId: PriceList_GetPriceListItems
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/pricelistGetPriceListItemsRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/pricelistGetPriceListItemsResponse'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - PriceList
+      x-codegen-request-body-name: body
+  /pricelist.PriceList/GetPricesItems:
+    post:
+      operationId: PriceList_GetPricesItems
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/pricelistGetPricesRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/pricelistGetPricesResponse'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - PriceList
+      x-codegen-request-body-name: body
+  /pricelist.PriceList/ListFullPriceItemsByPricelistId:
+    post:
+      operationId: PriceList_ListFullPriceItemsByPricelistId
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/pricelistListFullPriceItemsRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/pricelistListFullPriceItemsResponse'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - PriceList
+      x-codegen-request-body-name: body
+  /pricelist.PriceList/ListPriceLists:
+    post:
+      operationId: PriceList_ListPriceLists
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/pricelistListPriceListsRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/pricelistListPriceListsResponse'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - PriceList
+      x-codegen-request-body-name: body
+  /pricelist.PriceList/SetPriceListItems:
+    post:
+      operationId: PriceList_SetPriceListItems
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/pricelistSetPriceListItemsRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/pricelistSetPriceListItemsResponse'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - PriceList
+      x-codegen-request-body-name: body
+  /pricelist.PriceList/UpdatePriceList:
+    post:
+      operationId: PriceList_UpdatePriceList
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/pricelistUpdatePriceListRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/pricelistUpdatePriceListResponse'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - PriceList
+      x-codegen-request-body-name: body
+components:
+  schemas:
+    ListPriceListsRequestFilter:
+      properties:
+        code:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        isActive:
+          type: boolean
+        isDefault:
+          type: boolean
+        currencyFilter:
+          $ref: '#/components/schemas/pricelistCurrencyFilter'
+        vatIncluded:
+          type: boolean
+        deliveredDutyPaid:
+          type: boolean
+        segmentsFilter:
+          $ref: '#/components/schemas/pricelistSegmentFilter'
+        marketsFilter:
+          $ref: '#/components/schemas/pricelistMarketFilter'
+        channelsFilter:
+          $ref: '#/components/schemas/pricelistChannelFilter'
+        typeFilter:
+          $ref: '#/components/schemas/pricelistPriceListTypeFilter'
+        isSystem:
+          type: boolean
+      type: object
+    ListPriceListsResponsePriceList:
+      example:
+        grn: grn
+        code: code
+        deliveredDutyPaid: true
+        description: description
+        isActive: true
+        type: null
+        segments:
+        - segments
+        - segments
+        isSystem: true
+        createdAt: 2000-01-23T04:56:07.000+00:00
+        isDefault: true
+        markets:
+        - markets
+        - markets
+        channels:
+        - channels
+        - channels
+        name: name
+        vatIncluded: true
+        currency: null
+        id: id
+        updatedAt: 2000-01-23T04:56:07.000+00:00
+      properties:
+        id:
+          type: string
+        grn:
+          type: string
+        code:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        isActive:
+          type: boolean
+        isDefault:
+          type: boolean
+        currency:
+          $ref: '#/components/schemas/pricelistCurrency'
+        vatIncluded:
+          type: boolean
+        deliveredDutyPaid:
+          type: boolean
+        segments:
+          items:
+            type: string
+          type: array
+        markets:
+          items:
+            type: string
+          type: array
+        channels:
+          items:
+            type: string
+          type: array
+        createdAt:
+          format: date-time
+          type: string
+        updatedAt:
+          format: date-time
+          type: string
+        type:
+          $ref: '#/components/schemas/pricelistPriceListType'
+        isSystem:
+          type: boolean
+      type: object
+    pricelistChannelFilter:
+      properties:
+        channels:
+          items:
+            type: string
+          type: array
+        condition:
+          $ref: '#/components/schemas/pricelistFilterCondition'
+      type: object
+    pricelistCreatePriceListRequest:
+      properties:
+        tenantId:
+          title: required
+          type: string
+        code:
+          title: required unique by tenant_id
+          type: string
+        name:
+          title: required
+          type: string
+        description:
+          title: "default: empty"
+          type: string
+        isActive:
+          title: "default value: false"
+          type: boolean
+        isDefault:
+          title: "default value: false"
+          type: boolean
+        currency:
+          $ref: '#/components/schemas/pricelistCurrency'
+        vatIncluded:
+          title: "default value: false"
+          type: boolean
+        deliveredDutyPaid:
+          title: "default value: false"
+          type: boolean
+        segments:
+          items:
+            type: string
+          type: array
+        markets:
+          items:
+            type: string
+          type: array
+        channels:
+          items:
+            type: string
+          type: array
+        type:
+          $ref: '#/components/schemas/pricelistPriceListType'
+        isSystem:
+          title: "default value: false"
+          type: boolean
+      type: object
+    pricelistCreatePriceListResponse:
+      example:
+        grn: grn
+        id: id
+      properties:
+        id:
+          type: string
+        grn:
+          type: string
+      type: object
+    pricelistCurrency:
+      default: XXX
+      description: "Stands for Albania, not all ;-)"
+      enum:
+      - XXX
+      - ALL
+      - DZD
+      - ARS
+      - AUD
+      - BSD
+      - BHD
+      - BDT
+      - AMD
+      - BBD
+      - BMD
+      - BTN
+      - BOB
+      - BWP
+      - BZD
+      - SBD
+      - BND
+      - MMK
+      - BIF
+      - KHR
+      - CAD
+      - CVE
+      - KYD
+      - LKR
+      - CLP
+      - CNY
+      - COP
+      - KMF
+      - CRC
+      - HRK
+      - CUP
+      - CZK
+      - DKK
+      - DOP
+      - SVC
+      - ETB
+      - ERN
+      - FKP
+      - FJD
+      - DJF
+      - GMD
+      - GIP
+      - GTQ
+      - GNF
+      - GYD
+      - HTG
+      - HNL
+      - HKD
+      - HUF
+      - ISK
+      - INR
+      - IDR
+      - IRR
+      - IQD
+      - ILS
+      - JMD
+      - JPY
+      - KZT
+      - JOD
+      - KES
+      - KPW
+      - KRW
+      - KWD
+      - KGS
+      - LAK
+      - LBP
+      - LSL
+      - LRD
+      - LYD
+      - LTL
+      - MOP
+      - MWK
+      - MYR
+      - MVR
+      - MRO
+      - MUR
+      - MXN
+      - MNT
+      - MDL
+      - MAD
+      - OMR
+      - NAD
+      - NPR
+      - ANG
+      - AWG
+      - VUV
+      - NZD
+      - NIO
+      - NGN
+      - NOK
+      - PKR
+      - PAB
+      - PGK
+      - PYG
+      - PEN
+      - PHP
+      - QAR
+      - RUB
+      - RWF
+      - SHP
+      - STD
+      - SAR
+      - SCR
+      - SLL
+      - SGD
+      - VND
+      - SOS
+      - ZAR
+      - SSP
+      - SZL
+      - SEK
+      - CHF
+      - SYP
+      - THB
+      - TOP
+      - TTD
+      - AED
+      - TND
+      - UGX
+      - MKD
+      - EGP
+      - GBP
+      - TZS
+      - USD
+      - UYU
+      - UZS
+      - WST
+      - YER
+      - TWD
+      - CUC
+      - ZWL
+      - TMT
+      - GHS
+      - VEF
+      - SDG
+      - UYI
+      - RSD
+      - MZN
+      - AZN
+      - RON
+      - CHE
+      - CHW
+      - TRY
+      - XAF
+      - XCD
+      - XOF
+      - XPF
+      - XBA
+      - XBB
+      - XBC
+      - XBD
+      - XAU
+      - XDR
+      - XAG
+      - XPT
+      - XPD
+      - XUA
+      - ZMW
+      - SRD
+      - MGA
+      - COU
+      - AFN
+      - TJS
+      - AOA
+      - BYR
+      - BGN
+      - CDF
+      - BAM
+      - EUR
+      - MXV
+      - UAH
+      - GEL
+      - BOV
+      - PLN
+      - BRL
+      - CLF
+      - XSU
+      - USN
+      title: |-
+        - XXX: XXX = 999; //Changed to 0 because proto3 requires the default to be 0
+         - ALL: XTS = 963; //Codes specifically reserved for testing purposes
+      type: string
+    pricelistCurrencyFilter:
+      properties:
+        currencies:
+          items:
+            $ref: '#/components/schemas/pricelistCurrency'
+          type: array
+        condition:
+          $ref: '#/components/schemas/pricelistFilterCondition'
+      type: object
+    pricelistDeletePriceListItemsRequest:
+      properties:
+        tenantId:
+          title: required
+          type: string
+        id:
+          title: required
+          type: string
+        itemsGrn:
+          items:
+            type: string
+          type: array
+      type: object
+    pricelistDeletePriceListItemsResponse:
+      type: object
+    pricelistFilterCondition:
+      default: IN
+      enum:
+      - IN
+      - NOT_IN
+      type: string
+    pricelistGetFullPriceItem:
+      example:
+        createdAt: 2000-01-23T04:56:07.000+00:00
+        grn: grn
+        itemGrn: itemGrn
+        currency: null
+        id: id
+        prices:
+        - price:
+            micros: 0
+            units: units
+          isEnabled: true
+          endAt: 2000-01-23T04:56:07.000+00:00
+          startAt: 2000-01-23T04:56:07.000+00:00
+          order: 6
+          basePrice:
+            micros: 0
+            units: units
+        - price:
+            micros: 0
+            units: units
+          isEnabled: true
+          endAt: 2000-01-23T04:56:07.000+00:00
+          startAt: 2000-01-23T04:56:07.000+00:00
+          order: 6
+          basePrice:
+            micros: 0
+            units: units
+        basePrice:
+          micros: 0
+          units: units
+        updatedAt: 2000-01-23T04:56:07.000+00:00
+        hasTierPrices: true
+      properties:
+        id:
+          type: string
+        grn:
+          type: string
+        itemGrn:
+          type: string
+        basePrice:
+          $ref: '#/components/schemas/pricelistMoney'
+        createdAt:
+          format: date-time
+          type: string
+        updatedAt:
+          format: date-time
+          type: string
+        currency:
+          $ref: '#/components/schemas/pricelistCurrency'
+        prices:
+          items:
+            $ref: '#/components/schemas/pricelistGetFullPriceItemPrice'
+          type: array
+        hasTierPrices:
+          type: boolean
+      type: object
+    pricelistGetFullPriceItemPrice:
+      example:
+        price:
+          micros: 0
+          units: units
+        isEnabled: true
+        endAt: 2000-01-23T04:56:07.000+00:00
+        startAt: 2000-01-23T04:56:07.000+00:00
+        order: 6
+        basePrice:
+          micros: 0
+          units: units
+      properties:
+        price:
+          $ref: '#/components/schemas/pricelistMoney'
+        isEnabled:
+          type: boolean
+        startAt:
+          format: date-time
+          type: string
+        endAt:
+          format: date-time
+          type: string
+        order:
+          format: int64
+          type: integer
+        basePrice:
+          $ref: '#/components/schemas/pricelistMoney'
+      type: object
+    pricelistGetFullPriceItemsRequest:
+      properties:
+        tenantId:
+          title: required
+          type: string
+        pricelistId:
+          title: required
+          type: string
+        itemsGrn:
+          items:
+            type: string
+          title: required
+          type: array
+      type: object
+    pricelistGetFullPriceItemsResponse:
+      example:
+        priceItems:
+        - createdAt: 2000-01-23T04:56:07.000+00:00
+          grn: grn
+          itemGrn: itemGrn
+          currency: null
+          id: id
+          prices:
+          - price:
+              micros: 0
+              units: units
+            isEnabled: true
+            endAt: 2000-01-23T04:56:07.000+00:00
+            startAt: 2000-01-23T04:56:07.000+00:00
+            order: 6
+            basePrice:
+              micros: 0
+              units: units
+          - price:
+              micros: 0
+              units: units
+            isEnabled: true
+            endAt: 2000-01-23T04:56:07.000+00:00
+            startAt: 2000-01-23T04:56:07.000+00:00
+            order: 6
+            basePrice:
+              micros: 0
+              units: units
+          basePrice:
+            micros: 0
+            units: units
+          updatedAt: 2000-01-23T04:56:07.000+00:00
+          hasTierPrices: true
+        - createdAt: 2000-01-23T04:56:07.000+00:00
+          grn: grn
+          itemGrn: itemGrn
+          currency: null
+          id: id
+          prices:
+          - price:
+              micros: 0
+              units: units
+            isEnabled: true
+            endAt: 2000-01-23T04:56:07.000+00:00
+            startAt: 2000-01-23T04:56:07.000+00:00
+            order: 6
+            basePrice:
+              micros: 0
+              units: units
+          - price:
+              micros: 0
+              units: units
+            isEnabled: true
+            endAt: 2000-01-23T04:56:07.000+00:00
+            startAt: 2000-01-23T04:56:07.000+00:00
+            order: 6
+            basePrice:
+              micros: 0
+              units: units
+          basePrice:
+            micros: 0
+            units: units
+          updatedAt: 2000-01-23T04:56:07.000+00:00
+          hasTierPrices: true
+      properties:
+        priceItems:
+          items:
+            $ref: '#/components/schemas/pricelistGetFullPriceItem'
+          type: array
+      type: object
+    pricelistGetPriceItem:
+      example:
+        createdAt: 2000-01-23T04:56:07.000+00:00
+        itemGrn: itemGrn
+        endDatePrice: 2000-01-23T04:56:07.000+00:00
+        price:
+          micros: 0
+          units: units
+        doubleFormatBasePrice: 6.027456183070403
+        doubleFormatPrice: 0.8008281904610115
+        currency: null
+        basePrice:
+          micros: 0
+          units: units
+        hasTierPrices: true
+        updatedAt: 2000-01-23T04:56:07.000+00:00
+      properties:
+        itemGrn:
+          type: string
+        price:
+          $ref: '#/components/schemas/pricelistMoney'
+        doubleFormatPrice:
+          format: double
+          title: The price converted to double
+          type: number
+        endDatePrice:
+          format: date-time
+          title: The end date of the price
+          type: string
+        basePrice:
+          $ref: '#/components/schemas/pricelistMoney'
+        doubleFormatBasePrice:
+          format: double
+          title: The base_price converted to double
+          type: number
+        currency:
+          $ref: '#/components/schemas/pricelistCurrency'
+        hasTierPrices:
+          title: Whether the price has tiered prices in the tier-prices microservice
+          type: boolean
+        createdAt:
+          format: date-time
+          type: string
+        updatedAt:
+          format: date-time
+          type: string
+      title: "different scope of GetPriceListItem, may differ in the next future"
+      type: object
+    pricelistGetPriceItemsByPriceListItemIdsRequest:
+      properties:
+        tenantId:
+          type: string
+        priceListItemId:
+          items:
+            type: string
+          type: array
+      type: object
+    pricelistGetPriceItemsByPriceListItemIdsResponse:
+      example:
+        prices:
+        - createdAt: 2000-01-23T04:56:07.000+00:00
+          grn: grn
+          itemGrn: itemGrn
+          endDatePrice: 2000-01-23T04:56:07.000+00:00
+          price:
+            micros: 0
+            units: units
+          doubleFormatBasePrice: 6.027456183070403
+          doubleFormatPrice: 0.8008281904610115
+          currency: null
+          id: id
+          basePrice:
+            micros: 0
+            units: units
+          hasTierPrices: true
+          updatedAt: 2000-01-23T04:56:07.000+00:00
+        - createdAt: 2000-01-23T04:56:07.000+00:00
+          grn: grn
+          itemGrn: itemGrn
+          endDatePrice: 2000-01-23T04:56:07.000+00:00
+          price:
+            micros: 0
+            units: units
+          doubleFormatBasePrice: 6.027456183070403
+          doubleFormatPrice: 0.8008281904610115
+          currency: null
+          id: id
+          basePrice:
+            micros: 0
+            units: units
+          hasTierPrices: true
+          updatedAt: 2000-01-23T04:56:07.000+00:00
+      properties:
+        prices:
+          items:
+            $ref: '#/components/schemas/pricelistGetPriceListItem'
+          type: array
+      type: object
+    pricelistGetPriceListByCodeRequest:
+      properties:
+        tenantId:
+          title: required
+          type: string
+        code:
+          title: required
+          type: string
+      type: object
+    pricelistGetPriceListByCodeResponse:
+      example:
+        grn: grn
+        code: code
+        deliveredDutyPaid: true
+        description: description
+        isActive: true
+        type: null
+        segments:
+        - segments
+        - segments
+        isSystem: true
+        createdAt: 2000-01-23T04:56:07.000+00:00
+        isDefault: true
+        markets:
+        - markets
+        - markets
+        channels:
+        - channels
+        - channels
+        name: name
+        vatIncluded: true
+        currency: null
+        id: id
+        updatedAt: 2000-01-23T04:56:07.000+00:00
+      properties:
+        id:
+          type: string
+        grn:
+          type: string
+        code:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        isActive:
+          type: boolean
+        isDefault:
+          type: boolean
+        currency:
+          $ref: '#/components/schemas/pricelistCurrency'
+        vatIncluded:
+          type: boolean
+        deliveredDutyPaid:
+          type: boolean
+        segments:
+          items:
+            type: string
+          type: array
+        markets:
+          items:
+            type: string
+          type: array
+        channels:
+          items:
+            type: string
+          type: array
+        createdAt:
+          format: date-time
+          type: string
+        updatedAt:
+          format: date-time
+          type: string
+        type:
+          $ref: '#/components/schemas/pricelistPriceListType'
+        isSystem:
+          type: boolean
+      type: object
+    pricelistGetPriceListItem:
+      example:
+        createdAt: 2000-01-23T04:56:07.000+00:00
+        grn: grn
+        itemGrn: itemGrn
+        endDatePrice: 2000-01-23T04:56:07.000+00:00
+        price:
+          micros: 0
+          units: units
+        doubleFormatBasePrice: 6.027456183070403
+        doubleFormatPrice: 0.8008281904610115
+        currency: null
+        id: id
+        basePrice:
+          micros: 0
+          units: units
+        hasTierPrices: true
+        updatedAt: 2000-01-23T04:56:07.000+00:00
+      properties:
+        id:
+          type: string
+        grn:
+          type: string
+        itemGrn:
+          type: string
+        price:
+          $ref: '#/components/schemas/pricelistMoney'
+        doubleFormatPrice:
+          format: double
+          title: The price converted to double
+          type: number
+        endDatePrice:
+          format: date-time
+          title: The end date of the price
+          type: string
+        basePrice:
+          $ref: '#/components/schemas/pricelistMoney'
+        doubleFormatBasePrice:
+          format: double
+          title: The base_price converted to double
+          type: number
+        currency:
+          $ref: '#/components/schemas/pricelistCurrency'
+        hasTierPrices:
+          title: Whether the price has tiered prices in the tier-prices microservice
+          type: boolean
+        createdAt:
+          format: date-time
+          type: string
+        updatedAt:
+          format: date-time
+          type: string
+      type: object
+    pricelistGetPriceListItemsRequest:
+      properties:
+        tenantId:
+          title: required
+          type: string
+        id:
+          title: required
+          type: string
+        pageSize:
+          format: int64
+          type: integer
+        pageToken:
+          type: string
+      type: object
+    pricelistGetPriceListItemsResponse:
+      example:
+        nextPageToken: nextPageToken
+        items:
+        - createdAt: 2000-01-23T04:56:07.000+00:00
+          grn: grn
+          itemGrn: itemGrn
+          endDatePrice: 2000-01-23T04:56:07.000+00:00
+          price:
+            micros: 0
+            units: units
+          doubleFormatBasePrice: 6.027456183070403
+          doubleFormatPrice: 0.8008281904610115
+          currency: null
+          id: id
+          basePrice:
+            micros: 0
+            units: units
+          hasTierPrices: true
+          updatedAt: 2000-01-23T04:56:07.000+00:00
+        - createdAt: 2000-01-23T04:56:07.000+00:00
+          grn: grn
+          itemGrn: itemGrn
+          endDatePrice: 2000-01-23T04:56:07.000+00:00
+          price:
+            micros: 0
+            units: units
+          doubleFormatBasePrice: 6.027456183070403
+          doubleFormatPrice: 0.8008281904610115
+          currency: null
+          id: id
+          basePrice:
+            micros: 0
+            units: units
+          hasTierPrices: true
+          updatedAt: 2000-01-23T04:56:07.000+00:00
+      properties:
+        items:
+          items:
+            $ref: '#/components/schemas/pricelistGetPriceListItem'
+          type: array
+        nextPageToken:
+          type: string
+      type: object
+    pricelistGetPriceListRequest:
+      properties:
+        tenantId:
+          title: required
+          type: string
+        id:
+          title: required
+          type: string
+      type: object
+    pricelistGetPriceListResponse:
+      example:
+        grn: grn
+        code: code
+        deliveredDutyPaid: true
+        description: description
+        isActive: true
+        type: null
+        segments:
+        - segments
+        - segments
+        isSystem: true
+        createdAt: 2000-01-23T04:56:07.000+00:00
+        isDefault: true
+        markets:
+        - markets
+        - markets
+        channels:
+        - channels
+        - channels
+        name: name
+        vatIncluded: true
+        currency: null
+        id: id
+        updatedAt: 2000-01-23T04:56:07.000+00:00
+      properties:
+        id:
+          type: string
+        grn:
+          type: string
+        code:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        isActive:
+          type: boolean
+        isDefault:
+          type: boolean
+        currency:
+          $ref: '#/components/schemas/pricelistCurrency'
+        vatIncluded:
+          type: boolean
+        deliveredDutyPaid:
+          type: boolean
+        segments:
+          items:
+            type: string
+          type: array
+        markets:
+          items:
+            type: string
+          type: array
+        channels:
+          items:
+            type: string
+          type: array
+        createdAt:
+          format: date-time
+          type: string
+        updatedAt:
+          format: date-time
+          type: string
+        type:
+          $ref: '#/components/schemas/pricelistPriceListType'
+        isSystem:
+          type: boolean
+      type: object
+    pricelistGetPricesRequest:
+      properties:
+        tenantId:
+          type: string
+        itemsGrn:
+          items:
+            type: string
+          type: array
+        context:
+          $ref: '#/components/schemas/pricelistPriceContext'
+      type: object
+    pricelistGetPricesResponse:
+      example:
+        prices:
+        - createdAt: 2000-01-23T04:56:07.000+00:00
+          itemGrn: itemGrn
+          endDatePrice: 2000-01-23T04:56:07.000+00:00
+          price:
+            micros: 0
+            units: units
+          doubleFormatBasePrice: 6.027456183070403
+          doubleFormatPrice: 0.8008281904610115
+          currency: null
+          basePrice:
+            micros: 0
+            units: units
+          hasTierPrices: true
+          updatedAt: 2000-01-23T04:56:07.000+00:00
+        - createdAt: 2000-01-23T04:56:07.000+00:00
+          itemGrn: itemGrn
+          endDatePrice: 2000-01-23T04:56:07.000+00:00
+          price:
+            micros: 0
+            units: units
+          doubleFormatBasePrice: 6.027456183070403
+          doubleFormatPrice: 0.8008281904610115
+          currency: null
+          basePrice:
+            micros: 0
+            units: units
+          hasTierPrices: true
+          updatedAt: 2000-01-23T04:56:07.000+00:00
+      properties:
+        prices:
+          items:
+            $ref: '#/components/schemas/pricelistGetPriceItem'
+          type: array
+      type: object
+    pricelistListFullPriceItemsRequest:
+      properties:
+        tenantId:
+          title: required
+          type: string
+        id:
+          title: required
+          type: string
+        pageSize:
+          format: int64
+          title: required
+          type: integer
+        pageToken:
+          type: string
+      type: object
+    pricelistListFullPriceItemsResponse:
+      example:
+        nextPageToken: nextPageToken
+        items:
+        - createdAt: 2000-01-23T04:56:07.000+00:00
+          grn: grn
+          itemGrn: itemGrn
+          currency: null
+          id: id
+          prices:
+          - price:
+              micros: 0
+              units: units
+            isEnabled: true
+            endAt: 2000-01-23T04:56:07.000+00:00
+            startAt: 2000-01-23T04:56:07.000+00:00
+            order: 6
+            basePrice:
+              micros: 0
+              units: units
+          - price:
+              micros: 0
+              units: units
+            isEnabled: true
+            endAt: 2000-01-23T04:56:07.000+00:00
+            startAt: 2000-01-23T04:56:07.000+00:00
+            order: 6
+            basePrice:
+              micros: 0
+              units: units
+          basePrice:
+            micros: 0
+            units: units
+          updatedAt: 2000-01-23T04:56:07.000+00:00
+          hasTierPrices: true
+        - createdAt: 2000-01-23T04:56:07.000+00:00
+          grn: grn
+          itemGrn: itemGrn
+          currency: null
+          id: id
+          prices:
+          - price:
+              micros: 0
+              units: units
+            isEnabled: true
+            endAt: 2000-01-23T04:56:07.000+00:00
+            startAt: 2000-01-23T04:56:07.000+00:00
+            order: 6
+            basePrice:
+              micros: 0
+              units: units
+          - price:
+              micros: 0
+              units: units
+            isEnabled: true
+            endAt: 2000-01-23T04:56:07.000+00:00
+            startAt: 2000-01-23T04:56:07.000+00:00
+            order: 6
+            basePrice:
+              micros: 0
+              units: units
+          basePrice:
+            micros: 0
+            units: units
+          updatedAt: 2000-01-23T04:56:07.000+00:00
+          hasTierPrices: true
+      properties:
+        items:
+          items:
+            $ref: '#/components/schemas/pricelistGetFullPriceItem'
+          type: array
+        nextPageToken:
+          type: string
+      type: object
+    pricelistListPriceListsRequest:
+      properties:
+        tenantId:
+          title: required
+          type: string
+        pageSize:
+          format: int64
+          type: integer
+        pageToken:
+          type: string
+        searchQuery:
+          type: string
+        filterMask:
+          type: string
+        filter:
+          $ref: '#/components/schemas/ListPriceListsRequestFilter'
+      type: object
+    pricelistListPriceListsResponse:
+      example:
+        pricelists:
+        - grn: grn
+          code: code
+          deliveredDutyPaid: true
+          description: description
+          isActive: true
+          type: null
+          segments:
+          - segments
+          - segments
+          isSystem: true
+          createdAt: 2000-01-23T04:56:07.000+00:00
+          isDefault: true
+          markets:
+          - markets
+          - markets
+          channels:
+          - channels
+          - channels
+          name: name
+          vatIncluded: true
+          currency: null
+          id: id
+          updatedAt: 2000-01-23T04:56:07.000+00:00
+        - grn: grn
+          code: code
+          deliveredDutyPaid: true
+          description: description
+          isActive: true
+          type: null
+          segments:
+          - segments
+          - segments
+          isSystem: true
+          createdAt: 2000-01-23T04:56:07.000+00:00
+          isDefault: true
+          markets:
+          - markets
+          - markets
+          channels:
+          - channels
+          - channels
+          name: name
+          vatIncluded: true
+          currency: null
+          id: id
+          updatedAt: 2000-01-23T04:56:07.000+00:00
+        nextPageToken: nextPageToken
+      properties:
+        pricelists:
+          items:
+            $ref: '#/components/schemas/ListPriceListsResponsePriceList'
+          type: array
+        nextPageToken:
+          type: string
+      type: object
+    pricelistMarketFilter:
+      properties:
+        markets:
+          items:
+            type: string
+          type: array
+        condition:
+          $ref: '#/components/schemas/pricelistFilterCondition'
+      type: object
+    pricelistMoney:
+      description: Represents an amount of money.
+      example:
+        micros: 0
+        units: units
+      properties:
+        units:
+          description: |-
+            The whole units of the amount.
+            For example if `currencyCode` is `"USD"`, then 1 unit is one US dollar.
+          format: int64
+          type: string
+        micros:
+          description: |-
+            Number of micro (10^-6) units of the amount.
+            The value must be between -999,999 and +999,999 inclusive.
+            If `units` is positive, `micros` must be positive or zero.
+            If `units` is zero, `micros` can be positive, zero, or negative.
+            If `units` is negative, `micros` must be negative or zero.
+            For example $-1.75 is represented as `units`=-1 and `micros`=-750,000.
+          format: int32
+          type: integer
+      type: object
+    pricelistPriceContext:
+      properties:
+        currency:
+          $ref: '#/components/schemas/pricelistCurrency'
+        segment:
+          type: string
+        segments:
+          items:
+            type: string
+          type: array
+        market:
+          type: string
+        channel:
+          type: string
+      required:
+      - currency
+      type: object
+    pricelistPriceListType:
+      default: UNKNOWN
+      enum:
+      - UNKNOWN
+      - BASE
+      - CATALOG_PROMOTION
+      type: string
+    pricelistPriceListTypeFilter:
+      properties:
+        pricelistTypes:
+          items:
+            $ref: '#/components/schemas/pricelistPriceListType'
+          type: array
+        condition:
+          $ref: '#/components/schemas/pricelistFilterCondition'
+      type: object
+    pricelistSegmentFilter:
+      properties:
+        segments:
+          items:
+            type: string
+          type: array
+        condition:
+          $ref: '#/components/schemas/pricelistFilterCondition'
+      type: object
+    pricelistSetPriceListItem:
+      properties:
+        itemGrn:
+          title: required and unique by price list
+          type: string
+        basePrice:
+          $ref: '#/components/schemas/pricelistMoney'
+        priceItems:
+          items:
+            $ref: '#/components/schemas/pricelistSetPriceListItemPrice'
+          type: array
+        hasTierPrices:
+          title: Whether the price has tiered prices in the tier-prices microservice
+          type: boolean
+      type: object
+    pricelistSetPriceListItemError:
+      example:
+        itemGrn: itemGrn
+        code: code
+        description: description
+      properties:
+        itemGrn:
+          type: string
+        code:
+          type: string
+        description:
+          type: string
+      type: object
+    pricelistSetPriceListItemPrice:
+      properties:
+        price:
+          $ref: '#/components/schemas/pricelistMoney'
+        isEnabled:
+          title: Whether the price is enabled or not
+          type: boolean
+        startAt:
+          format: date-time
+          title: The start date of the price
+          type: string
+        endAt:
+          format: date-time
+          title: The end date of the price
+          type: string
+        order:
+          format: int64
+          title: "The order of the price. The lower the value, the higher the priority"
+          type: integer
+        basePrice:
+          $ref: '#/components/schemas/pricelistMoney'
+      type: object
+    pricelistSetPriceListItemsRequest:
+      properties:
+        tenantId:
+          type: string
+        id:
+          type: string
+        items:
+          items:
+            $ref: '#/components/schemas/pricelistSetPriceListItem'
+          type: array
+      type: object
+    pricelistSetPriceListItemsResponse:
+      example:
+        errors:
+          itemGrn: itemGrn
+          code: code
+          description: description
+      properties:
+        errors:
+          $ref: '#/components/schemas/pricelistSetPriceListItemError'
+      type: object
+    pricelistUpdatePriceListRequest:
+      properties:
+        tenantId:
+          title: required
+          type: string
+        id:
+          title: required
+          type: string
+        payload:
+          $ref: '#/components/schemas/pricelistUpdatePriceListRequestPayload'
+        payloadMask:
+          type: string
+      type: object
+    pricelistUpdatePriceListRequestPayload:
+      properties:
+        isActive:
+          type: boolean
+        isDefault:
+          type: boolean
+        currency:
+          $ref: '#/components/schemas/pricelistCurrency'
+        vatIncluded:
+          type: boolean
+        deliveredDutyPaid:
+          type: boolean
+        segments:
+          items:
+            type: string
+          type: array
+        markets:
+          items:
+            type: string
+          type: array
+        channels:
+          items:
+            type: string
+          type: array
+        type:
+          $ref: '#/components/schemas/pricelistPriceListType'
+        isSystem:
+          type: boolean
+        name:
+          type: string
+        description:
+          type: string
+      type: object
+    pricelistUpdatePriceListResponse:
+      type: object
+    protobufAny:
+      additionalProperties:
+        type: object
+      properties:
+        '@type':
+          type: string
+      type: object
+    rpcStatus:
+      properties:
+        code:
+          format: int32
+          type: integer
+        message:
+          type: string
+        details:
+          items:
+            $ref: '#/components/schemas/protobufAny'
+          type: array
+      type: object
+x-original-swagger-version: "2.0"
