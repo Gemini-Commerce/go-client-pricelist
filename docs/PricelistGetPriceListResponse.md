@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **Description**| **string** |   | [optional]
 **IsActive**| **bool** |   | [optional]
 **IsDefault**| **bool** |   | [optional]
-**Currency**| [**PricelistCurrency**](PricelistCurrency.md) |  for more information please, see Model/PricelistCurrency.php  | [optional] [default to XXX]
+**Currency**| [**PricelistCurrency**](PricelistCurrency.md) |  for more information please, see Model/PricelistCurrency.php  | [optional] [default to PRICELISTCURRENCY_XXX]
 **VatIncluded**| **bool** |   | [optional]
 **DeliveredDutyPaid**| **bool** |   | [optional]
 **Segments**| **[]string** |   | [optional]
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **Channels**| **[]string** |   | [optional]
 **CreatedAt**| [**time.Time**](time.Time.md) |   | [optional]
 **UpdatedAt**| [**time.Time**](time.Time.md) |   | [optional]
-**Type**| [**PricelistPriceListType**](PricelistPriceListType.md) |  for more information please, see Model/PricelistPriceListType.php  | [optional] [default to UNKNOWN]
+**Type**| [**PricelistPriceListType**](PricelistPriceListType.md) |  for more information please, see Model/PricelistPriceListType.php  | [optional] [default to PRICELISTPRICELISTTYPE_UNKNOWN]
 **IsSystem**| **bool** |   | [optional]
 
 

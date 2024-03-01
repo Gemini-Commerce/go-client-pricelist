@@ -1,5 +1,5 @@
 /*
-pricelist/service.proto
+PriceList Service
 
 Testing PriceListAPIService
 
@@ -22,11 +22,11 @@ func Test_pricelist_PriceListAPIService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test PriceListAPIService PriceListCreatePriceList", func(t *testing.T) {
+	t.Run("Test PriceListAPIService CreatePriceList", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.PriceListAPI.PriceListCreatePriceList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.PriceListAPI.CreatePriceList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -34,11 +34,11 @@ func Test_pricelist_PriceListAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test PriceListAPIService PriceListDeletePriceListItems", func(t *testing.T) {
+	t.Run("Test PriceListAPIService DeletePriceListItems", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.PriceListAPI.PriceListDeletePriceListItems(context.Background()).Execute()
+		resp, httpRes, err := apiClient.PriceListAPI.DeletePriceListItems(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -46,11 +46,83 @@ func Test_pricelist_PriceListAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test PriceListAPIService PriceListGetFullPriceItemsByPricelistId", func(t *testing.T) {
+	t.Run("Test PriceListAPIService GetFullPriceItemsByPricelistId", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.PriceListAPI.PriceListGetFullPriceItemsByPricelistId(context.Background()).Execute()
+		resp, httpRes, err := apiClient.PriceListAPI.GetFullPriceItemsByPricelistId(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test PriceListAPIService GetPriceList", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.PriceListAPI.GetPriceList(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test PriceListAPIService GetPriceListByCode", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.PriceListAPI.GetPriceListByCode(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test PriceListAPIService GetPriceListItems", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.PriceListAPI.GetPriceListItems(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test PriceListAPIService GetPricesItems", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.PriceListAPI.GetPricesItems(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test PriceListAPIService ListFullPriceItemsByPricelistId", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.PriceListAPI.ListFullPriceItemsByPricelistId(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test PriceListAPIService ListPriceLists", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.PriceListAPI.ListPriceLists(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -70,11 +142,11 @@ func Test_pricelist_PriceListAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test PriceListAPIService PriceListGetPriceList", func(t *testing.T) {
+	t.Run("Test PriceListAPIService SetPriceListItems", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.PriceListAPI.PriceListGetPriceList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.PriceListAPI.SetPriceListItems(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -82,83 +154,11 @@ func Test_pricelist_PriceListAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test PriceListAPIService PriceListGetPriceListByCode", func(t *testing.T) {
+	t.Run("Test PriceListAPIService UpdatePriceList", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.PriceListAPI.PriceListGetPriceListByCode(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test PriceListAPIService PriceListGetPriceListItems", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		resp, httpRes, err := apiClient.PriceListAPI.PriceListGetPriceListItems(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test PriceListAPIService PriceListGetPricesItems", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		resp, httpRes, err := apiClient.PriceListAPI.PriceListGetPricesItems(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test PriceListAPIService PriceListListFullPriceItemsByPricelistId", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		resp, httpRes, err := apiClient.PriceListAPI.PriceListListFullPriceItemsByPricelistId(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test PriceListAPIService PriceListListPriceLists", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		resp, httpRes, err := apiClient.PriceListAPI.PriceListListPriceLists(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test PriceListAPIService PriceListSetPriceListItems", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		resp, httpRes, err := apiClient.PriceListAPI.PriceListSetPriceListItems(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test PriceListAPIService PriceListUpdatePriceList", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		resp, httpRes, err := apiClient.PriceListAPI.PriceListUpdatePriceList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.PriceListAPI.UpdatePriceList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

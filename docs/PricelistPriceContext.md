@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Currency**| [**PricelistCurrency**](PricelistCurrency.md) |  for more information please, see Model/PricelistCurrency.php  | [default to XXX]
+**Currency**| [**PricelistCurrency**](PricelistCurrency.md) |  for more information please, see Model/PricelistCurrency.php  | [default to PRICELISTCURRENCY_XXX]
 **Segment**| **string** |   | [optional]
 **Segments**| **[]string** |   | [optional]
 **Market**| **string** |   | [optional]

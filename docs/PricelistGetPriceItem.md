@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **EndDatePrice**| [**time.Time**](time.Time.md) |   | [optional]
 **BasePrice**| [**PricelistMoney**](PricelistMoney.md) |   | [optional]
 **DoubleFormatBasePrice**| **float64** |   | [optional]
-**Currency**| [**PricelistCurrency**](PricelistCurrency.md) |  for more information please, see Model/PricelistCurrency.php  | [optional] [default to XXX]
+**Currency**| [**PricelistCurrency**](PricelistCurrency.md) |  for more information please, see Model/PricelistCurrency.php  | [optional] [default to PRICELISTCURRENCY_XXX]
 **HasTierPrices**| **bool** |   | [optional]
 **CreatedAt**| [**time.Time**](time.Time.md) |   | [optional]
 **UpdatedAt**| [**time.Time**](time.Time.md) |   | [optional]

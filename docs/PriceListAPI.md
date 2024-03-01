@@ -1,27 +1,29 @@
 # GeminiCommerce\Pricelist\PriceListAPI
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://pricelist.api.gogemini.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**PriceListCreatePriceList**](PriceListAPI.md#PriceListCreatePriceList) | **Post** /pricelist.PriceList/CreatePriceList | 
-[**PriceListDeletePriceListItems**](PriceListAPI.md#PriceListDeletePriceListItems) | **Post** /pricelist.PriceList/DeletePriceListItems | 
-[**PriceListGetFullPriceItemsByPricelistId**](PriceListAPI.md#PriceListGetFullPriceItemsByPricelistId) | **Post** /pricelist.PriceList/GetFullPriceItemsByPricelistId | 
+[**CreatePriceList**](PriceListAPI.md#CreatePriceList) | **Post** /pricelist.PriceList/CreatePriceList | Create new list
+[**DeletePriceListItems**](PriceListAPI.md#DeletePriceListItems) | **Post** /pricelist.PriceList/DeletePriceListItems | Get prices for items
+[**GetFullPriceItemsByPricelistId**](PriceListAPI.md#GetFullPriceItemsByPricelistId) | **Post** /pricelist.PriceList/GetFullPriceItemsByPricelistId | List detailed items
+[**GetPriceList**](PriceListAPI.md#GetPriceList) | **Post** /pricelist.PriceList/GetPriceList | Get specific list
+[**GetPriceListByCode**](PriceListAPI.md#GetPriceListByCode) | **Post** /pricelist.PriceList/GetPriceListByCode | Get list by code
+[**GetPriceListItems**](PriceListAPI.md#GetPriceListItems) | **Post** /pricelist.PriceList/GetPriceListItems | Get items in list
+[**GetPricesItems**](PriceListAPI.md#GetPricesItems) | **Post** /pricelist.PriceList/GetPricesItems | Get detailed items
+[**ListFullPriceItemsByPricelistId**](PriceListAPI.md#ListFullPriceItemsByPricelistId) | **Post** /pricelist.PriceList/ListFullPriceItemsByPricelistId | List detailed price items for a specific price list
+[**ListPriceLists**](PriceListAPI.md#ListPriceLists) | **Post** /pricelist.PriceList/ListPriceLists | List all price lists
 [**PriceListGetPriceItemsByPriceListItemIds**](PriceListAPI.md#PriceListGetPriceItemsByPriceListItemIds) | **Post** /pricelist.PriceList/GetPriceItemsByPriceListItemIds | 
-[**PriceListGetPriceList**](PriceListAPI.md#PriceListGetPriceList) | **Post** /pricelist.PriceList/GetPriceList | 
-[**PriceListGetPriceListByCode**](PriceListAPI.md#PriceListGetPriceListByCode) | **Post** /pricelist.PriceList/GetPriceListByCode | 
-[**PriceListGetPriceListItems**](PriceListAPI.md#PriceListGetPriceListItems) | **Post** /pricelist.PriceList/GetPriceListItems | 
-[**PriceListGetPricesItems**](PriceListAPI.md#PriceListGetPricesItems) | **Post** /pricelist.PriceList/GetPricesItems | 
-[**PriceListListFullPriceItemsByPricelistId**](PriceListAPI.md#PriceListListFullPriceItemsByPricelistId) | **Post** /pricelist.PriceList/ListFullPriceItemsByPricelistId | 
-[**PriceListListPriceLists**](PriceListAPI.md#PriceListListPriceLists) | **Post** /pricelist.PriceList/ListPriceLists | 
-[**PriceListSetPriceListItems**](PriceListAPI.md#PriceListSetPriceListItems) | **Post** /pricelist.PriceList/SetPriceListItems | 
-[**PriceListUpdatePriceList**](PriceListAPI.md#PriceListUpdatePriceList) | **Post** /pricelist.PriceList/UpdatePriceList | 
+[**SetPriceListItems**](PriceListAPI.md#SetPriceListItems) | **Post** /pricelist.PriceList/SetPriceListItems | Set items in list
+[**UpdatePriceList**](PriceListAPI.md#UpdatePriceList) | **Post** /pricelist.PriceList/UpdatePriceList | Update list
 
 
 
-## PriceListCreatePriceList
+## CreatePriceList
 
-> PricelistCreatePriceListResponse PriceListCreatePriceList(ctx).Body(body).Execute()
+> PricelistCreatePriceListResponse CreatePriceList(ctx).Body(body).Execute()
+
+Create new list
 
 
 
@@ -42,13 +44,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PriceListAPI.PriceListCreatePriceList(context.Background()).Body(body).Execute()
+	resp, r, err := apiClient.PriceListAPI.CreatePriceList(context.Background()).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `PriceListAPI.PriceListCreatePriceList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `PriceListAPI.CreatePriceList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PriceListCreatePriceList`: PricelistCreatePriceListResponse
-	fmt.Fprintf(os.Stdout, "Response from `PriceListAPI.PriceListCreatePriceList`: %v\n", resp)
+	// response from `CreatePriceList`: PricelistCreatePriceListResponse
+	fmt.Fprintf(os.Stdout, "Response from `PriceListAPI.CreatePriceList`: %v\n", resp)
 }
 ```
 
@@ -58,7 +60,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPriceListCreatePriceListRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreatePriceListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -71,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -83,9 +85,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## PriceListDeletePriceListItems
+## DeletePriceListItems
 
-> map[string]interface{} PriceListDeletePriceListItems(ctx).Body(body).Execute()
+> map[string]interface{} DeletePriceListItems(ctx).Body(body).Execute()
+
+Get prices for items
 
 
 
@@ -106,13 +110,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PriceListAPI.PriceListDeletePriceListItems(context.Background()).Body(body).Execute()
+	resp, r, err := apiClient.PriceListAPI.DeletePriceListItems(context.Background()).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `PriceListAPI.PriceListDeletePriceListItems``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `PriceListAPI.DeletePriceListItems``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PriceListDeletePriceListItems`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `PriceListAPI.PriceListDeletePriceListItems`: %v\n", resp)
+	// response from `DeletePriceListItems`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `PriceListAPI.DeletePriceListItems`: %v\n", resp)
 }
 ```
 
@@ -122,7 +126,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPriceListDeletePriceListItemsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeletePriceListItemsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -135,7 +139,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -147,9 +151,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## PriceListGetFullPriceItemsByPricelistId
+## GetFullPriceItemsByPricelistId
 
-> PricelistGetFullPriceItemsResponse PriceListGetFullPriceItemsByPricelistId(ctx).Body(body).Execute()
+> PricelistGetFullPriceItemsResponse GetFullPriceItemsByPricelistId(ctx).Body(body).Execute()
+
+List detailed items
 
 
 
@@ -170,13 +176,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PriceListAPI.PriceListGetFullPriceItemsByPricelistId(context.Background()).Body(body).Execute()
+	resp, r, err := apiClient.PriceListAPI.GetFullPriceItemsByPricelistId(context.Background()).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `PriceListAPI.PriceListGetFullPriceItemsByPricelistId``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `PriceListAPI.GetFullPriceItemsByPricelistId``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PriceListGetFullPriceItemsByPricelistId`: PricelistGetFullPriceItemsResponse
-	fmt.Fprintf(os.Stdout, "Response from `PriceListAPI.PriceListGetFullPriceItemsByPricelistId`: %v\n", resp)
+	// response from `GetFullPriceItemsByPricelistId`: PricelistGetFullPriceItemsResponse
+	fmt.Fprintf(os.Stdout, "Response from `PriceListAPI.GetFullPriceItemsByPricelistId`: %v\n", resp)
 }
 ```
 
@@ -186,7 +192,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPriceListGetFullPriceItemsByPricelistIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetFullPriceItemsByPricelistIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -199,7 +205,403 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetPriceList
+
+> PricelistGetPriceListResponse GetPriceList(ctx).Body(body).Execute()
+
+Get specific list
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Gemini-Commerce/go-client-pricelist"
+)
+
+func main() {
+	body := *openapiclient.NewPricelistGetPriceListRequest() // PricelistGetPriceListRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PriceListAPI.GetPriceList(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PriceListAPI.GetPriceList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetPriceList`: PricelistGetPriceListResponse
+	fmt.Fprintf(os.Stdout, "Response from `PriceListAPI.GetPriceList`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetPriceListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**PricelistGetPriceListRequest**](PricelistGetPriceListRequest.md) |  | 
+
+### Return type
+
+[**PricelistGetPriceListResponse**](PricelistGetPriceListResponse.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetPriceListByCode
+
+> PricelistGetPriceListByCodeResponse GetPriceListByCode(ctx).Body(body).Execute()
+
+Get list by code
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Gemini-Commerce/go-client-pricelist"
+)
+
+func main() {
+	body := *openapiclient.NewPricelistGetPriceListByCodeRequest() // PricelistGetPriceListByCodeRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PriceListAPI.GetPriceListByCode(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PriceListAPI.GetPriceListByCode``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetPriceListByCode`: PricelistGetPriceListByCodeResponse
+	fmt.Fprintf(os.Stdout, "Response from `PriceListAPI.GetPriceListByCode`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetPriceListByCodeRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**PricelistGetPriceListByCodeRequest**](PricelistGetPriceListByCodeRequest.md) |  | 
+
+### Return type
+
+[**PricelistGetPriceListByCodeResponse**](PricelistGetPriceListByCodeResponse.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetPriceListItems
+
+> PricelistGetPriceListItemsResponse GetPriceListItems(ctx).Body(body).Execute()
+
+Get items in list
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Gemini-Commerce/go-client-pricelist"
+)
+
+func main() {
+	body := *openapiclient.NewPricelistGetPriceListItemsRequest() // PricelistGetPriceListItemsRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PriceListAPI.GetPriceListItems(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PriceListAPI.GetPriceListItems``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetPriceListItems`: PricelistGetPriceListItemsResponse
+	fmt.Fprintf(os.Stdout, "Response from `PriceListAPI.GetPriceListItems`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetPriceListItemsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**PricelistGetPriceListItemsRequest**](PricelistGetPriceListItemsRequest.md) |  | 
+
+### Return type
+
+[**PricelistGetPriceListItemsResponse**](PricelistGetPriceListItemsResponse.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetPricesItems
+
+> PricelistGetPricesResponse GetPricesItems(ctx).Body(body).Execute()
+
+Get detailed items
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Gemini-Commerce/go-client-pricelist"
+)
+
+func main() {
+	body := *openapiclient.NewPricelistGetPricesRequest() // PricelistGetPricesRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PriceListAPI.GetPricesItems(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PriceListAPI.GetPricesItems``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetPricesItems`: PricelistGetPricesResponse
+	fmt.Fprintf(os.Stdout, "Response from `PriceListAPI.GetPricesItems`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetPricesItemsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**PricelistGetPricesRequest**](PricelistGetPricesRequest.md) |  | 
+
+### Return type
+
+[**PricelistGetPricesResponse**](PricelistGetPricesResponse.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListFullPriceItemsByPricelistId
+
+> PricelistListFullPriceItemsResponse ListFullPriceItemsByPricelistId(ctx).Body(body).Execute()
+
+List detailed price items for a specific price list
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Gemini-Commerce/go-client-pricelist"
+)
+
+func main() {
+	body := *openapiclient.NewPricelistListFullPriceItemsRequest() // PricelistListFullPriceItemsRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PriceListAPI.ListFullPriceItemsByPricelistId(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PriceListAPI.ListFullPriceItemsByPricelistId``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListFullPriceItemsByPricelistId`: PricelistListFullPriceItemsResponse
+	fmt.Fprintf(os.Stdout, "Response from `PriceListAPI.ListFullPriceItemsByPricelistId`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListFullPriceItemsByPricelistIdRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**PricelistListFullPriceItemsRequest**](PricelistListFullPriceItemsRequest.md) |  | 
+
+### Return type
+
+[**PricelistListFullPriceItemsResponse**](PricelistListFullPriceItemsResponse.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListPriceLists
+
+> PricelistListPriceListsResponse ListPriceLists(ctx).Body(body).Execute()
+
+List all price lists
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Gemini-Commerce/go-client-pricelist"
+)
+
+func main() {
+	body := *openapiclient.NewPricelistListPriceListsRequest() // PricelistListPriceListsRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PriceListAPI.ListPriceLists(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PriceListAPI.ListPriceLists``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListPriceLists`: PricelistListPriceListsResponse
+	fmt.Fprintf(os.Stdout, "Response from `PriceListAPI.ListPriceLists`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListPriceListsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**PricelistListPriceListsRequest**](PricelistListPriceListsRequest.md) |  | 
+
+### Return type
+
+[**PricelistListPriceListsResponse**](PricelistListPriceListsResponse.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -263,7 +665,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -275,393 +677,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## PriceListGetPriceList
+## SetPriceListItems
 
-> PricelistGetPriceListResponse PriceListGetPriceList(ctx).Body(body).Execute()
+> PricelistSetPriceListItemsResponse SetPriceListItems(ctx).Body(body).Execute()
 
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Gemini-Commerce/go-client-pricelist"
-)
-
-func main() {
-	body := *openapiclient.NewPricelistGetPriceListRequest() // PricelistGetPriceListRequest | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PriceListAPI.PriceListGetPriceList(context.Background()).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `PriceListAPI.PriceListGetPriceList``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `PriceListGetPriceList`: PricelistGetPriceListResponse
-	fmt.Fprintf(os.Stdout, "Response from `PriceListAPI.PriceListGetPriceList`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPriceListGetPriceListRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**PricelistGetPriceListRequest**](PricelistGetPriceListRequest.md) |  | 
-
-### Return type
-
-[**PricelistGetPriceListResponse**](PricelistGetPriceListResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## PriceListGetPriceListByCode
-
-> PricelistGetPriceListByCodeResponse PriceListGetPriceListByCode(ctx).Body(body).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Gemini-Commerce/go-client-pricelist"
-)
-
-func main() {
-	body := *openapiclient.NewPricelistGetPriceListByCodeRequest() // PricelistGetPriceListByCodeRequest | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PriceListAPI.PriceListGetPriceListByCode(context.Background()).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `PriceListAPI.PriceListGetPriceListByCode``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `PriceListGetPriceListByCode`: PricelistGetPriceListByCodeResponse
-	fmt.Fprintf(os.Stdout, "Response from `PriceListAPI.PriceListGetPriceListByCode`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPriceListGetPriceListByCodeRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**PricelistGetPriceListByCodeRequest**](PricelistGetPriceListByCodeRequest.md) |  | 
-
-### Return type
-
-[**PricelistGetPriceListByCodeResponse**](PricelistGetPriceListByCodeResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## PriceListGetPriceListItems
-
-> PricelistGetPriceListItemsResponse PriceListGetPriceListItems(ctx).Body(body).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Gemini-Commerce/go-client-pricelist"
-)
-
-func main() {
-	body := *openapiclient.NewPricelistGetPriceListItemsRequest() // PricelistGetPriceListItemsRequest | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PriceListAPI.PriceListGetPriceListItems(context.Background()).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `PriceListAPI.PriceListGetPriceListItems``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `PriceListGetPriceListItems`: PricelistGetPriceListItemsResponse
-	fmt.Fprintf(os.Stdout, "Response from `PriceListAPI.PriceListGetPriceListItems`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPriceListGetPriceListItemsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**PricelistGetPriceListItemsRequest**](PricelistGetPriceListItemsRequest.md) |  | 
-
-### Return type
-
-[**PricelistGetPriceListItemsResponse**](PricelistGetPriceListItemsResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## PriceListGetPricesItems
-
-> PricelistGetPricesResponse PriceListGetPricesItems(ctx).Body(body).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Gemini-Commerce/go-client-pricelist"
-)
-
-func main() {
-	body := *openapiclient.NewPricelistGetPricesRequest() // PricelistGetPricesRequest | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PriceListAPI.PriceListGetPricesItems(context.Background()).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `PriceListAPI.PriceListGetPricesItems``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `PriceListGetPricesItems`: PricelistGetPricesResponse
-	fmt.Fprintf(os.Stdout, "Response from `PriceListAPI.PriceListGetPricesItems`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPriceListGetPricesItemsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**PricelistGetPricesRequest**](PricelistGetPricesRequest.md) |  | 
-
-### Return type
-
-[**PricelistGetPricesResponse**](PricelistGetPricesResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## PriceListListFullPriceItemsByPricelistId
-
-> PricelistListFullPriceItemsResponse PriceListListFullPriceItemsByPricelistId(ctx).Body(body).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Gemini-Commerce/go-client-pricelist"
-)
-
-func main() {
-	body := *openapiclient.NewPricelistListFullPriceItemsRequest() // PricelistListFullPriceItemsRequest | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PriceListAPI.PriceListListFullPriceItemsByPricelistId(context.Background()).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `PriceListAPI.PriceListListFullPriceItemsByPricelistId``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `PriceListListFullPriceItemsByPricelistId`: PricelistListFullPriceItemsResponse
-	fmt.Fprintf(os.Stdout, "Response from `PriceListAPI.PriceListListFullPriceItemsByPricelistId`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPriceListListFullPriceItemsByPricelistIdRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**PricelistListFullPriceItemsRequest**](PricelistListFullPriceItemsRequest.md) |  | 
-
-### Return type
-
-[**PricelistListFullPriceItemsResponse**](PricelistListFullPriceItemsResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## PriceListListPriceLists
-
-> PricelistListPriceListsResponse PriceListListPriceLists(ctx).Body(body).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Gemini-Commerce/go-client-pricelist"
-)
-
-func main() {
-	body := *openapiclient.NewPricelistListPriceListsRequest() // PricelistListPriceListsRequest | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PriceListAPI.PriceListListPriceLists(context.Background()).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `PriceListAPI.PriceListListPriceLists``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `PriceListListPriceLists`: PricelistListPriceListsResponse
-	fmt.Fprintf(os.Stdout, "Response from `PriceListAPI.PriceListListPriceLists`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPriceListListPriceListsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**PricelistListPriceListsRequest**](PricelistListPriceListsRequest.md) |  | 
-
-### Return type
-
-[**PricelistListPriceListsResponse**](PricelistListPriceListsResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## PriceListSetPriceListItems
-
-> PricelistSetPriceListItemsResponse PriceListSetPriceListItems(ctx).Body(body).Execute()
+Set items in list
 
 
 
@@ -682,13 +702,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PriceListAPI.PriceListSetPriceListItems(context.Background()).Body(body).Execute()
+	resp, r, err := apiClient.PriceListAPI.SetPriceListItems(context.Background()).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `PriceListAPI.PriceListSetPriceListItems``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `PriceListAPI.SetPriceListItems``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PriceListSetPriceListItems`: PricelistSetPriceListItemsResponse
-	fmt.Fprintf(os.Stdout, "Response from `PriceListAPI.PriceListSetPriceListItems`: %v\n", resp)
+	// response from `SetPriceListItems`: PricelistSetPriceListItemsResponse
+	fmt.Fprintf(os.Stdout, "Response from `PriceListAPI.SetPriceListItems`: %v\n", resp)
 }
 ```
 
@@ -698,7 +718,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPriceListSetPriceListItemsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiSetPriceListItemsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -711,7 +731,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -723,9 +743,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## PriceListUpdatePriceList
+## UpdatePriceList
 
-> map[string]interface{} PriceListUpdatePriceList(ctx).Body(body).Execute()
+> map[string]interface{} UpdatePriceList(ctx).Body(body).Execute()
+
+Update list
 
 
 
@@ -746,13 +768,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PriceListAPI.PriceListUpdatePriceList(context.Background()).Body(body).Execute()
+	resp, r, err := apiClient.PriceListAPI.UpdatePriceList(context.Background()).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `PriceListAPI.PriceListUpdatePriceList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `PriceListAPI.UpdatePriceList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PriceListUpdatePriceList`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `PriceListAPI.PriceListUpdatePriceList`: %v\n", resp)
+	// response from `UpdatePriceList`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `PriceListAPI.UpdatePriceList`: %v\n", resp)
 }
 ```
 
@@ -762,7 +784,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPriceListUpdatePriceListRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdatePriceListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -775,7 +797,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 

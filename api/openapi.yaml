@@ -1,15 +1,28 @@
 openapi: 3.0.1
 info:
-  title: pricelist/service.proto
-  version: version not set
+  contact:
+    email: info@gemini-commerce.com
+    name: Gemini Team
+  license:
+    name: Gemini fair use license
+    url: https://gemini-commerce.com/api/fair-use-license
+  title: PriceList Service
+  version: v1
 servers:
-- url: /
+- url: https://pricelist.api.gogemini.io/
+security:
+- Authorization: []
 tags:
-- name: PriceList
+- description: Pricelist Description
+  externalDocs:
+    url: https://gemini-commerce.com/api/pricelist
+  name: PriceList
 paths:
   /pricelist.PriceList/CreatePriceList:
     post:
-      operationId: PriceList_CreatePriceList
+      description: "Allows the creation of a new price list with specified details\
+        \ such as code, name, currency, and type."
+      operationId: CreatePriceList
       requestBody:
         content:
           application/json:
@@ -22,19 +35,35 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/pricelistCreatePriceListResponse'
-          description: A successful response.
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Unauthorized
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
         default:
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      summary: Create new list
       tags:
       - PriceList
       x-codegen-request-body-name: body
   /pricelist.PriceList/DeletePriceListItems:
     post:
-      operationId: PriceList_DeletePriceListItems
+      description: Deletes specified items from a price list based on their unique
+        identifiers.
+      operationId: DeletePriceListItems
       requestBody:
         content:
           application/json:
@@ -47,19 +76,35 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/pricelistDeletePriceListItemsResponse'
-          description: A successful response.
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Unauthorized
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
         default:
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      summary: Get prices for items
       tags:
       - PriceList
       x-codegen-request-body-name: body
   /pricelist.PriceList/GetFullPriceItemsByPricelistId:
     post:
-      operationId: PriceList_GetFullPriceItemsByPricelistId
+      description: "Fetches detailed information about items, including historical\
+        \ price data, for a specific price list."
+      operationId: GetFullPriceItemsByPricelistId
       requestBody:
         content:
           application/json:
@@ -72,13 +117,27 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/pricelistGetFullPriceItemsResponse'
-          description: A successful response.
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Unauthorized
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
         default:
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      summary: List detailed items
       tags:
       - PriceList
       x-codegen-request-body-name: body
@@ -109,7 +168,10 @@ paths:
       x-codegen-request-body-name: body
   /pricelist.PriceList/GetPriceList:
     post:
-      operationId: PriceList_GetPriceList
+      description: "Returns information about a particular price list identified by\
+        \ tenant ID and price list ID. The response includes details such as code,\
+        \ name, currency, and type."
+      operationId: GetPriceList
       requestBody:
         content:
           application/json:
@@ -122,19 +184,36 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/pricelistGetPriceListResponse'
-          description: A successful response.
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Unauthorized
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
         default:
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      summary: Get specific list
       tags:
       - PriceList
       x-codegen-request-body-name: body
   /pricelist.PriceList/GetPriceListByCode:
     post:
-      operationId: PriceList_GetPriceListByCode
+      description: "Retrieves information about a specific price list using the unique\
+        \ code associated with it. The response includes details such as code, name,\
+        \ currency, and type."
+      operationId: GetPriceListByCode
       requestBody:
         content:
           application/json:
@@ -147,19 +226,35 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/pricelistGetPriceListByCodeResponse'
-          description: A successful response.
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Unauthorized
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
         default:
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      summary: Get list by code
       tags:
       - PriceList
       x-codegen-request-body-name: body
   /pricelist.PriceList/GetPriceListItems:
     post:
-      operationId: PriceList_GetPriceListItems
+      description: Fetches a paginated list of items associated with a particular
+        price list.
+      operationId: GetPriceListItems
       requestBody:
         content:
           application/json:
@@ -172,19 +267,35 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/pricelistGetPriceListItemsResponse'
-          description: A successful response.
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Unauthorized
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
         default:
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      summary: Get items in list
       tags:
       - PriceList
       x-codegen-request-body-name: body
   /pricelist.PriceList/GetPricesItems:
     post:
-      operationId: PriceList_GetPricesItems
+      description: "Retrieves the current prices of specified items considering the\
+        \ provided context, such as currency and market."
+      operationId: GetPricesItems
       requestBody:
         content:
           application/json:
@@ -197,19 +308,35 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/pricelistGetPricesResponse'
-          description: A successful response.
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Unauthorized
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
         default:
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      summary: Get detailed items
       tags:
       - PriceList
       x-codegen-request-body-name: body
   /pricelist.PriceList/ListFullPriceItemsByPricelistId:
     post:
-      operationId: PriceList_ListFullPriceItemsByPricelistId
+      description: "Retrieves a paginated list of detailed price items, including\
+        \ historical data, for a specific price list."
+      operationId: ListFullPriceItemsByPricelistId
       requestBody:
         content:
           application/json:
@@ -222,19 +349,36 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/pricelistListFullPriceItemsResponse'
-          description: A successful response.
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Unauthorized
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
         default:
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      summary: List detailed price items for a specific price list
       tags:
       - PriceList
       x-codegen-request-body-name: body
   /pricelist.PriceList/ListPriceLists:
     post:
-      operationId: PriceList_ListPriceLists
+      description: "Retrieves a list of price lists based on optional filters such\
+        \ as name, code, and other attributes. The response includes details such\
+        \ as code, name, currency, and type."
+      operationId: ListPriceLists
       requestBody:
         content:
           application/json:
@@ -247,19 +391,35 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/pricelistListPriceListsResponse'
-          description: A successful response.
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Unauthorized
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
         default:
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      summary: List all price lists
       tags:
       - PriceList
       x-codegen-request-body-name: body
   /pricelist.PriceList/SetPriceListItems:
     post:
-      operationId: PriceList_SetPriceListItems
+      description: "Updates or creates items for a given price list, allowing bulk\
+        \ modifications."
+      operationId: SetPriceListItems
       requestBody:
         content:
           application/json:
@@ -272,19 +432,37 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/pricelistSetPriceListItemsResponse'
-          description: A successful response.
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Unauthorized
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
         default:
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      summary: Set items in list
       tags:
       - PriceList
       x-codegen-request-body-name: body
   /pricelist.PriceList/UpdatePriceList:
     post:
-      operationId: PriceList_UpdatePriceList
+      description: "Modifies the attributes of an existing price list based on the\
+        \ provided payload and field mask. The field mask is used to specify which\
+        \ attributes of the price list are to be updated. The field mask is a comma-separated\
+        \ list of fully qualified names of fields. Example: `code,name,currency,type`"
+      operationId: UpdatePriceList
       requestBody:
         content:
           application/json:
@@ -297,13 +475,27 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/pricelistUpdatePriceListResponse'
-          description: A successful response.
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Unauthorized
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
         default:
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      summary: Update list
       tags:
       - PriceList
       x-codegen-request-body-name: body
@@ -1648,4 +1840,14 @@ components:
             $ref: '#/components/schemas/protobufAny'
           type: array
       type: object
+  securitySchemes:
+    Authorization:
+      in: header
+      name: Authorization
+      type: apiKey
+    standardAuthorization:
+      flows:
+        implicit:
+          scopes: {}
+      type: oauth2
 x-original-swagger-version: "2.0"
