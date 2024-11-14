@@ -21,7 +21,10 @@ var _ MappedNullable = &PricelistGetPriceItemsByPriceListItemIdsResponse{}
 // PricelistGetPriceItemsByPriceListItemIdsResponse struct for PricelistGetPriceItemsByPriceListItemIdsResponse
 type PricelistGetPriceItemsByPriceListItemIdsResponse struct {
 	Prices []PricelistGetPriceListItem `json:"prices,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _PricelistGetPriceItemsByPriceListItemIdsResponse PricelistGetPriceItemsByPriceListItemIdsResponse
 
 // NewPricelistGetPriceItemsByPriceListItemIdsResponse instantiates a new PricelistGetPriceItemsByPriceListItemIdsResponse object
 // This constructor will assign default values to properties that have it defined,
@@ -58,8 +61,8 @@ func (o *PricelistGetPriceItemsByPriceListItemIdsResponse) GetPricesOk() ([]Pric
 	return o.Prices, true
 }
 
-// HasPrices returns a boolean if a field has been set.
-func (o *PricelistGetPriceItemsByPriceListItemIdsResponse) HasPrices() bool {
+// &#39;Has&#39;Prices returns a boolean if a field has been set.
+func (o *PricelistGetPriceItemsByPriceListItemIdsResponse) &#39;Has&#39;Prices() bool {
 	if o != nil && !IsNil(o.Prices) {
 		return true
 	}
@@ -85,9 +88,53 @@ func (o PricelistGetPriceItemsByPriceListItemIdsResponse) ToMap() (map[string]in
 	if !IsNil(o.Prices) {
 		toSerialize["prices"] = o.Prices
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *PricelistGetPriceItemsByPriceListItemIdsResponse) UnmarshalJSON(data []byte) (err error) {
+	varPricelistGetPriceItemsByPriceListItemIdsResponse := _PricelistGetPriceItemsByPriceListItemIdsResponse{}
+
+	err = json.Unmarshal(data, &varPricelistGetPriceItemsByPriceListItemIdsResponse)
+
+	if err != nil {
+		return err
+	}
+
+	*o = PricelistGetPriceItemsByPriceListItemIdsResponse(varPricelistGetPriceItemsByPriceListItemIdsResponse)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "prices")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *PricelistGetPriceItemsByPriceListItemIdsResponse) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *PricelistGetPriceItemsByPriceListItemIdsResponse) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullablePricelistGetPriceItemsByPriceListItemIdsResponse struct {
 	value *PricelistGetPriceItemsByPriceListItemIdsResponse
 	isSet bool

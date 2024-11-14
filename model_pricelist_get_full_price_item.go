@@ -30,7 +30,10 @@ type PricelistGetFullPriceItem struct {
 	Currency *PricelistCurrency `json:"currency,omitempty"`
 	Prices []PricelistGetFullPriceItemPrice `json:"prices,omitempty"`
 	HasTierPrices *bool `json:"hasTierPrices,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _PricelistGetFullPriceItem PricelistGetFullPriceItem
 
 // NewPricelistGetFullPriceItem instantiates a new PricelistGetFullPriceItem object
 // This constructor will assign default values to properties that have it defined,
@@ -71,8 +74,8 @@ func (o *PricelistGetFullPriceItem) GetIdOk() (*string, bool) {
 	return o.Id, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *PricelistGetFullPriceItem) HasId() bool {
+// &#39;Has&#39;Id returns a boolean if a field has been set.
+func (o *PricelistGetFullPriceItem) &#39;Has&#39;Id() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -103,8 +106,8 @@ func (o *PricelistGetFullPriceItem) GetGrnOk() (*string, bool) {
 	return o.Grn, true
 }
 
-// HasGrn returns a boolean if a field has been set.
-func (o *PricelistGetFullPriceItem) HasGrn() bool {
+// &#39;Has&#39;Grn returns a boolean if a field has been set.
+func (o *PricelistGetFullPriceItem) &#39;Has&#39;Grn() bool {
 	if o != nil && !IsNil(o.Grn) {
 		return true
 	}
@@ -135,8 +138,8 @@ func (o *PricelistGetFullPriceItem) GetItemGrnOk() (*string, bool) {
 	return o.ItemGrn, true
 }
 
-// HasItemGrn returns a boolean if a field has been set.
-func (o *PricelistGetFullPriceItem) HasItemGrn() bool {
+// &#39;Has&#39;ItemGrn returns a boolean if a field has been set.
+func (o *PricelistGetFullPriceItem) &#39;Has&#39;ItemGrn() bool {
 	if o != nil && !IsNil(o.ItemGrn) {
 		return true
 	}
@@ -167,8 +170,8 @@ func (o *PricelistGetFullPriceItem) GetBasePriceOk() (*PricelistMoney, bool) {
 	return o.BasePrice, true
 }
 
-// HasBasePrice returns a boolean if a field has been set.
-func (o *PricelistGetFullPriceItem) HasBasePrice() bool {
+// &#39;Has&#39;BasePrice returns a boolean if a field has been set.
+func (o *PricelistGetFullPriceItem) &#39;Has&#39;BasePrice() bool {
 	if o != nil && !IsNil(o.BasePrice) {
 		return true
 	}
@@ -199,8 +202,8 @@ func (o *PricelistGetFullPriceItem) GetCreatedAtOk() (*time.Time, bool) {
 	return o.CreatedAt, true
 }
 
-// HasCreatedAt returns a boolean if a field has been set.
-func (o *PricelistGetFullPriceItem) HasCreatedAt() bool {
+// &#39;Has&#39;CreatedAt returns a boolean if a field has been set.
+func (o *PricelistGetFullPriceItem) &#39;Has&#39;CreatedAt() bool {
 	if o != nil && !IsNil(o.CreatedAt) {
 		return true
 	}
@@ -231,8 +234,8 @@ func (o *PricelistGetFullPriceItem) GetUpdatedAtOk() (*time.Time, bool) {
 	return o.UpdatedAt, true
 }
 
-// HasUpdatedAt returns a boolean if a field has been set.
-func (o *PricelistGetFullPriceItem) HasUpdatedAt() bool {
+// &#39;Has&#39;UpdatedAt returns a boolean if a field has been set.
+func (o *PricelistGetFullPriceItem) &#39;Has&#39;UpdatedAt() bool {
 	if o != nil && !IsNil(o.UpdatedAt) {
 		return true
 	}
@@ -263,8 +266,8 @@ func (o *PricelistGetFullPriceItem) GetCurrencyOk() (*PricelistCurrency, bool) {
 	return o.Currency, true
 }
 
-// HasCurrency returns a boolean if a field has been set.
-func (o *PricelistGetFullPriceItem) HasCurrency() bool {
+// &#39;Has&#39;Currency returns a boolean if a field has been set.
+func (o *PricelistGetFullPriceItem) &#39;Has&#39;Currency() bool {
 	if o != nil && !IsNil(o.Currency) {
 		return true
 	}
@@ -295,8 +298,8 @@ func (o *PricelistGetFullPriceItem) GetPricesOk() ([]PricelistGetFullPriceItemPr
 	return o.Prices, true
 }
 
-// HasPrices returns a boolean if a field has been set.
-func (o *PricelistGetFullPriceItem) HasPrices() bool {
+// &#39;Has&#39;Prices returns a boolean if a field has been set.
+func (o *PricelistGetFullPriceItem) &#39;Has&#39;Prices() bool {
 	if o != nil && !IsNil(o.Prices) {
 		return true
 	}
@@ -327,8 +330,8 @@ func (o *PricelistGetFullPriceItem) GetHasTierPricesOk() (*bool, bool) {
 	return o.HasTierPrices, true
 }
 
-// HasHasTierPrices returns a boolean if a field has been set.
-func (o *PricelistGetFullPriceItem) HasHasTierPrices() bool {
+// &#39;Has&#39;HasTierPrices returns a boolean if a field has been set.
+func (o *PricelistGetFullPriceItem) &#39;Has&#39;HasTierPrices() bool {
 	if o != nil && !IsNil(o.HasTierPrices) {
 		return true
 	}
@@ -378,9 +381,61 @@ func (o PricelistGetFullPriceItem) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.HasTierPrices) {
 		toSerialize["hasTierPrices"] = o.HasTierPrices
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *PricelistGetFullPriceItem) UnmarshalJSON(data []byte) (err error) {
+	varPricelistGetFullPriceItem := _PricelistGetFullPriceItem{}
+
+	err = json.Unmarshal(data, &varPricelistGetFullPriceItem)
+
+	if err != nil {
+		return err
+	}
+
+	*o = PricelistGetFullPriceItem(varPricelistGetFullPriceItem)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "grn")
+		delete(additionalProperties, "itemGrn")
+		delete(additionalProperties, "basePrice")
+		delete(additionalProperties, "createdAt")
+		delete(additionalProperties, "updatedAt")
+		delete(additionalProperties, "currency")
+		delete(additionalProperties, "prices")
+		delete(additionalProperties, "hasTierPrices")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *PricelistGetFullPriceItem) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *PricelistGetFullPriceItem) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullablePricelistGetFullPriceItem struct {
 	value *PricelistGetFullPriceItem
 	isSet bool

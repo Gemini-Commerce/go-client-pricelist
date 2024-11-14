@@ -22,7 +22,10 @@ var _ MappedNullable = &PricelistCurrencyFilter{}
 type PricelistCurrencyFilter struct {
 	Currencies []PricelistCurrency `json:"currencies,omitempty"`
 	Condition *PricelistFilterCondition `json:"condition,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _PricelistCurrencyFilter PricelistCurrencyFilter
 
 // NewPricelistCurrencyFilter instantiates a new PricelistCurrencyFilter object
 // This constructor will assign default values to properties that have it defined,
@@ -63,8 +66,8 @@ func (o *PricelistCurrencyFilter) GetCurrenciesOk() ([]PricelistCurrency, bool) 
 	return o.Currencies, true
 }
 
-// HasCurrencies returns a boolean if a field has been set.
-func (o *PricelistCurrencyFilter) HasCurrencies() bool {
+// &#39;Has&#39;Currencies returns a boolean if a field has been set.
+func (o *PricelistCurrencyFilter) &#39;Has&#39;Currencies() bool {
 	if o != nil && !IsNil(o.Currencies) {
 		return true
 	}
@@ -95,8 +98,8 @@ func (o *PricelistCurrencyFilter) GetConditionOk() (*PricelistFilterCondition, b
 	return o.Condition, true
 }
 
-// HasCondition returns a boolean if a field has been set.
-func (o *PricelistCurrencyFilter) HasCondition() bool {
+// &#39;Has&#39;Condition returns a boolean if a field has been set.
+func (o *PricelistCurrencyFilter) &#39;Has&#39;Condition() bool {
 	if o != nil && !IsNil(o.Condition) {
 		return true
 	}
@@ -125,9 +128,54 @@ func (o PricelistCurrencyFilter) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Condition) {
 		toSerialize["condition"] = o.Condition
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *PricelistCurrencyFilter) UnmarshalJSON(data []byte) (err error) {
+	varPricelistCurrencyFilter := _PricelistCurrencyFilter{}
+
+	err = json.Unmarshal(data, &varPricelistCurrencyFilter)
+
+	if err != nil {
+		return err
+	}
+
+	*o = PricelistCurrencyFilter(varPricelistCurrencyFilter)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "currencies")
+		delete(additionalProperties, "condition")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *PricelistCurrencyFilter) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *PricelistCurrencyFilter) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullablePricelistCurrencyFilter struct {
 	value *PricelistCurrencyFilter
 	isSet bool

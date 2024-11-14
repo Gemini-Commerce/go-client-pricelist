@@ -26,7 +26,10 @@ type PricelistListPriceListsRequest struct {
 	SearchQuery *string `json:"searchQuery,omitempty"`
 	FilterMask *string `json:"filterMask,omitempty"`
 	Filter *ListPriceListsRequestFilter `json:"filter,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _PricelistListPriceListsRequest PricelistListPriceListsRequest
 
 // NewPricelistListPriceListsRequest instantiates a new PricelistListPriceListsRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -63,8 +66,8 @@ func (o *PricelistListPriceListsRequest) GetTenantIdOk() (*string, bool) {
 	return o.TenantId, true
 }
 
-// HasTenantId returns a boolean if a field has been set.
-func (o *PricelistListPriceListsRequest) HasTenantId() bool {
+// &#39;Has&#39;TenantId returns a boolean if a field has been set.
+func (o *PricelistListPriceListsRequest) &#39;Has&#39;TenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -95,8 +98,8 @@ func (o *PricelistListPriceListsRequest) GetPageSizeOk() (*int64, bool) {
 	return o.PageSize, true
 }
 
-// HasPageSize returns a boolean if a field has been set.
-func (o *PricelistListPriceListsRequest) HasPageSize() bool {
+// &#39;Has&#39;PageSize returns a boolean if a field has been set.
+func (o *PricelistListPriceListsRequest) &#39;Has&#39;PageSize() bool {
 	if o != nil && !IsNil(o.PageSize) {
 		return true
 	}
@@ -127,8 +130,8 @@ func (o *PricelistListPriceListsRequest) GetPageTokenOk() (*string, bool) {
 	return o.PageToken, true
 }
 
-// HasPageToken returns a boolean if a field has been set.
-func (o *PricelistListPriceListsRequest) HasPageToken() bool {
+// &#39;Has&#39;PageToken returns a boolean if a field has been set.
+func (o *PricelistListPriceListsRequest) &#39;Has&#39;PageToken() bool {
 	if o != nil && !IsNil(o.PageToken) {
 		return true
 	}
@@ -159,8 +162,8 @@ func (o *PricelistListPriceListsRequest) GetSearchQueryOk() (*string, bool) {
 	return o.SearchQuery, true
 }
 
-// HasSearchQuery returns a boolean if a field has been set.
-func (o *PricelistListPriceListsRequest) HasSearchQuery() bool {
+// &#39;Has&#39;SearchQuery returns a boolean if a field has been set.
+func (o *PricelistListPriceListsRequest) &#39;Has&#39;SearchQuery() bool {
 	if o != nil && !IsNil(o.SearchQuery) {
 		return true
 	}
@@ -191,8 +194,8 @@ func (o *PricelistListPriceListsRequest) GetFilterMaskOk() (*string, bool) {
 	return o.FilterMask, true
 }
 
-// HasFilterMask returns a boolean if a field has been set.
-func (o *PricelistListPriceListsRequest) HasFilterMask() bool {
+// &#39;Has&#39;FilterMask returns a boolean if a field has been set.
+func (o *PricelistListPriceListsRequest) &#39;Has&#39;FilterMask() bool {
 	if o != nil && !IsNil(o.FilterMask) {
 		return true
 	}
@@ -223,8 +226,8 @@ func (o *PricelistListPriceListsRequest) GetFilterOk() (*ListPriceListsRequestFi
 	return o.Filter, true
 }
 
-// HasFilter returns a boolean if a field has been set.
-func (o *PricelistListPriceListsRequest) HasFilter() bool {
+// &#39;Has&#39;Filter returns a boolean if a field has been set.
+func (o *PricelistListPriceListsRequest) &#39;Has&#39;Filter() bool {
 	if o != nil && !IsNil(o.Filter) {
 		return true
 	}
@@ -265,9 +268,58 @@ func (o PricelistListPriceListsRequest) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.Filter) {
 		toSerialize["filter"] = o.Filter
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *PricelistListPriceListsRequest) UnmarshalJSON(data []byte) (err error) {
+	varPricelistListPriceListsRequest := _PricelistListPriceListsRequest{}
+
+	err = json.Unmarshal(data, &varPricelistListPriceListsRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = PricelistListPriceListsRequest(varPricelistListPriceListsRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "pageSize")
+		delete(additionalProperties, "pageToken")
+		delete(additionalProperties, "searchQuery")
+		delete(additionalProperties, "filterMask")
+		delete(additionalProperties, "filter")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *PricelistListPriceListsRequest) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *PricelistListPriceListsRequest) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullablePricelistListPriceListsRequest struct {
 	value *PricelistListPriceListsRequest
 	isSet bool

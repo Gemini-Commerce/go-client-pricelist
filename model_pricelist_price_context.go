@@ -13,7 +13,6 @@ package pricelist
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -27,6 +26,7 @@ type PricelistPriceContext struct {
 	Segments []string `json:"segments,omitempty"`
 	Market *string `json:"market,omitempty"`
 	Channel *string `json:"channel,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _PricelistPriceContext PricelistPriceContext
@@ -93,8 +93,8 @@ func (o *PricelistPriceContext) GetSegmentOk() (*string, bool) {
 	return o.Segment, true
 }
 
-// HasSegment returns a boolean if a field has been set.
-func (o *PricelistPriceContext) HasSegment() bool {
+// &#39;Has&#39;Segment returns a boolean if a field has been set.
+func (o *PricelistPriceContext) &#39;Has&#39;Segment() bool {
 	if o != nil && !IsNil(o.Segment) {
 		return true
 	}
@@ -125,8 +125,8 @@ func (o *PricelistPriceContext) GetSegmentsOk() ([]string, bool) {
 	return o.Segments, true
 }
 
-// HasSegments returns a boolean if a field has been set.
-func (o *PricelistPriceContext) HasSegments() bool {
+// &#39;Has&#39;Segments returns a boolean if a field has been set.
+func (o *PricelistPriceContext) &#39;Has&#39;Segments() bool {
 	if o != nil && !IsNil(o.Segments) {
 		return true
 	}
@@ -157,8 +157,8 @@ func (o *PricelistPriceContext) GetMarketOk() (*string, bool) {
 	return o.Market, true
 }
 
-// HasMarket returns a boolean if a field has been set.
-func (o *PricelistPriceContext) HasMarket() bool {
+// &#39;Has&#39;Market returns a boolean if a field has been set.
+func (o *PricelistPriceContext) &#39;Has&#39;Market() bool {
 	if o != nil && !IsNil(o.Market) {
 		return true
 	}
@@ -189,8 +189,8 @@ func (o *PricelistPriceContext) GetChannelOk() (*string, bool) {
 	return o.Channel, true
 }
 
-// HasChannel returns a boolean if a field has been set.
-func (o *PricelistPriceContext) HasChannel() bool {
+// &#39;Has&#39;Channel returns a boolean if a field has been set.
+func (o *PricelistPriceContext) &#39;Has&#39;Channel() bool {
 	if o != nil && !IsNil(o.Channel) {
 		return true
 	}
@@ -226,6 +226,11 @@ func (o PricelistPriceContext) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Channel) {
 		toSerialize["channel"] = o.Channel
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -253,9 +258,7 @@ func (o *PricelistPriceContext) UnmarshalJSON(data []byte) (err error) {
 
 	varPricelistPriceContext := _PricelistPriceContext{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varPricelistPriceContext)
+	err = json.Unmarshal(data, &varPricelistPriceContext)
 
 	if err != nil {
 		return err
@@ -263,9 +266,38 @@ func (o *PricelistPriceContext) UnmarshalJSON(data []byte) (err error) {
 
 	*o = PricelistPriceContext(varPricelistPriceContext)
 
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "currency")
+		delete(additionalProperties, "segment")
+		delete(additionalProperties, "segments")
+		delete(additionalProperties, "market")
+		delete(additionalProperties, "channel")
+		o.AdditionalProperties = additionalProperties
+	}
+
 	return err
 }
 
+// GetValue returns the value of well-known types
+func (o *PricelistPriceContext) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *PricelistPriceContext) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullablePricelistPriceContext struct {
 	value *PricelistPriceContext
 	isSet bool

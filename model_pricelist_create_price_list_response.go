@@ -22,7 +22,10 @@ var _ MappedNullable = &PricelistCreatePriceListResponse{}
 type PricelistCreatePriceListResponse struct {
 	Id *string `json:"id,omitempty"`
 	Grn *string `json:"grn,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _PricelistCreatePriceListResponse PricelistCreatePriceListResponse
 
 // NewPricelistCreatePriceListResponse instantiates a new PricelistCreatePriceListResponse object
 // This constructor will assign default values to properties that have it defined,
@@ -59,8 +62,8 @@ func (o *PricelistCreatePriceListResponse) GetIdOk() (*string, bool) {
 	return o.Id, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *PricelistCreatePriceListResponse) HasId() bool {
+// &#39;Has&#39;Id returns a boolean if a field has been set.
+func (o *PricelistCreatePriceListResponse) &#39;Has&#39;Id() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -91,8 +94,8 @@ func (o *PricelistCreatePriceListResponse) GetGrnOk() (*string, bool) {
 	return o.Grn, true
 }
 
-// HasGrn returns a boolean if a field has been set.
-func (o *PricelistCreatePriceListResponse) HasGrn() bool {
+// &#39;Has&#39;Grn returns a boolean if a field has been set.
+func (o *PricelistCreatePriceListResponse) &#39;Has&#39;Grn() bool {
 	if o != nil && !IsNil(o.Grn) {
 		return true
 	}
@@ -121,9 +124,54 @@ func (o PricelistCreatePriceListResponse) ToMap() (map[string]interface{}, error
 	if !IsNil(o.Grn) {
 		toSerialize["grn"] = o.Grn
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *PricelistCreatePriceListResponse) UnmarshalJSON(data []byte) (err error) {
+	varPricelistCreatePriceListResponse := _PricelistCreatePriceListResponse{}
+
+	err = json.Unmarshal(data, &varPricelistCreatePriceListResponse)
+
+	if err != nil {
+		return err
+	}
+
+	*o = PricelistCreatePriceListResponse(varPricelistCreatePriceListResponse)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "grn")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *PricelistCreatePriceListResponse) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *PricelistCreatePriceListResponse) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullablePricelistCreatePriceListResponse struct {
 	value *PricelistCreatePriceListResponse
 	isSet bool

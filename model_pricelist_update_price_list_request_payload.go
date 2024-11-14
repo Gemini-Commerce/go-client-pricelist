@@ -32,7 +32,10 @@ type PricelistUpdatePriceListRequestPayload struct {
 	IsSystem *bool `json:"isSystem,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Description *string `json:"description,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _PricelistUpdatePriceListRequestPayload PricelistUpdatePriceListRequestPayload
 
 // NewPricelistUpdatePriceListRequestPayload instantiates a new PricelistUpdatePriceListRequestPayload object
 // This constructor will assign default values to properties that have it defined,
@@ -77,8 +80,8 @@ func (o *PricelistUpdatePriceListRequestPayload) GetIsActiveOk() (*bool, bool) {
 	return o.IsActive, true
 }
 
-// HasIsActive returns a boolean if a field has been set.
-func (o *PricelistUpdatePriceListRequestPayload) HasIsActive() bool {
+// &#39;Has&#39;IsActive returns a boolean if a field has been set.
+func (o *PricelistUpdatePriceListRequestPayload) &#39;Has&#39;IsActive() bool {
 	if o != nil && !IsNil(o.IsActive) {
 		return true
 	}
@@ -109,8 +112,8 @@ func (o *PricelistUpdatePriceListRequestPayload) GetIsDefaultOk() (*bool, bool) 
 	return o.IsDefault, true
 }
 
-// HasIsDefault returns a boolean if a field has been set.
-func (o *PricelistUpdatePriceListRequestPayload) HasIsDefault() bool {
+// &#39;Has&#39;IsDefault returns a boolean if a field has been set.
+func (o *PricelistUpdatePriceListRequestPayload) &#39;Has&#39;IsDefault() bool {
 	if o != nil && !IsNil(o.IsDefault) {
 		return true
 	}
@@ -141,8 +144,8 @@ func (o *PricelistUpdatePriceListRequestPayload) GetCurrencyOk() (*PricelistCurr
 	return o.Currency, true
 }
 
-// HasCurrency returns a boolean if a field has been set.
-func (o *PricelistUpdatePriceListRequestPayload) HasCurrency() bool {
+// &#39;Has&#39;Currency returns a boolean if a field has been set.
+func (o *PricelistUpdatePriceListRequestPayload) &#39;Has&#39;Currency() bool {
 	if o != nil && !IsNil(o.Currency) {
 		return true
 	}
@@ -173,8 +176,8 @@ func (o *PricelistUpdatePriceListRequestPayload) GetVatIncludedOk() (*bool, bool
 	return o.VatIncluded, true
 }
 
-// HasVatIncluded returns a boolean if a field has been set.
-func (o *PricelistUpdatePriceListRequestPayload) HasVatIncluded() bool {
+// &#39;Has&#39;VatIncluded returns a boolean if a field has been set.
+func (o *PricelistUpdatePriceListRequestPayload) &#39;Has&#39;VatIncluded() bool {
 	if o != nil && !IsNil(o.VatIncluded) {
 		return true
 	}
@@ -205,8 +208,8 @@ func (o *PricelistUpdatePriceListRequestPayload) GetDeliveredDutyPaidOk() (*bool
 	return o.DeliveredDutyPaid, true
 }
 
-// HasDeliveredDutyPaid returns a boolean if a field has been set.
-func (o *PricelistUpdatePriceListRequestPayload) HasDeliveredDutyPaid() bool {
+// &#39;Has&#39;DeliveredDutyPaid returns a boolean if a field has been set.
+func (o *PricelistUpdatePriceListRequestPayload) &#39;Has&#39;DeliveredDutyPaid() bool {
 	if o != nil && !IsNil(o.DeliveredDutyPaid) {
 		return true
 	}
@@ -237,8 +240,8 @@ func (o *PricelistUpdatePriceListRequestPayload) GetSegmentsOk() ([]string, bool
 	return o.Segments, true
 }
 
-// HasSegments returns a boolean if a field has been set.
-func (o *PricelistUpdatePriceListRequestPayload) HasSegments() bool {
+// &#39;Has&#39;Segments returns a boolean if a field has been set.
+func (o *PricelistUpdatePriceListRequestPayload) &#39;Has&#39;Segments() bool {
 	if o != nil && !IsNil(o.Segments) {
 		return true
 	}
@@ -269,8 +272,8 @@ func (o *PricelistUpdatePriceListRequestPayload) GetMarketsOk() ([]string, bool)
 	return o.Markets, true
 }
 
-// HasMarkets returns a boolean if a field has been set.
-func (o *PricelistUpdatePriceListRequestPayload) HasMarkets() bool {
+// &#39;Has&#39;Markets returns a boolean if a field has been set.
+func (o *PricelistUpdatePriceListRequestPayload) &#39;Has&#39;Markets() bool {
 	if o != nil && !IsNil(o.Markets) {
 		return true
 	}
@@ -301,8 +304,8 @@ func (o *PricelistUpdatePriceListRequestPayload) GetChannelsOk() ([]string, bool
 	return o.Channels, true
 }
 
-// HasChannels returns a boolean if a field has been set.
-func (o *PricelistUpdatePriceListRequestPayload) HasChannels() bool {
+// &#39;Has&#39;Channels returns a boolean if a field has been set.
+func (o *PricelistUpdatePriceListRequestPayload) &#39;Has&#39;Channels() bool {
 	if o != nil && !IsNil(o.Channels) {
 		return true
 	}
@@ -333,8 +336,8 @@ func (o *PricelistUpdatePriceListRequestPayload) GetTypeOk() (*PricelistPriceLis
 	return o.Type, true
 }
 
-// HasType returns a boolean if a field has been set.
-func (o *PricelistUpdatePriceListRequestPayload) HasType() bool {
+// &#39;Has&#39;Type returns a boolean if a field has been set.
+func (o *PricelistUpdatePriceListRequestPayload) &#39;Has&#39;Type() bool {
 	if o != nil && !IsNil(o.Type) {
 		return true
 	}
@@ -365,8 +368,8 @@ func (o *PricelistUpdatePriceListRequestPayload) GetIsSystemOk() (*bool, bool) {
 	return o.IsSystem, true
 }
 
-// HasIsSystem returns a boolean if a field has been set.
-func (o *PricelistUpdatePriceListRequestPayload) HasIsSystem() bool {
+// &#39;Has&#39;IsSystem returns a boolean if a field has been set.
+func (o *PricelistUpdatePriceListRequestPayload) &#39;Has&#39;IsSystem() bool {
 	if o != nil && !IsNil(o.IsSystem) {
 		return true
 	}
@@ -397,8 +400,8 @@ func (o *PricelistUpdatePriceListRequestPayload) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// HasName returns a boolean if a field has been set.
-func (o *PricelistUpdatePriceListRequestPayload) HasName() bool {
+// &#39;Has&#39;Name returns a boolean if a field has been set.
+func (o *PricelistUpdatePriceListRequestPayload) &#39;Has&#39;Name() bool {
 	if o != nil && !IsNil(o.Name) {
 		return true
 	}
@@ -429,8 +432,8 @@ func (o *PricelistUpdatePriceListRequestPayload) GetDescriptionOk() (*string, bo
 	return o.Description, true
 }
 
-// HasDescription returns a boolean if a field has been set.
-func (o *PricelistUpdatePriceListRequestPayload) HasDescription() bool {
+// &#39;Has&#39;Description returns a boolean if a field has been set.
+func (o *PricelistUpdatePriceListRequestPayload) &#39;Has&#39;Description() bool {
 	if o != nil && !IsNil(o.Description) {
 		return true
 	}
@@ -489,9 +492,64 @@ func (o PricelistUpdatePriceListRequestPayload) ToMap() (map[string]interface{},
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *PricelistUpdatePriceListRequestPayload) UnmarshalJSON(data []byte) (err error) {
+	varPricelistUpdatePriceListRequestPayload := _PricelistUpdatePriceListRequestPayload{}
+
+	err = json.Unmarshal(data, &varPricelistUpdatePriceListRequestPayload)
+
+	if err != nil {
+		return err
+	}
+
+	*o = PricelistUpdatePriceListRequestPayload(varPricelistUpdatePriceListRequestPayload)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "isActive")
+		delete(additionalProperties, "isDefault")
+		delete(additionalProperties, "currency")
+		delete(additionalProperties, "vatIncluded")
+		delete(additionalProperties, "deliveredDutyPaid")
+		delete(additionalProperties, "segments")
+		delete(additionalProperties, "markets")
+		delete(additionalProperties, "channels")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "isSystem")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *PricelistUpdatePriceListRequestPayload) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *PricelistUpdatePriceListRequestPayload) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullablePricelistUpdatePriceListRequestPayload struct {
 	value *PricelistUpdatePriceListRequestPayload
 	isSet bool

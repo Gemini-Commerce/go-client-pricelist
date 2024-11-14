@@ -22,7 +22,10 @@ var _ MappedNullable = &PricelistChannelFilter{}
 type PricelistChannelFilter struct {
 	Channels []string `json:"channels,omitempty"`
 	Condition *PricelistFilterCondition `json:"condition,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _PricelistChannelFilter PricelistChannelFilter
 
 // NewPricelistChannelFilter instantiates a new PricelistChannelFilter object
 // This constructor will assign default values to properties that have it defined,
@@ -63,8 +66,8 @@ func (o *PricelistChannelFilter) GetChannelsOk() ([]string, bool) {
 	return o.Channels, true
 }
 
-// HasChannels returns a boolean if a field has been set.
-func (o *PricelistChannelFilter) HasChannels() bool {
+// &#39;Has&#39;Channels returns a boolean if a field has been set.
+func (o *PricelistChannelFilter) &#39;Has&#39;Channels() bool {
 	if o != nil && !IsNil(o.Channels) {
 		return true
 	}
@@ -95,8 +98,8 @@ func (o *PricelistChannelFilter) GetConditionOk() (*PricelistFilterCondition, bo
 	return o.Condition, true
 }
 
-// HasCondition returns a boolean if a field has been set.
-func (o *PricelistChannelFilter) HasCondition() bool {
+// &#39;Has&#39;Condition returns a boolean if a field has been set.
+func (o *PricelistChannelFilter) &#39;Has&#39;Condition() bool {
 	if o != nil && !IsNil(o.Condition) {
 		return true
 	}
@@ -125,9 +128,54 @@ func (o PricelistChannelFilter) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Condition) {
 		toSerialize["condition"] = o.Condition
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *PricelistChannelFilter) UnmarshalJSON(data []byte) (err error) {
+	varPricelistChannelFilter := _PricelistChannelFilter{}
+
+	err = json.Unmarshal(data, &varPricelistChannelFilter)
+
+	if err != nil {
+		return err
+	}
+
+	*o = PricelistChannelFilter(varPricelistChannelFilter)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "channels")
+		delete(additionalProperties, "condition")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *PricelistChannelFilter) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *PricelistChannelFilter) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullablePricelistChannelFilter struct {
 	value *PricelistChannelFilter
 	isSet bool

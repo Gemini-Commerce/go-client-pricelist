@@ -22,7 +22,10 @@ var _ MappedNullable = &PricelistSegmentFilter{}
 type PricelistSegmentFilter struct {
 	Segments []string `json:"segments,omitempty"`
 	Condition *PricelistFilterCondition `json:"condition,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _PricelistSegmentFilter PricelistSegmentFilter
 
 // NewPricelistSegmentFilter instantiates a new PricelistSegmentFilter object
 // This constructor will assign default values to properties that have it defined,
@@ -63,8 +66,8 @@ func (o *PricelistSegmentFilter) GetSegmentsOk() ([]string, bool) {
 	return o.Segments, true
 }
 
-// HasSegments returns a boolean if a field has been set.
-func (o *PricelistSegmentFilter) HasSegments() bool {
+// &#39;Has&#39;Segments returns a boolean if a field has been set.
+func (o *PricelistSegmentFilter) &#39;Has&#39;Segments() bool {
 	if o != nil && !IsNil(o.Segments) {
 		return true
 	}
@@ -95,8 +98,8 @@ func (o *PricelistSegmentFilter) GetConditionOk() (*PricelistFilterCondition, bo
 	return o.Condition, true
 }
 
-// HasCondition returns a boolean if a field has been set.
-func (o *PricelistSegmentFilter) HasCondition() bool {
+// &#39;Has&#39;Condition returns a boolean if a field has been set.
+func (o *PricelistSegmentFilter) &#39;Has&#39;Condition() bool {
 	if o != nil && !IsNil(o.Condition) {
 		return true
 	}
@@ -125,9 +128,54 @@ func (o PricelistSegmentFilter) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Condition) {
 		toSerialize["condition"] = o.Condition
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *PricelistSegmentFilter) UnmarshalJSON(data []byte) (err error) {
+	varPricelistSegmentFilter := _PricelistSegmentFilter{}
+
+	err = json.Unmarshal(data, &varPricelistSegmentFilter)
+
+	if err != nil {
+		return err
+	}
+
+	*o = PricelistSegmentFilter(varPricelistSegmentFilter)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "segments")
+		delete(additionalProperties, "condition")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *PricelistSegmentFilter) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *PricelistSegmentFilter) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullablePricelistSegmentFilter struct {
 	value *PricelistSegmentFilter
 	isSet bool

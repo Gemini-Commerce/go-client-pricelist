@@ -24,7 +24,10 @@ type PricelistListFullPriceItemsRequest struct {
 	Id *string `json:"id,omitempty"`
 	PageSize *int64 `json:"pageSize,omitempty"`
 	PageToken *string `json:"pageToken,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _PricelistListFullPriceItemsRequest PricelistListFullPriceItemsRequest
 
 // NewPricelistListFullPriceItemsRequest instantiates a new PricelistListFullPriceItemsRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -61,8 +64,8 @@ func (o *PricelistListFullPriceItemsRequest) GetTenantIdOk() (*string, bool) {
 	return o.TenantId, true
 }
 
-// HasTenantId returns a boolean if a field has been set.
-func (o *PricelistListFullPriceItemsRequest) HasTenantId() bool {
+// &#39;Has&#39;TenantId returns a boolean if a field has been set.
+func (o *PricelistListFullPriceItemsRequest) &#39;Has&#39;TenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -93,8 +96,8 @@ func (o *PricelistListFullPriceItemsRequest) GetIdOk() (*string, bool) {
 	return o.Id, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *PricelistListFullPriceItemsRequest) HasId() bool {
+// &#39;Has&#39;Id returns a boolean if a field has been set.
+func (o *PricelistListFullPriceItemsRequest) &#39;Has&#39;Id() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -125,8 +128,8 @@ func (o *PricelistListFullPriceItemsRequest) GetPageSizeOk() (*int64, bool) {
 	return o.PageSize, true
 }
 
-// HasPageSize returns a boolean if a field has been set.
-func (o *PricelistListFullPriceItemsRequest) HasPageSize() bool {
+// &#39;Has&#39;PageSize returns a boolean if a field has been set.
+func (o *PricelistListFullPriceItemsRequest) &#39;Has&#39;PageSize() bool {
 	if o != nil && !IsNil(o.PageSize) {
 		return true
 	}
@@ -157,8 +160,8 @@ func (o *PricelistListFullPriceItemsRequest) GetPageTokenOk() (*string, bool) {
 	return o.PageToken, true
 }
 
-// HasPageToken returns a boolean if a field has been set.
-func (o *PricelistListFullPriceItemsRequest) HasPageToken() bool {
+// &#39;Has&#39;PageToken returns a boolean if a field has been set.
+func (o *PricelistListFullPriceItemsRequest) &#39;Has&#39;PageToken() bool {
 	if o != nil && !IsNil(o.PageToken) {
 		return true
 	}
@@ -193,9 +196,56 @@ func (o PricelistListFullPriceItemsRequest) ToMap() (map[string]interface{}, err
 	if !IsNil(o.PageToken) {
 		toSerialize["pageToken"] = o.PageToken
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *PricelistListFullPriceItemsRequest) UnmarshalJSON(data []byte) (err error) {
+	varPricelistListFullPriceItemsRequest := _PricelistListFullPriceItemsRequest{}
+
+	err = json.Unmarshal(data, &varPricelistListFullPriceItemsRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = PricelistListFullPriceItemsRequest(varPricelistListFullPriceItemsRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "pageSize")
+		delete(additionalProperties, "pageToken")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *PricelistListFullPriceItemsRequest) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *PricelistListFullPriceItemsRequest) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullablePricelistListFullPriceItemsRequest struct {
 	value *PricelistListFullPriceItemsRequest
 	isSet bool

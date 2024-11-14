@@ -23,7 +23,10 @@ type PricelistGetFullPriceItemsRequest struct {
 	TenantId *string `json:"tenantId,omitempty"`
 	PricelistId *string `json:"pricelistId,omitempty"`
 	ItemsGrn []string `json:"itemsGrn,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _PricelistGetFullPriceItemsRequest PricelistGetFullPriceItemsRequest
 
 // NewPricelistGetFullPriceItemsRequest instantiates a new PricelistGetFullPriceItemsRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -60,8 +63,8 @@ func (o *PricelistGetFullPriceItemsRequest) GetTenantIdOk() (*string, bool) {
 	return o.TenantId, true
 }
 
-// HasTenantId returns a boolean if a field has been set.
-func (o *PricelistGetFullPriceItemsRequest) HasTenantId() bool {
+// &#39;Has&#39;TenantId returns a boolean if a field has been set.
+func (o *PricelistGetFullPriceItemsRequest) &#39;Has&#39;TenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -92,8 +95,8 @@ func (o *PricelistGetFullPriceItemsRequest) GetPricelistIdOk() (*string, bool) {
 	return o.PricelistId, true
 }
 
-// HasPricelistId returns a boolean if a field has been set.
-func (o *PricelistGetFullPriceItemsRequest) HasPricelistId() bool {
+// &#39;Has&#39;PricelistId returns a boolean if a field has been set.
+func (o *PricelistGetFullPriceItemsRequest) &#39;Has&#39;PricelistId() bool {
 	if o != nil && !IsNil(o.PricelistId) {
 		return true
 	}
@@ -124,8 +127,8 @@ func (o *PricelistGetFullPriceItemsRequest) GetItemsGrnOk() ([]string, bool) {
 	return o.ItemsGrn, true
 }
 
-// HasItemsGrn returns a boolean if a field has been set.
-func (o *PricelistGetFullPriceItemsRequest) HasItemsGrn() bool {
+// &#39;Has&#39;ItemsGrn returns a boolean if a field has been set.
+func (o *PricelistGetFullPriceItemsRequest) &#39;Has&#39;ItemsGrn() bool {
 	if o != nil && !IsNil(o.ItemsGrn) {
 		return true
 	}
@@ -157,9 +160,55 @@ func (o PricelistGetFullPriceItemsRequest) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.ItemsGrn) {
 		toSerialize["itemsGrn"] = o.ItemsGrn
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *PricelistGetFullPriceItemsRequest) UnmarshalJSON(data []byte) (err error) {
+	varPricelistGetFullPriceItemsRequest := _PricelistGetFullPriceItemsRequest{}
+
+	err = json.Unmarshal(data, &varPricelistGetFullPriceItemsRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = PricelistGetFullPriceItemsRequest(varPricelistGetFullPriceItemsRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "pricelistId")
+		delete(additionalProperties, "itemsGrn")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *PricelistGetFullPriceItemsRequest) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *PricelistGetFullPriceItemsRequest) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullablePricelistGetFullPriceItemsRequest struct {
 	value *PricelistGetFullPriceItemsRequest
 	isSet bool

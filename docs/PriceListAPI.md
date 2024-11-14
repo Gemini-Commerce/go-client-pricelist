@@ -1,4 +1,4 @@
-# GeminiCommerce\Pricelist\PriceListAPI
+# \PriceListAPI
 
 All URIs are relative to *https://pricelist.api.gogemini.io*
 

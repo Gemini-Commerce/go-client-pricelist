@@ -537,7 +537,7 @@ components:
         deliveredDutyPaid: true
         description: description
         isActive: true
-        type: null
+        type: UNKNOWN
         segments:
         - segments
         - segments
@@ -552,7 +552,7 @@ components:
         - channels
         name: name
         vatIncluded: true
-        currency: null
+        currency: XXX
         id: id
         updatedAt: 2000-01-23T04:56:07.000+00:00
       properties:
@@ -885,7 +885,7 @@ components:
         createdAt: 2000-01-23T04:56:07.000+00:00
         grn: grn
         itemGrn: itemGrn
-        currency: null
+        currency: XXX
         id: id
         prices:
         - price:
@@ -986,7 +986,7 @@ components:
         - createdAt: 2000-01-23T04:56:07.000+00:00
           grn: grn
           itemGrn: itemGrn
-          currency: null
+          currency: XXX
           id: id
           prices:
           - price:
@@ -1017,7 +1017,7 @@ components:
         - createdAt: 2000-01-23T04:56:07.000+00:00
           grn: grn
           itemGrn: itemGrn
-          currency: null
+          currency: XXX
           id: id
           prices:
           - price:
@@ -1061,7 +1061,7 @@ components:
           units: units
         doubleFormatBasePrice: 6.027456183070403
         doubleFormatPrice: 0.8008281904610115
-        currency: null
+        currency: XXX
         basePrice:
           micros: 0
           units: units
@@ -1120,7 +1120,7 @@ components:
             units: units
           doubleFormatBasePrice: 6.027456183070403
           doubleFormatPrice: 0.8008281904610115
-          currency: null
+          currency: XXX
           id: id
           basePrice:
             micros: 0
@@ -1136,7 +1136,7 @@ components:
             units: units
           doubleFormatBasePrice: 6.027456183070403
           doubleFormatPrice: 0.8008281904610115
-          currency: null
+          currency: XXX
           id: id
           basePrice:
             micros: 0
@@ -1165,7 +1165,7 @@ components:
         deliveredDutyPaid: true
         description: description
         isActive: true
-        type: null
+        type: UNKNOWN
         segments:
         - segments
         - segments
@@ -1180,7 +1180,7 @@ components:
         - channels
         name: name
         vatIncluded: true
-        currency: null
+        currency: XXX
         id: id
         updatedAt: 2000-01-23T04:56:07.000+00:00
       properties:
@@ -1238,7 +1238,7 @@ components:
           units: units
         doubleFormatBasePrice: 6.027456183070403
         doubleFormatPrice: 0.8008281904610115
-        currency: null
+        currency: XXX
         id: id
         basePrice:
           micros: 0
@@ -1307,7 +1307,7 @@ components:
             units: units
           doubleFormatBasePrice: 6.027456183070403
           doubleFormatPrice: 0.8008281904610115
-          currency: null
+          currency: XXX
           id: id
           basePrice:
             micros: 0
@@ -1323,7 +1323,7 @@ components:
             units: units
           doubleFormatBasePrice: 6.027456183070403
           doubleFormatPrice: 0.8008281904610115
-          currency: null
+          currency: XXX
           id: id
           basePrice:
             micros: 0
@@ -1354,7 +1354,7 @@ components:
         deliveredDutyPaid: true
         description: description
         isActive: true
-        type: null
+        type: UNKNOWN
         segments:
         - segments
         - segments
@@ -1369,7 +1369,7 @@ components:
         - channels
         name: name
         vatIncluded: true
-        currency: null
+        currency: XXX
         id: id
         updatedAt: 2000-01-23T04:56:07.000+00:00
       properties:
@@ -1438,7 +1438,7 @@ components:
             units: units
           doubleFormatBasePrice: 6.027456183070403
           doubleFormatPrice: 0.8008281904610115
-          currency: null
+          currency: XXX
           basePrice:
             micros: 0
             units: units
@@ -1452,7 +1452,7 @@ components:
             units: units
           doubleFormatBasePrice: 6.027456183070403
           doubleFormatPrice: 0.8008281904610115
-          currency: null
+          currency: XXX
           basePrice:
             micros: 0
             units: units
@@ -1486,7 +1486,7 @@ components:
         - createdAt: 2000-01-23T04:56:07.000+00:00
           grn: grn
           itemGrn: itemGrn
-          currency: null
+          currency: XXX
           id: id
           prices:
           - price:
@@ -1517,7 +1517,7 @@ components:
         - createdAt: 2000-01-23T04:56:07.000+00:00
           grn: grn
           itemGrn: itemGrn
-          currency: null
+          currency: XXX
           id: id
           prices:
           - price:
@@ -1578,7 +1578,7 @@ components:
           deliveredDutyPaid: true
           description: description
           isActive: true
-          type: null
+          type: UNKNOWN
           segments:
           - segments
           - segments
@@ -1593,7 +1593,7 @@ components:
           - channels
           name: name
           vatIncluded: true
-          currency: null
+          currency: XXX
           id: id
           updatedAt: 2000-01-23T04:56:07.000+00:00
         - grn: grn
@@ -1601,7 +1601,7 @@ components:
           deliveredDutyPaid: true
           description: description
           isActive: true
-          type: null
+          type: UNKNOWN
           segments:
           - segments
           - segments
@@ -1616,7 +1616,7 @@ components:
           - channels
           name: name
           vatIncluded: true
-          currency: null
+          currency: XXX
           id: id
           updatedAt: 2000-01-23T04:56:07.000+00:00
         nextPageToken: nextPageToken
@@ -1824,11 +1824,19 @@ components:
     protobufAny:
       additionalProperties:
         type: object
+      example:
+        '@type': '@type'
       properties:
         '@type':
           type: string
       type: object
     rpcStatus:
+      example:
+        code: 0
+        details:
+        - '@type': '@type'
+        - '@type': '@type'
+        message: message
       properties:
         code:
           format: int32

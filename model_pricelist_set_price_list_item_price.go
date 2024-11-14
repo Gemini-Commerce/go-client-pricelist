@@ -27,7 +27,10 @@ type PricelistSetPriceListItemPrice struct {
 	EndAt *time.Time `json:"endAt,omitempty"`
 	Order *int64 `json:"order,omitempty"`
 	BasePrice *PricelistMoney `json:"basePrice,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _PricelistSetPriceListItemPrice PricelistSetPriceListItemPrice
 
 // NewPricelistSetPriceListItemPrice instantiates a new PricelistSetPriceListItemPrice object
 // This constructor will assign default values to properties that have it defined,
@@ -64,8 +67,8 @@ func (o *PricelistSetPriceListItemPrice) GetPriceOk() (*PricelistMoney, bool) {
 	return o.Price, true
 }
 
-// HasPrice returns a boolean if a field has been set.
-func (o *PricelistSetPriceListItemPrice) HasPrice() bool {
+// &#39;Has&#39;Price returns a boolean if a field has been set.
+func (o *PricelistSetPriceListItemPrice) &#39;Has&#39;Price() bool {
 	if o != nil && !IsNil(o.Price) {
 		return true
 	}
@@ -96,8 +99,8 @@ func (o *PricelistSetPriceListItemPrice) GetIsEnabledOk() (*bool, bool) {
 	return o.IsEnabled, true
 }
 
-// HasIsEnabled returns a boolean if a field has been set.
-func (o *PricelistSetPriceListItemPrice) HasIsEnabled() bool {
+// &#39;Has&#39;IsEnabled returns a boolean if a field has been set.
+func (o *PricelistSetPriceListItemPrice) &#39;Has&#39;IsEnabled() bool {
 	if o != nil && !IsNil(o.IsEnabled) {
 		return true
 	}
@@ -128,8 +131,8 @@ func (o *PricelistSetPriceListItemPrice) GetStartAtOk() (*time.Time, bool) {
 	return o.StartAt, true
 }
 
-// HasStartAt returns a boolean if a field has been set.
-func (o *PricelistSetPriceListItemPrice) HasStartAt() bool {
+// &#39;Has&#39;StartAt returns a boolean if a field has been set.
+func (o *PricelistSetPriceListItemPrice) &#39;Has&#39;StartAt() bool {
 	if o != nil && !IsNil(o.StartAt) {
 		return true
 	}
@@ -160,8 +163,8 @@ func (o *PricelistSetPriceListItemPrice) GetEndAtOk() (*time.Time, bool) {
 	return o.EndAt, true
 }
 
-// HasEndAt returns a boolean if a field has been set.
-func (o *PricelistSetPriceListItemPrice) HasEndAt() bool {
+// &#39;Has&#39;EndAt returns a boolean if a field has been set.
+func (o *PricelistSetPriceListItemPrice) &#39;Has&#39;EndAt() bool {
 	if o != nil && !IsNil(o.EndAt) {
 		return true
 	}
@@ -192,8 +195,8 @@ func (o *PricelistSetPriceListItemPrice) GetOrderOk() (*int64, bool) {
 	return o.Order, true
 }
 
-// HasOrder returns a boolean if a field has been set.
-func (o *PricelistSetPriceListItemPrice) HasOrder() bool {
+// &#39;Has&#39;Order returns a boolean if a field has been set.
+func (o *PricelistSetPriceListItemPrice) &#39;Has&#39;Order() bool {
 	if o != nil && !IsNil(o.Order) {
 		return true
 	}
@@ -224,8 +227,8 @@ func (o *PricelistSetPriceListItemPrice) GetBasePriceOk() (*PricelistMoney, bool
 	return o.BasePrice, true
 }
 
-// HasBasePrice returns a boolean if a field has been set.
-func (o *PricelistSetPriceListItemPrice) HasBasePrice() bool {
+// &#39;Has&#39;BasePrice returns a boolean if a field has been set.
+func (o *PricelistSetPriceListItemPrice) &#39;Has&#39;BasePrice() bool {
 	if o != nil && !IsNil(o.BasePrice) {
 		return true
 	}
@@ -266,9 +269,58 @@ func (o PricelistSetPriceListItemPrice) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.BasePrice) {
 		toSerialize["basePrice"] = o.BasePrice
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *PricelistSetPriceListItemPrice) UnmarshalJSON(data []byte) (err error) {
+	varPricelistSetPriceListItemPrice := _PricelistSetPriceListItemPrice{}
+
+	err = json.Unmarshal(data, &varPricelistSetPriceListItemPrice)
+
+	if err != nil {
+		return err
+	}
+
+	*o = PricelistSetPriceListItemPrice(varPricelistSetPriceListItemPrice)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "price")
+		delete(additionalProperties, "isEnabled")
+		delete(additionalProperties, "startAt")
+		delete(additionalProperties, "endAt")
+		delete(additionalProperties, "order")
+		delete(additionalProperties, "basePrice")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *PricelistSetPriceListItemPrice) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *PricelistSetPriceListItemPrice) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullablePricelistSetPriceListItemPrice struct {
 	value *PricelistSetPriceListItemPrice
 	isSet bool

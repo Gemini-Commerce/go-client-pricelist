@@ -24,7 +24,10 @@ type PricelistSetPriceListItem struct {
 	BasePrice *PricelistMoney `json:"basePrice,omitempty"`
 	PriceItems []PricelistSetPriceListItemPrice `json:"priceItems,omitempty"`
 	HasTierPrices *bool `json:"hasTierPrices,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _PricelistSetPriceListItem PricelistSetPriceListItem
 
 // NewPricelistSetPriceListItem instantiates a new PricelistSetPriceListItem object
 // This constructor will assign default values to properties that have it defined,
@@ -61,8 +64,8 @@ func (o *PricelistSetPriceListItem) GetItemGrnOk() (*string, bool) {
 	return o.ItemGrn, true
 }
 
-// HasItemGrn returns a boolean if a field has been set.
-func (o *PricelistSetPriceListItem) HasItemGrn() bool {
+// &#39;Has&#39;ItemGrn returns a boolean if a field has been set.
+func (o *PricelistSetPriceListItem) &#39;Has&#39;ItemGrn() bool {
 	if o != nil && !IsNil(o.ItemGrn) {
 		return true
 	}
@@ -93,8 +96,8 @@ func (o *PricelistSetPriceListItem) GetBasePriceOk() (*PricelistMoney, bool) {
 	return o.BasePrice, true
 }
 
-// HasBasePrice returns a boolean if a field has been set.
-func (o *PricelistSetPriceListItem) HasBasePrice() bool {
+// &#39;Has&#39;BasePrice returns a boolean if a field has been set.
+func (o *PricelistSetPriceListItem) &#39;Has&#39;BasePrice() bool {
 	if o != nil && !IsNil(o.BasePrice) {
 		return true
 	}
@@ -125,8 +128,8 @@ func (o *PricelistSetPriceListItem) GetPriceItemsOk() ([]PricelistSetPriceListIt
 	return o.PriceItems, true
 }
 
-// HasPriceItems returns a boolean if a field has been set.
-func (o *PricelistSetPriceListItem) HasPriceItems() bool {
+// &#39;Has&#39;PriceItems returns a boolean if a field has been set.
+func (o *PricelistSetPriceListItem) &#39;Has&#39;PriceItems() bool {
 	if o != nil && !IsNil(o.PriceItems) {
 		return true
 	}
@@ -157,8 +160,8 @@ func (o *PricelistSetPriceListItem) GetHasTierPricesOk() (*bool, bool) {
 	return o.HasTierPrices, true
 }
 
-// HasHasTierPrices returns a boolean if a field has been set.
-func (o *PricelistSetPriceListItem) HasHasTierPrices() bool {
+// &#39;Has&#39;HasTierPrices returns a boolean if a field has been set.
+func (o *PricelistSetPriceListItem) &#39;Has&#39;HasTierPrices() bool {
 	if o != nil && !IsNil(o.HasTierPrices) {
 		return true
 	}
@@ -193,9 +196,56 @@ func (o PricelistSetPriceListItem) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.HasTierPrices) {
 		toSerialize["hasTierPrices"] = o.HasTierPrices
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *PricelistSetPriceListItem) UnmarshalJSON(data []byte) (err error) {
+	varPricelistSetPriceListItem := _PricelistSetPriceListItem{}
+
+	err = json.Unmarshal(data, &varPricelistSetPriceListItem)
+
+	if err != nil {
+		return err
+	}
+
+	*o = PricelistSetPriceListItem(varPricelistSetPriceListItem)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "itemGrn")
+		delete(additionalProperties, "basePrice")
+		delete(additionalProperties, "priceItems")
+		delete(additionalProperties, "hasTierPrices")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *PricelistSetPriceListItem) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *PricelistSetPriceListItem) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullablePricelistSetPriceListItem struct {
 	value *PricelistSetPriceListItem
 	isSet bool

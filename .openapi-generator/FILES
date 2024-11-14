@@ -98,5 +98,4 @@ model_pricelist_update_price_list_request_payload.go
 model_protobuf_any.go
 model_rpc_status.go
 response.go
-test/api_price_list_test.go
 utils.go
