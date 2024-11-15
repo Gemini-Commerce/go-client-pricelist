@@ -61,8 +61,8 @@ func (o *PricelistGetPriceItemsByPriceListItemIdsResponse) GetPricesOk() ([]Pric
 	return o.Prices, true
 }
 
-// &#39;Has&#39;Prices returns a boolean if a field has been set.
-func (o *PricelistGetPriceItemsByPriceListItemIdsResponse) &#39;Has&#39;Prices() bool {
+// HasPrices returns a boolean if a field has been set.
+func (o *PricelistGetPriceItemsByPriceListItemIdsResponse) HasPrices() bool {
 	if o != nil && !IsNil(o.Prices) {
 		return true
 	}

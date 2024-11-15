@@ -93,8 +93,8 @@ func (o *PricelistPriceContext) GetSegmentOk() (*string, bool) {
 	return o.Segment, true
 }
 
-// &#39;Has&#39;Segment returns a boolean if a field has been set.
-func (o *PricelistPriceContext) &#39;Has&#39;Segment() bool {
+// HasSegment returns a boolean if a field has been set.
+func (o *PricelistPriceContext) HasSegment() bool {
 	if o != nil && !IsNil(o.Segment) {
 		return true
 	}
@@ -125,8 +125,8 @@ func (o *PricelistPriceContext) GetSegmentsOk() ([]string, bool) {
 	return o.Segments, true
 }
 
-// &#39;Has&#39;Segments returns a boolean if a field has been set.
-func (o *PricelistPriceContext) &#39;Has&#39;Segments() bool {
+// HasSegments returns a boolean if a field has been set.
+func (o *PricelistPriceContext) HasSegments() bool {
 	if o != nil && !IsNil(o.Segments) {
 		return true
 	}
@@ -157,8 +157,8 @@ func (o *PricelistPriceContext) GetMarketOk() (*string, bool) {
 	return o.Market, true
 }
 
-// &#39;Has&#39;Market returns a boolean if a field has been set.
-func (o *PricelistPriceContext) &#39;Has&#39;Market() bool {
+// HasMarket returns a boolean if a field has been set.
+func (o *PricelistPriceContext) HasMarket() bool {
 	if o != nil && !IsNil(o.Market) {
 		return true
 	}
@@ -189,8 +189,8 @@ func (o *PricelistPriceContext) GetChannelOk() (*string, bool) {
 	return o.Channel, true
 }
 
-// &#39;Has&#39;Channel returns a boolean if a field has been set.
-func (o *PricelistPriceContext) &#39;Has&#39;Channel() bool {
+// HasChannel returns a boolean if a field has been set.
+func (o *PricelistPriceContext) HasChannel() bool {
 	if o != nil && !IsNil(o.Channel) {
 		return true
 	}

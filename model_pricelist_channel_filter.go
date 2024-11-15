@@ -66,8 +66,8 @@ func (o *PricelistChannelFilter) GetChannelsOk() ([]string, bool) {
 	return o.Channels, true
 }
 
-// &#39;Has&#39;Channels returns a boolean if a field has been set.
-func (o *PricelistChannelFilter) &#39;Has&#39;Channels() bool {
+// HasChannels returns a boolean if a field has been set.
+func (o *PricelistChannelFilter) HasChannels() bool {
 	if o != nil && !IsNil(o.Channels) {
 		return true
 	}
@@ -98,8 +98,8 @@ func (o *PricelistChannelFilter) GetConditionOk() (*PricelistFilterCondition, bo
 	return o.Condition, true
 }
 
-// &#39;Has&#39;Condition returns a boolean if a field has been set.
-func (o *PricelistChannelFilter) &#39;Has&#39;Condition() bool {
+// HasCondition returns a boolean if a field has been set.
+func (o *PricelistChannelFilter) HasCondition() bool {
 	if o != nil && !IsNil(o.Condition) {
 		return true
 	}

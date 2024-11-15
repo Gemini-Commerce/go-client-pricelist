@@ -63,8 +63,8 @@ func (o *PricelistSetPriceListItemsRequest) GetTenantIdOk() (*string, bool) {
 	return o.TenantId, true
 }
 
-// &#39;Has&#39;TenantId returns a boolean if a field has been set.
-func (o *PricelistSetPriceListItemsRequest) &#39;Has&#39;TenantId() bool {
+// HasTenantId returns a boolean if a field has been set.
+func (o *PricelistSetPriceListItemsRequest) HasTenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -95,8 +95,8 @@ func (o *PricelistSetPriceListItemsRequest) GetIdOk() (*string, bool) {
 	return o.Id, true
 }
 
-// &#39;Has&#39;Id returns a boolean if a field has been set.
-func (o *PricelistSetPriceListItemsRequest) &#39;Has&#39;Id() bool {
+// HasId returns a boolean if a field has been set.
+func (o *PricelistSetPriceListItemsRequest) HasId() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -127,8 +127,8 @@ func (o *PricelistSetPriceListItemsRequest) GetItemsOk() ([]PricelistSetPriceLis
 	return o.Items, true
 }
 
-// &#39;Has&#39;Items returns a boolean if a field has been set.
-func (o *PricelistSetPriceListItemsRequest) &#39;Has&#39;Items() bool {
+// HasItems returns a boolean if a field has been set.
+func (o *PricelistSetPriceListItemsRequest) HasItems() bool {
 	if o != nil && !IsNil(o.Items) {
 		return true
 	}

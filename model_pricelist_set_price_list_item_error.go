@@ -63,8 +63,8 @@ func (o *PricelistSetPriceListItemError) GetItemGrnOk() (*string, bool) {
 	return o.ItemGrn, true
 }
 
-// &#39;Has&#39;ItemGrn returns a boolean if a field has been set.
-func (o *PricelistSetPriceListItemError) &#39;Has&#39;ItemGrn() bool {
+// HasItemGrn returns a boolean if a field has been set.
+func (o *PricelistSetPriceListItemError) HasItemGrn() bool {
 	if o != nil && !IsNil(o.ItemGrn) {
 		return true
 	}
@@ -95,8 +95,8 @@ func (o *PricelistSetPriceListItemError) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// &#39;Has&#39;Code returns a boolean if a field has been set.
-func (o *PricelistSetPriceListItemError) &#39;Has&#39;Code() bool {
+// HasCode returns a boolean if a field has been set.
+func (o *PricelistSetPriceListItemError) HasCode() bool {
 	if o != nil && !IsNil(o.Code) {
 		return true
 	}
@@ -127,8 +127,8 @@ func (o *PricelistSetPriceListItemError) GetDescriptionOk() (*string, bool) {
 	return o.Description, true
 }
 
-// &#39;Has&#39;Description returns a boolean if a field has been set.
-func (o *PricelistSetPriceListItemError) &#39;Has&#39;Description() bool {
+// HasDescription returns a boolean if a field has been set.
+func (o *PricelistSetPriceListItemError) HasDescription() bool {
 	if o != nil && !IsNil(o.Description) {
 		return true
 	}

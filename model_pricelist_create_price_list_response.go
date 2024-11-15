@@ -62,8 +62,8 @@ func (o *PricelistCreatePriceListResponse) GetIdOk() (*string, bool) {
 	return o.Id, true
 }
 
-// &#39;Has&#39;Id returns a boolean if a field has been set.
-func (o *PricelistCreatePriceListResponse) &#39;Has&#39;Id() bool {
+// HasId returns a boolean if a field has been set.
+func (o *PricelistCreatePriceListResponse) HasId() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -94,8 +94,8 @@ func (o *PricelistCreatePriceListResponse) GetGrnOk() (*string, bool) {
 	return o.Grn, true
 }
 
-// &#39;Has&#39;Grn returns a boolean if a field has been set.
-func (o *PricelistCreatePriceListResponse) &#39;Has&#39;Grn() bool {
+// HasGrn returns a boolean if a field has been set.
+func (o *PricelistCreatePriceListResponse) HasGrn() bool {
 	if o != nil && !IsNil(o.Grn) {
 		return true
 	}

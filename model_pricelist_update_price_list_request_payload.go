@@ -80,8 +80,8 @@ func (o *PricelistUpdatePriceListRequestPayload) GetIsActiveOk() (*bool, bool) {
 	return o.IsActive, true
 }
 
-// &#39;Has&#39;IsActive returns a boolean if a field has been set.
-func (o *PricelistUpdatePriceListRequestPayload) &#39;Has&#39;IsActive() bool {
+// HasIsActive returns a boolean if a field has been set.
+func (o *PricelistUpdatePriceListRequestPayload) HasIsActive() bool {
 	if o != nil && !IsNil(o.IsActive) {
 		return true
 	}
@@ -112,8 +112,8 @@ func (o *PricelistUpdatePriceListRequestPayload) GetIsDefaultOk() (*bool, bool) 
 	return o.IsDefault, true
 }
 
-// &#39;Has&#39;IsDefault returns a boolean if a field has been set.
-func (o *PricelistUpdatePriceListRequestPayload) &#39;Has&#39;IsDefault() bool {
+// HasIsDefault returns a boolean if a field has been set.
+func (o *PricelistUpdatePriceListRequestPayload) HasIsDefault() bool {
 	if o != nil && !IsNil(o.IsDefault) {
 		return true
 	}
@@ -144,8 +144,8 @@ func (o *PricelistUpdatePriceListRequestPayload) GetCurrencyOk() (*PricelistCurr
 	return o.Currency, true
 }
 
-// &#39;Has&#39;Currency returns a boolean if a field has been set.
-func (o *PricelistUpdatePriceListRequestPayload) &#39;Has&#39;Currency() bool {
+// HasCurrency returns a boolean if a field has been set.
+func (o *PricelistUpdatePriceListRequestPayload) HasCurrency() bool {
 	if o != nil && !IsNil(o.Currency) {
 		return true
 	}
@@ -176,8 +176,8 @@ func (o *PricelistUpdatePriceListRequestPayload) GetVatIncludedOk() (*bool, bool
 	return o.VatIncluded, true
 }
 
-// &#39;Has&#39;VatIncluded returns a boolean if a field has been set.
-func (o *PricelistUpdatePriceListRequestPayload) &#39;Has&#39;VatIncluded() bool {
+// HasVatIncluded returns a boolean if a field has been set.
+func (o *PricelistUpdatePriceListRequestPayload) HasVatIncluded() bool {
 	if o != nil && !IsNil(o.VatIncluded) {
 		return true
 	}
@@ -208,8 +208,8 @@ func (o *PricelistUpdatePriceListRequestPayload) GetDeliveredDutyPaidOk() (*bool
 	return o.DeliveredDutyPaid, true
 }
 
-// &#39;Has&#39;DeliveredDutyPaid returns a boolean if a field has been set.
-func (o *PricelistUpdatePriceListRequestPayload) &#39;Has&#39;DeliveredDutyPaid() bool {
+// HasDeliveredDutyPaid returns a boolean if a field has been set.
+func (o *PricelistUpdatePriceListRequestPayload) HasDeliveredDutyPaid() bool {
 	if o != nil && !IsNil(o.DeliveredDutyPaid) {
 		return true
 	}
@@ -240,8 +240,8 @@ func (o *PricelistUpdatePriceListRequestPayload) GetSegmentsOk() ([]string, bool
 	return o.Segments, true
 }
 
-// &#39;Has&#39;Segments returns a boolean if a field has been set.
-func (o *PricelistUpdatePriceListRequestPayload) &#39;Has&#39;Segments() bool {
+// HasSegments returns a boolean if a field has been set.
+func (o *PricelistUpdatePriceListRequestPayload) HasSegments() bool {
 	if o != nil && !IsNil(o.Segments) {
 		return true
 	}
@@ -272,8 +272,8 @@ func (o *PricelistUpdatePriceListRequestPayload) GetMarketsOk() ([]string, bool)
 	return o.Markets, true
 }
 
-// &#39;Has&#39;Markets returns a boolean if a field has been set.
-func (o *PricelistUpdatePriceListRequestPayload) &#39;Has&#39;Markets() bool {
+// HasMarkets returns a boolean if a field has been set.
+func (o *PricelistUpdatePriceListRequestPayload) HasMarkets() bool {
 	if o != nil && !IsNil(o.Markets) {
 		return true
 	}
@@ -304,8 +304,8 @@ func (o *PricelistUpdatePriceListRequestPayload) GetChannelsOk() ([]string, bool
 	return o.Channels, true
 }
 
-// &#39;Has&#39;Channels returns a boolean if a field has been set.
-func (o *PricelistUpdatePriceListRequestPayload) &#39;Has&#39;Channels() bool {
+// HasChannels returns a boolean if a field has been set.
+func (o *PricelistUpdatePriceListRequestPayload) HasChannels() bool {
 	if o != nil && !IsNil(o.Channels) {
 		return true
 	}
@@ -336,8 +336,8 @@ func (o *PricelistUpdatePriceListRequestPayload) GetTypeOk() (*PricelistPriceLis
 	return o.Type, true
 }
 
-// &#39;Has&#39;Type returns a boolean if a field has been set.
-func (o *PricelistUpdatePriceListRequestPayload) &#39;Has&#39;Type() bool {
+// HasType returns a boolean if a field has been set.
+func (o *PricelistUpdatePriceListRequestPayload) HasType() bool {
 	if o != nil && !IsNil(o.Type) {
 		return true
 	}
@@ -368,8 +368,8 @@ func (o *PricelistUpdatePriceListRequestPayload) GetIsSystemOk() (*bool, bool) {
 	return o.IsSystem, true
 }
 
-// &#39;Has&#39;IsSystem returns a boolean if a field has been set.
-func (o *PricelistUpdatePriceListRequestPayload) &#39;Has&#39;IsSystem() bool {
+// HasIsSystem returns a boolean if a field has been set.
+func (o *PricelistUpdatePriceListRequestPayload) HasIsSystem() bool {
 	if o != nil && !IsNil(o.IsSystem) {
 		return true
 	}
@@ -400,8 +400,8 @@ func (o *PricelistUpdatePriceListRequestPayload) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// &#39;Has&#39;Name returns a boolean if a field has been set.
-func (o *PricelistUpdatePriceListRequestPayload) &#39;Has&#39;Name() bool {
+// HasName returns a boolean if a field has been set.
+func (o *PricelistUpdatePriceListRequestPayload) HasName() bool {
 	if o != nil && !IsNil(o.Name) {
 		return true
 	}
@@ -432,8 +432,8 @@ func (o *PricelistUpdatePriceListRequestPayload) GetDescriptionOk() (*string, bo
 	return o.Description, true
 }
 
-// &#39;Has&#39;Description returns a boolean if a field has been set.
-func (o *PricelistUpdatePriceListRequestPayload) &#39;Has&#39;Description() bool {
+// HasDescription returns a boolean if a field has been set.
+func (o *PricelistUpdatePriceListRequestPayload) HasDescription() bool {
 	if o != nil && !IsNil(o.Description) {
 		return true
 	}

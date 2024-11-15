@@ -66,8 +66,8 @@ func (o *PricelistListPriceListsRequest) GetTenantIdOk() (*string, bool) {
 	return o.TenantId, true
 }
 
-// &#39;Has&#39;TenantId returns a boolean if a field has been set.
-func (o *PricelistListPriceListsRequest) &#39;Has&#39;TenantId() bool {
+// HasTenantId returns a boolean if a field has been set.
+func (o *PricelistListPriceListsRequest) HasTenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -98,8 +98,8 @@ func (o *PricelistListPriceListsRequest) GetPageSizeOk() (*int64, bool) {
 	return o.PageSize, true
 }
 
-// &#39;Has&#39;PageSize returns a boolean if a field has been set.
-func (o *PricelistListPriceListsRequest) &#39;Has&#39;PageSize() bool {
+// HasPageSize returns a boolean if a field has been set.
+func (o *PricelistListPriceListsRequest) HasPageSize() bool {
 	if o != nil && !IsNil(o.PageSize) {
 		return true
 	}
@@ -130,8 +130,8 @@ func (o *PricelistListPriceListsRequest) GetPageTokenOk() (*string, bool) {
 	return o.PageToken, true
 }
 
-// &#39;Has&#39;PageToken returns a boolean if a field has been set.
-func (o *PricelistListPriceListsRequest) &#39;Has&#39;PageToken() bool {
+// HasPageToken returns a boolean if a field has been set.
+func (o *PricelistListPriceListsRequest) HasPageToken() bool {
 	if o != nil && !IsNil(o.PageToken) {
 		return true
 	}
@@ -162,8 +162,8 @@ func (o *PricelistListPriceListsRequest) GetSearchQueryOk() (*string, bool) {
 	return o.SearchQuery, true
 }
 
-// &#39;Has&#39;SearchQuery returns a boolean if a field has been set.
-func (o *PricelistListPriceListsRequest) &#39;Has&#39;SearchQuery() bool {
+// HasSearchQuery returns a boolean if a field has been set.
+func (o *PricelistListPriceListsRequest) HasSearchQuery() bool {
 	if o != nil && !IsNil(o.SearchQuery) {
 		return true
 	}
@@ -194,8 +194,8 @@ func (o *PricelistListPriceListsRequest) GetFilterMaskOk() (*string, bool) {
 	return o.FilterMask, true
 }
 
-// &#39;Has&#39;FilterMask returns a boolean if a field has been set.
-func (o *PricelistListPriceListsRequest) &#39;Has&#39;FilterMask() bool {
+// HasFilterMask returns a boolean if a field has been set.
+func (o *PricelistListPriceListsRequest) HasFilterMask() bool {
 	if o != nil && !IsNil(o.FilterMask) {
 		return true
 	}
@@ -226,8 +226,8 @@ func (o *PricelistListPriceListsRequest) GetFilterOk() (*ListPriceListsRequestFi
 	return o.Filter, true
 }
 
-// &#39;Has&#39;Filter returns a boolean if a field has been set.
-func (o *PricelistListPriceListsRequest) &#39;Has&#39;Filter() bool {
+// HasFilter returns a boolean if a field has been set.
+func (o *PricelistListPriceListsRequest) HasFilter() bool {
 	if o != nil && !IsNil(o.Filter) {
 		return true
 	}

@@ -64,8 +64,8 @@ func (o *PricelistSetPriceListItem) GetItemGrnOk() (*string, bool) {
 	return o.ItemGrn, true
 }
 
-// &#39;Has&#39;ItemGrn returns a boolean if a field has been set.
-func (o *PricelistSetPriceListItem) &#39;Has&#39;ItemGrn() bool {
+// HasItemGrn returns a boolean if a field has been set.
+func (o *PricelistSetPriceListItem) HasItemGrn() bool {
 	if o != nil && !IsNil(o.ItemGrn) {
 		return true
 	}
@@ -96,8 +96,8 @@ func (o *PricelistSetPriceListItem) GetBasePriceOk() (*PricelistMoney, bool) {
 	return o.BasePrice, true
 }
 
-// &#39;Has&#39;BasePrice returns a boolean if a field has been set.
-func (o *PricelistSetPriceListItem) &#39;Has&#39;BasePrice() bool {
+// HasBasePrice returns a boolean if a field has been set.
+func (o *PricelistSetPriceListItem) HasBasePrice() bool {
 	if o != nil && !IsNil(o.BasePrice) {
 		return true
 	}
@@ -128,8 +128,8 @@ func (o *PricelistSetPriceListItem) GetPriceItemsOk() ([]PricelistSetPriceListIt
 	return o.PriceItems, true
 }
 
-// &#39;Has&#39;PriceItems returns a boolean if a field has been set.
-func (o *PricelistSetPriceListItem) &#39;Has&#39;PriceItems() bool {
+// HasPriceItems returns a boolean if a field has been set.
+func (o *PricelistSetPriceListItem) HasPriceItems() bool {
 	if o != nil && !IsNil(o.PriceItems) {
 		return true
 	}
@@ -160,8 +160,8 @@ func (o *PricelistSetPriceListItem) GetHasTierPricesOk() (*bool, bool) {
 	return o.HasTierPrices, true
 }
 
-// &#39;Has&#39;HasTierPrices returns a boolean if a field has been set.
-func (o *PricelistSetPriceListItem) &#39;Has&#39;HasTierPrices() bool {
+// HasHasTierPrices returns a boolean if a field has been set.
+func (o *PricelistSetPriceListItem) HasHasTierPrices() bool {
 	if o != nil && !IsNil(o.HasTierPrices) {
 		return true
 	}

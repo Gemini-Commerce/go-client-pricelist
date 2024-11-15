@@ -66,8 +66,8 @@ func (o *PricelistSegmentFilter) GetSegmentsOk() ([]string, bool) {
 	return o.Segments, true
 }
 
-// &#39;Has&#39;Segments returns a boolean if a field has been set.
-func (o *PricelistSegmentFilter) &#39;Has&#39;Segments() bool {
+// HasSegments returns a boolean if a field has been set.
+func (o *PricelistSegmentFilter) HasSegments() bool {
 	if o != nil && !IsNil(o.Segments) {
 		return true
 	}
@@ -98,8 +98,8 @@ func (o *PricelistSegmentFilter) GetConditionOk() (*PricelistFilterCondition, bo
 	return o.Condition, true
 }
 
-// &#39;Has&#39;Condition returns a boolean if a field has been set.
-func (o *PricelistSegmentFilter) &#39;Has&#39;Condition() bool {
+// HasCondition returns a boolean if a field has been set.
+func (o *PricelistSegmentFilter) HasCondition() bool {
 	if o != nil && !IsNil(o.Condition) {
 		return true
 	}

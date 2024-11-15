@@ -66,8 +66,8 @@ func (o *PricelistMarketFilter) GetMarketsOk() ([]string, bool) {
 	return o.Markets, true
 }
 
-// &#39;Has&#39;Markets returns a boolean if a field has been set.
-func (o *PricelistMarketFilter) &#39;Has&#39;Markets() bool {
+// HasMarkets returns a boolean if a field has been set.
+func (o *PricelistMarketFilter) HasMarkets() bool {
 	if o != nil && !IsNil(o.Markets) {
 		return true
 	}
@@ -98,8 +98,8 @@ func (o *PricelistMarketFilter) GetConditionOk() (*PricelistFilterCondition, boo
 	return o.Condition, true
 }
 
-// &#39;Has&#39;Condition returns a boolean if a field has been set.
-func (o *PricelistMarketFilter) &#39;Has&#39;Condition() bool {
+// HasCondition returns a boolean if a field has been set.
+func (o *PricelistMarketFilter) HasCondition() bool {
 	if o != nil && !IsNil(o.Condition) {
 		return true
 	}

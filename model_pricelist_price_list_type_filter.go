@@ -66,8 +66,8 @@ func (o *PricelistPriceListTypeFilter) GetPricelistTypesOk() ([]PricelistPriceLi
 	return o.PricelistTypes, true
 }
 
-// &#39;Has&#39;PricelistTypes returns a boolean if a field has been set.
-func (o *PricelistPriceListTypeFilter) &#39;Has&#39;PricelistTypes() bool {
+// HasPricelistTypes returns a boolean if a field has been set.
+func (o *PricelistPriceListTypeFilter) HasPricelistTypes() bool {
 	if o != nil && !IsNil(o.PricelistTypes) {
 		return true
 	}
@@ -98,8 +98,8 @@ func (o *PricelistPriceListTypeFilter) GetConditionOk() (*PricelistFilterConditi
 	return o.Condition, true
 }
 
-// &#39;Has&#39;Condition returns a boolean if a field has been set.
-func (o *PricelistPriceListTypeFilter) &#39;Has&#39;Condition() bool {
+// HasCondition returns a boolean if a field has been set.
+func (o *PricelistPriceListTypeFilter) HasCondition() bool {
 	if o != nil && !IsNil(o.Condition) {
 		return true
 	}

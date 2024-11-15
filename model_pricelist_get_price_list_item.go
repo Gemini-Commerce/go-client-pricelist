@@ -77,8 +77,8 @@ func (o *PricelistGetPriceListItem) GetIdOk() (*string, bool) {
 	return o.Id, true
 }
 
-// &#39;Has&#39;Id returns a boolean if a field has been set.
-func (o *PricelistGetPriceListItem) &#39;Has&#39;Id() bool {
+// HasId returns a boolean if a field has been set.
+func (o *PricelistGetPriceListItem) HasId() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -109,8 +109,8 @@ func (o *PricelistGetPriceListItem) GetGrnOk() (*string, bool) {
 	return o.Grn, true
 }
 
-// &#39;Has&#39;Grn returns a boolean if a field has been set.
-func (o *PricelistGetPriceListItem) &#39;Has&#39;Grn() bool {
+// HasGrn returns a boolean if a field has been set.
+func (o *PricelistGetPriceListItem) HasGrn() bool {
 	if o != nil && !IsNil(o.Grn) {
 		return true
 	}
@@ -141,8 +141,8 @@ func (o *PricelistGetPriceListItem) GetItemGrnOk() (*string, bool) {
 	return o.ItemGrn, true
 }
 
-// &#39;Has&#39;ItemGrn returns a boolean if a field has been set.
-func (o *PricelistGetPriceListItem) &#39;Has&#39;ItemGrn() bool {
+// HasItemGrn returns a boolean if a field has been set.
+func (o *PricelistGetPriceListItem) HasItemGrn() bool {
 	if o != nil && !IsNil(o.ItemGrn) {
 		return true
 	}
@@ -173,8 +173,8 @@ func (o *PricelistGetPriceListItem) GetPriceOk() (*PricelistMoney, bool) {
 	return o.Price, true
 }
 
-// &#39;Has&#39;Price returns a boolean if a field has been set.
-func (o *PricelistGetPriceListItem) &#39;Has&#39;Price() bool {
+// HasPrice returns a boolean if a field has been set.
+func (o *PricelistGetPriceListItem) HasPrice() bool {
 	if o != nil && !IsNil(o.Price) {
 		return true
 	}
@@ -205,8 +205,8 @@ func (o *PricelistGetPriceListItem) GetDoubleFormatPriceOk() (*float64, bool) {
 	return o.DoubleFormatPrice, true
 }
 
-// &#39;Has&#39;DoubleFormatPrice returns a boolean if a field has been set.
-func (o *PricelistGetPriceListItem) &#39;Has&#39;DoubleFormatPrice() bool {
+// HasDoubleFormatPrice returns a boolean if a field has been set.
+func (o *PricelistGetPriceListItem) HasDoubleFormatPrice() bool {
 	if o != nil && !IsNil(o.DoubleFormatPrice) {
 		return true
 	}
@@ -237,8 +237,8 @@ func (o *PricelistGetPriceListItem) GetEndDatePriceOk() (*time.Time, bool) {
 	return o.EndDatePrice, true
 }
 
-// &#39;Has&#39;EndDatePrice returns a boolean if a field has been set.
-func (o *PricelistGetPriceListItem) &#39;Has&#39;EndDatePrice() bool {
+// HasEndDatePrice returns a boolean if a field has been set.
+func (o *PricelistGetPriceListItem) HasEndDatePrice() bool {
 	if o != nil && !IsNil(o.EndDatePrice) {
 		return true
 	}
@@ -269,8 +269,8 @@ func (o *PricelistGetPriceListItem) GetBasePriceOk() (*PricelistMoney, bool) {
 	return o.BasePrice, true
 }
 
-// &#39;Has&#39;BasePrice returns a boolean if a field has been set.
-func (o *PricelistGetPriceListItem) &#39;Has&#39;BasePrice() bool {
+// HasBasePrice returns a boolean if a field has been set.
+func (o *PricelistGetPriceListItem) HasBasePrice() bool {
 	if o != nil && !IsNil(o.BasePrice) {
 		return true
 	}
@@ -301,8 +301,8 @@ func (o *PricelistGetPriceListItem) GetDoubleFormatBasePriceOk() (*float64, bool
 	return o.DoubleFormatBasePrice, true
 }
 
-// &#39;Has&#39;DoubleFormatBasePrice returns a boolean if a field has been set.
-func (o *PricelistGetPriceListItem) &#39;Has&#39;DoubleFormatBasePrice() bool {
+// HasDoubleFormatBasePrice returns a boolean if a field has been set.
+func (o *PricelistGetPriceListItem) HasDoubleFormatBasePrice() bool {
 	if o != nil && !IsNil(o.DoubleFormatBasePrice) {
 		return true
 	}
@@ -333,8 +333,8 @@ func (o *PricelistGetPriceListItem) GetCurrencyOk() (*PricelistCurrency, bool) {
 	return o.Currency, true
 }
 
-// &#39;Has&#39;Currency returns a boolean if a field has been set.
-func (o *PricelistGetPriceListItem) &#39;Has&#39;Currency() bool {
+// HasCurrency returns a boolean if a field has been set.
+func (o *PricelistGetPriceListItem) HasCurrency() bool {
 	if o != nil && !IsNil(o.Currency) {
 		return true
 	}
@@ -365,8 +365,8 @@ func (o *PricelistGetPriceListItem) GetHasTierPricesOk() (*bool, bool) {
 	return o.HasTierPrices, true
 }
 
-// &#39;Has&#39;HasTierPrices returns a boolean if a field has been set.
-func (o *PricelistGetPriceListItem) &#39;Has&#39;HasTierPrices() bool {
+// HasHasTierPrices returns a boolean if a field has been set.
+func (o *PricelistGetPriceListItem) HasHasTierPrices() bool {
 	if o != nil && !IsNil(o.HasTierPrices) {
 		return true
 	}
@@ -397,8 +397,8 @@ func (o *PricelistGetPriceListItem) GetCreatedAtOk() (*time.Time, bool) {
 	return o.CreatedAt, true
 }
 
-// &#39;Has&#39;CreatedAt returns a boolean if a field has been set.
-func (o *PricelistGetPriceListItem) &#39;Has&#39;CreatedAt() bool {
+// HasCreatedAt returns a boolean if a field has been set.
+func (o *PricelistGetPriceListItem) HasCreatedAt() bool {
 	if o != nil && !IsNil(o.CreatedAt) {
 		return true
 	}
@@ -429,8 +429,8 @@ func (o *PricelistGetPriceListItem) GetUpdatedAtOk() (*time.Time, bool) {
 	return o.UpdatedAt, true
 }
 
-// &#39;Has&#39;UpdatedAt returns a boolean if a field has been set.
-func (o *PricelistGetPriceListItem) &#39;Has&#39;UpdatedAt() bool {
+// HasUpdatedAt returns a boolean if a field has been set.
+func (o *PricelistGetPriceListItem) HasUpdatedAt() bool {
 	if o != nil && !IsNil(o.UpdatedAt) {
 		return true
 	}

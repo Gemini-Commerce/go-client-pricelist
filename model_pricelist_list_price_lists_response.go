@@ -62,8 +62,8 @@ func (o *PricelistListPriceListsResponse) GetPricelistsOk() ([]ListPriceListsRes
 	return o.Pricelists, true
 }
 
-// &#39;Has&#39;Pricelists returns a boolean if a field has been set.
-func (o *PricelistListPriceListsResponse) &#39;Has&#39;Pricelists() bool {
+// HasPricelists returns a boolean if a field has been set.
+func (o *PricelistListPriceListsResponse) HasPricelists() bool {
 	if o != nil && !IsNil(o.Pricelists) {
 		return true
 	}
@@ -94,8 +94,8 @@ func (o *PricelistListPriceListsResponse) GetNextPageTokenOk() (*string, bool) {
 	return o.NextPageToken, true
 }
 
-// &#39;Has&#39;NextPageToken returns a boolean if a field has been set.
-func (o *PricelistListPriceListsResponse) &#39;Has&#39;NextPageToken() bool {
+// HasNextPageToken returns a boolean if a field has been set.
+func (o *PricelistListPriceListsResponse) HasNextPageToken() bool {
 	if o != nil && !IsNil(o.NextPageToken) {
 		return true
 	}

@@ -61,8 +61,8 @@ func (o *PricelistSetPriceListItemsResponse) GetErrorsOk() (*PricelistSetPriceLi
 	return o.Errors, true
 }
 
-// &#39;Has&#39;Errors returns a boolean if a field has been set.
-func (o *PricelistSetPriceListItemsResponse) &#39;Has&#39;Errors() bool {
+// HasErrors returns a boolean if a field has been set.
+func (o *PricelistSetPriceListItemsResponse) HasErrors() bool {
 	if o != nil && !IsNil(o.Errors) {
 		return true
 	}

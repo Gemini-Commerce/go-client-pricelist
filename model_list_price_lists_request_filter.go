@@ -73,8 +73,8 @@ func (o *ListPriceListsRequestFilter) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// &#39;Has&#39;Code returns a boolean if a field has been set.
-func (o *ListPriceListsRequestFilter) &#39;Has&#39;Code() bool {
+// HasCode returns a boolean if a field has been set.
+func (o *ListPriceListsRequestFilter) HasCode() bool {
 	if o != nil && !IsNil(o.Code) {
 		return true
 	}
@@ -105,8 +105,8 @@ func (o *ListPriceListsRequestFilter) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// &#39;Has&#39;Name returns a boolean if a field has been set.
-func (o *ListPriceListsRequestFilter) &#39;Has&#39;Name() bool {
+// HasName returns a boolean if a field has been set.
+func (o *ListPriceListsRequestFilter) HasName() bool {
 	if o != nil && !IsNil(o.Name) {
 		return true
 	}
@@ -137,8 +137,8 @@ func (o *ListPriceListsRequestFilter) GetDescriptionOk() (*string, bool) {
 	return o.Description, true
 }
 
-// &#39;Has&#39;Description returns a boolean if a field has been set.
-func (o *ListPriceListsRequestFilter) &#39;Has&#39;Description() bool {
+// HasDescription returns a boolean if a field has been set.
+func (o *ListPriceListsRequestFilter) HasDescription() bool {
 	if o != nil && !IsNil(o.Description) {
 		return true
 	}
@@ -169,8 +169,8 @@ func (o *ListPriceListsRequestFilter) GetIsActiveOk() (*bool, bool) {
 	return o.IsActive, true
 }
 
-// &#39;Has&#39;IsActive returns a boolean if a field has been set.
-func (o *ListPriceListsRequestFilter) &#39;Has&#39;IsActive() bool {
+// HasIsActive returns a boolean if a field has been set.
+func (o *ListPriceListsRequestFilter) HasIsActive() bool {
 	if o != nil && !IsNil(o.IsActive) {
 		return true
 	}
@@ -201,8 +201,8 @@ func (o *ListPriceListsRequestFilter) GetIsDefaultOk() (*bool, bool) {
 	return o.IsDefault, true
 }
 
-// &#39;Has&#39;IsDefault returns a boolean if a field has been set.
-func (o *ListPriceListsRequestFilter) &#39;Has&#39;IsDefault() bool {
+// HasIsDefault returns a boolean if a field has been set.
+func (o *ListPriceListsRequestFilter) HasIsDefault() bool {
 	if o != nil && !IsNil(o.IsDefault) {
 		return true
 	}
@@ -233,8 +233,8 @@ func (o *ListPriceListsRequestFilter) GetCurrencyFilterOk() (*PricelistCurrencyF
 	return o.CurrencyFilter, true
 }
 
-// &#39;Has&#39;CurrencyFilter returns a boolean if a field has been set.
-func (o *ListPriceListsRequestFilter) &#39;Has&#39;CurrencyFilter() bool {
+// HasCurrencyFilter returns a boolean if a field has been set.
+func (o *ListPriceListsRequestFilter) HasCurrencyFilter() bool {
 	if o != nil && !IsNil(o.CurrencyFilter) {
 		return true
 	}
@@ -265,8 +265,8 @@ func (o *ListPriceListsRequestFilter) GetVatIncludedOk() (*bool, bool) {
 	return o.VatIncluded, true
 }
 
-// &#39;Has&#39;VatIncluded returns a boolean if a field has been set.
-func (o *ListPriceListsRequestFilter) &#39;Has&#39;VatIncluded() bool {
+// HasVatIncluded returns a boolean if a field has been set.
+func (o *ListPriceListsRequestFilter) HasVatIncluded() bool {
 	if o != nil && !IsNil(o.VatIncluded) {
 		return true
 	}
@@ -297,8 +297,8 @@ func (o *ListPriceListsRequestFilter) GetDeliveredDutyPaidOk() (*bool, bool) {
 	return o.DeliveredDutyPaid, true
 }
 
-// &#39;Has&#39;DeliveredDutyPaid returns a boolean if a field has been set.
-func (o *ListPriceListsRequestFilter) &#39;Has&#39;DeliveredDutyPaid() bool {
+// HasDeliveredDutyPaid returns a boolean if a field has been set.
+func (o *ListPriceListsRequestFilter) HasDeliveredDutyPaid() bool {
 	if o != nil && !IsNil(o.DeliveredDutyPaid) {
 		return true
 	}
@@ -329,8 +329,8 @@ func (o *ListPriceListsRequestFilter) GetSegmentsFilterOk() (*PricelistSegmentFi
 	return o.SegmentsFilter, true
 }
 
-// &#39;Has&#39;SegmentsFilter returns a boolean if a field has been set.
-func (o *ListPriceListsRequestFilter) &#39;Has&#39;SegmentsFilter() bool {
+// HasSegmentsFilter returns a boolean if a field has been set.
+func (o *ListPriceListsRequestFilter) HasSegmentsFilter() bool {
 	if o != nil && !IsNil(o.SegmentsFilter) {
 		return true
 	}
@@ -361,8 +361,8 @@ func (o *ListPriceListsRequestFilter) GetMarketsFilterOk() (*PricelistMarketFilt
 	return o.MarketsFilter, true
 }
 
-// &#39;Has&#39;MarketsFilter returns a boolean if a field has been set.
-func (o *ListPriceListsRequestFilter) &#39;Has&#39;MarketsFilter() bool {
+// HasMarketsFilter returns a boolean if a field has been set.
+func (o *ListPriceListsRequestFilter) HasMarketsFilter() bool {
 	if o != nil && !IsNil(o.MarketsFilter) {
 		return true
 	}
@@ -393,8 +393,8 @@ func (o *ListPriceListsRequestFilter) GetChannelsFilterOk() (*PricelistChannelFi
 	return o.ChannelsFilter, true
 }
 
-// &#39;Has&#39;ChannelsFilter returns a boolean if a field has been set.
-func (o *ListPriceListsRequestFilter) &#39;Has&#39;ChannelsFilter() bool {
+// HasChannelsFilter returns a boolean if a field has been set.
+func (o *ListPriceListsRequestFilter) HasChannelsFilter() bool {
 	if o != nil && !IsNil(o.ChannelsFilter) {
 		return true
 	}
@@ -425,8 +425,8 @@ func (o *ListPriceListsRequestFilter) GetTypeFilterOk() (*PricelistPriceListType
 	return o.TypeFilter, true
 }
 
-// &#39;Has&#39;TypeFilter returns a boolean if a field has been set.
-func (o *ListPriceListsRequestFilter) &#39;Has&#39;TypeFilter() bool {
+// HasTypeFilter returns a boolean if a field has been set.
+func (o *ListPriceListsRequestFilter) HasTypeFilter() bool {
 	if o != nil && !IsNil(o.TypeFilter) {
 		return true
 	}
@@ -457,8 +457,8 @@ func (o *ListPriceListsRequestFilter) GetIsSystemOk() (*bool, bool) {
 	return o.IsSystem, true
 }
 
-// &#39;Has&#39;IsSystem returns a boolean if a field has been set.
-func (o *ListPriceListsRequestFilter) &#39;Has&#39;IsSystem() bool {
+// HasIsSystem returns a boolean if a field has been set.
+func (o *ListPriceListsRequestFilter) HasIsSystem() bool {
 	if o != nil && !IsNil(o.IsSystem) {
 		return true
 	}

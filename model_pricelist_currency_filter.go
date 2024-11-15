@@ -66,8 +66,8 @@ func (o *PricelistCurrencyFilter) GetCurrenciesOk() ([]PricelistCurrency, bool) 
 	return o.Currencies, true
 }
 
-// &#39;Has&#39;Currencies returns a boolean if a field has been set.
-func (o *PricelistCurrencyFilter) &#39;Has&#39;Currencies() bool {
+// HasCurrencies returns a boolean if a field has been set.
+func (o *PricelistCurrencyFilter) HasCurrencies() bool {
 	if o != nil && !IsNil(o.Currencies) {
 		return true
 	}
@@ -98,8 +98,8 @@ func (o *PricelistCurrencyFilter) GetConditionOk() (*PricelistFilterCondition, b
 	return o.Condition, true
 }
 
-// &#39;Has&#39;Condition returns a boolean if a field has been set.
-func (o *PricelistCurrencyFilter) &#39;Has&#39;Condition() bool {
+// HasCondition returns a boolean if a field has been set.
+func (o *PricelistCurrencyFilter) HasCondition() bool {
 	if o != nil && !IsNil(o.Condition) {
 		return true
 	}

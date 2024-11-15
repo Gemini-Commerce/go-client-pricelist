@@ -64,8 +64,8 @@ func (o *PricelistUpdatePriceListRequest) GetTenantIdOk() (*string, bool) {
 	return o.TenantId, true
 }
 
-// &#39;Has&#39;TenantId returns a boolean if a field has been set.
-func (o *PricelistUpdatePriceListRequest) &#39;Has&#39;TenantId() bool {
+// HasTenantId returns a boolean if a field has been set.
+func (o *PricelistUpdatePriceListRequest) HasTenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -96,8 +96,8 @@ func (o *PricelistUpdatePriceListRequest) GetIdOk() (*string, bool) {
 	return o.Id, true
 }
 
-// &#39;Has&#39;Id returns a boolean if a field has been set.
-func (o *PricelistUpdatePriceListRequest) &#39;Has&#39;Id() bool {
+// HasId returns a boolean if a field has been set.
+func (o *PricelistUpdatePriceListRequest) HasId() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -128,8 +128,8 @@ func (o *PricelistUpdatePriceListRequest) GetPayloadOk() (*PricelistUpdatePriceL
 	return o.Payload, true
 }
 
-// &#39;Has&#39;Payload returns a boolean if a field has been set.
-func (o *PricelistUpdatePriceListRequest) &#39;Has&#39;Payload() bool {
+// HasPayload returns a boolean if a field has been set.
+func (o *PricelistUpdatePriceListRequest) HasPayload() bool {
 	if o != nil && !IsNil(o.Payload) {
 		return true
 	}
@@ -160,8 +160,8 @@ func (o *PricelistUpdatePriceListRequest) GetPayloadMaskOk() (*string, bool) {
 	return o.PayloadMask, true
 }
 
-// &#39;Has&#39;PayloadMask returns a boolean if a field has been set.
-func (o *PricelistUpdatePriceListRequest) &#39;Has&#39;PayloadMask() bool {
+// HasPayloadMask returns a boolean if a field has been set.
+func (o *PricelistUpdatePriceListRequest) HasPayloadMask() bool {
 	if o != nil && !IsNil(o.PayloadMask) {
 		return true
 	}
