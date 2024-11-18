@@ -20,7 +20,7 @@ var _ MappedNullable = &PricelistSetPriceListItemsResponse{}
 
 // PricelistSetPriceListItemsResponse struct for PricelistSetPriceListItemsResponse
 type PricelistSetPriceListItemsResponse struct {
-	Errors *PricelistSetPriceListItemError `json:"errors,omitempty"`
+	Errors               *PricelistSetPriceListItemError `json:"errors,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,7 +76,7 @@ func (o *PricelistSetPriceListItemsResponse) SetErrors(v PricelistSetPriceListIt
 }
 
 func (o PricelistSetPriceListItemsResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -119,22 +119,24 @@ func (o *PricelistSetPriceListItemsResponse) UnmarshalJSON(data []byte) (err err
 
 // GetValue returns the value of well-known types
 func (o *PricelistSetPriceListItemsResponse) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
-// SetValue populate the value of well-known types
+
+// SetValue populates the value of well-known types
 func (o *PricelistSetPriceListItemsResponse) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullablePricelistSetPriceListItemsResponse struct {
 	value *PricelistSetPriceListItemsResponse
 	isSet bool
@@ -170,5 +172,3 @@ func (v *NullablePricelistSetPriceListItemsResponse) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

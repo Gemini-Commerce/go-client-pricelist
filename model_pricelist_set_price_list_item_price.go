@@ -21,12 +21,12 @@ var _ MappedNullable = &PricelistSetPriceListItemPrice{}
 
 // PricelistSetPriceListItemPrice struct for PricelistSetPriceListItemPrice
 type PricelistSetPriceListItemPrice struct {
-	Price *PricelistMoney `json:"price,omitempty"`
-	IsEnabled *bool `json:"isEnabled,omitempty"`
-	StartAt *time.Time `json:"startAt,omitempty"`
-	EndAt *time.Time `json:"endAt,omitempty"`
-	Order *int64 `json:"order,omitempty"`
-	BasePrice *PricelistMoney `json:"basePrice,omitempty"`
+	Price                *PricelistMoney `json:"price,omitempty"`
+	IsEnabled            *bool           `json:"isEnabled,omitempty"`
+	StartAt              *time.Time      `json:"startAt,omitempty"`
+	EndAt                *time.Time      `json:"endAt,omitempty"`
+	Order                *int64          `json:"order,omitempty"`
+	BasePrice            *PricelistMoney `json:"basePrice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -242,7 +242,7 @@ func (o *PricelistSetPriceListItemPrice) SetBasePrice(v PricelistMoney) {
 }
 
 func (o PricelistSetPriceListItemPrice) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -305,22 +305,24 @@ func (o *PricelistSetPriceListItemPrice) UnmarshalJSON(data []byte) (err error) 
 
 // GetValue returns the value of well-known types
 func (o *PricelistSetPriceListItemPrice) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
-// SetValue populate the value of well-known types
+
+// SetValue populates the value of well-known types
 func (o *PricelistSetPriceListItemPrice) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullablePricelistSetPriceListItemPrice struct {
 	value *PricelistSetPriceListItemPrice
 	isSet bool
@@ -356,5 +358,3 @@ func (v *NullablePricelistSetPriceListItemPrice) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

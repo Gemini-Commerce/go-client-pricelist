@@ -19,14 +19,182 @@ import (
 	"net/url"
 )
 
+type PriceListAPI interface {
+
+	/*
+		CreatePriceList Create new list
+
+		Allows the creation of a new price list with specified details such as code, name, currency, and type.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiCreatePriceListRequest
+	*/
+	CreatePriceList(ctx context.Context) ApiCreatePriceListRequest
+
+	// CreatePriceListExecute executes the request
+	//  @return PricelistCreatePriceListResponse
+	CreatePriceListExecute(r ApiCreatePriceListRequest) (*PricelistCreatePriceListResponse, *http.Response, error)
+
+	/*
+		DeletePriceListItems Get prices for items
+
+		Deletes specified items from a price list based on their unique identifiers.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiDeletePriceListItemsRequest
+	*/
+	DeletePriceListItems(ctx context.Context) ApiDeletePriceListItemsRequest
+
+	// DeletePriceListItemsExecute executes the request
+	//  @return map[string]interface{}
+	DeletePriceListItemsExecute(r ApiDeletePriceListItemsRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+		GetFullPriceItemsByPricelistId List detailed items
+
+		Fetches detailed information about items, including historical price data, for a specific price list.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetFullPriceItemsByPricelistIdRequest
+	*/
+	GetFullPriceItemsByPricelistId(ctx context.Context) ApiGetFullPriceItemsByPricelistIdRequest
+
+	// GetFullPriceItemsByPricelistIdExecute executes the request
+	//  @return PricelistGetFullPriceItemsResponse
+	GetFullPriceItemsByPricelistIdExecute(r ApiGetFullPriceItemsByPricelistIdRequest) (*PricelistGetFullPriceItemsResponse, *http.Response, error)
+
+	/*
+		GetPriceList Get specific list
+
+		Returns information about a particular price list identified by tenant ID and price list ID. The response includes details such as code, name, currency, and type.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetPriceListRequest
+	*/
+	GetPriceList(ctx context.Context) ApiGetPriceListRequest
+
+	// GetPriceListExecute executes the request
+	//  @return PricelistGetPriceListResponse
+	GetPriceListExecute(r ApiGetPriceListRequest) (*PricelistGetPriceListResponse, *http.Response, error)
+
+	/*
+		GetPriceListByCode Get list by code
+
+		Retrieves information about a specific price list using the unique code associated with it. The response includes details such as code, name, currency, and type.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetPriceListByCodeRequest
+	*/
+	GetPriceListByCode(ctx context.Context) ApiGetPriceListByCodeRequest
+
+	// GetPriceListByCodeExecute executes the request
+	//  @return PricelistGetPriceListByCodeResponse
+	GetPriceListByCodeExecute(r ApiGetPriceListByCodeRequest) (*PricelistGetPriceListByCodeResponse, *http.Response, error)
+
+	/*
+		GetPriceListItems Get items in list
+
+		Fetches a paginated list of items associated with a particular price list.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetPriceListItemsRequest
+	*/
+	GetPriceListItems(ctx context.Context) ApiGetPriceListItemsRequest
+
+	// GetPriceListItemsExecute executes the request
+	//  @return PricelistGetPriceListItemsResponse
+	GetPriceListItemsExecute(r ApiGetPriceListItemsRequest) (*PricelistGetPriceListItemsResponse, *http.Response, error)
+
+	/*
+		GetPricesItems Get detailed items
+
+		Retrieves the current prices of specified items considering the provided context, such as currency and market.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetPricesItemsRequest
+	*/
+	GetPricesItems(ctx context.Context) ApiGetPricesItemsRequest
+
+	// GetPricesItemsExecute executes the request
+	//  @return PricelistGetPricesResponse
+	GetPricesItemsExecute(r ApiGetPricesItemsRequest) (*PricelistGetPricesResponse, *http.Response, error)
+
+	/*
+		ListFullPriceItemsByPricelistId List detailed price items for a specific price list
+
+		Retrieves a paginated list of detailed price items, including historical data, for a specific price list.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiListFullPriceItemsByPricelistIdRequest
+	*/
+	ListFullPriceItemsByPricelistId(ctx context.Context) ApiListFullPriceItemsByPricelistIdRequest
+
+	// ListFullPriceItemsByPricelistIdExecute executes the request
+	//  @return PricelistListFullPriceItemsResponse
+	ListFullPriceItemsByPricelistIdExecute(r ApiListFullPriceItemsByPricelistIdRequest) (*PricelistListFullPriceItemsResponse, *http.Response, error)
+
+	/*
+		ListPriceLists List all price lists
+
+		Retrieves a list of price lists based on optional filters such as name, code, and other attributes. The response includes details such as code, name, currency, and type.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiListPriceListsRequest
+	*/
+	ListPriceLists(ctx context.Context) ApiListPriceListsRequest
+
+	// ListPriceListsExecute executes the request
+	//  @return PricelistListPriceListsResponse
+	ListPriceListsExecute(r ApiListPriceListsRequest) (*PricelistListPriceListsResponse, *http.Response, error)
+
+	/*
+		PriceListGetPriceItemsByPriceListItemIds Method for PriceListGetPriceItemsByPriceListItemIds
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiPriceListGetPriceItemsByPriceListItemIdsRequest
+	*/
+	PriceListGetPriceItemsByPriceListItemIds(ctx context.Context) ApiPriceListGetPriceItemsByPriceListItemIdsRequest
+
+	// PriceListGetPriceItemsByPriceListItemIdsExecute executes the request
+	//  @return PricelistGetPriceItemsByPriceListItemIdsResponse
+	PriceListGetPriceItemsByPriceListItemIdsExecute(r ApiPriceListGetPriceItemsByPriceListItemIdsRequest) (*PricelistGetPriceItemsByPriceListItemIdsResponse, *http.Response, error)
+
+	/*
+		SetPriceListItems Set items in list
+
+		Updates or creates items for a given price list, allowing bulk modifications.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiSetPriceListItemsRequest
+	*/
+	SetPriceListItems(ctx context.Context) ApiSetPriceListItemsRequest
+
+	// SetPriceListItemsExecute executes the request
+	//  @return PricelistSetPriceListItemsResponse
+	SetPriceListItemsExecute(r ApiSetPriceListItemsRequest) (*PricelistSetPriceListItemsResponse, *http.Response, error)
+
+	/*
+		UpdatePriceList Update list
+
+		Modifies the attributes of an existing price list based on the provided payload and field mask. The field mask is used to specify which attributes of the price list are to be updated. The field mask is a comma-separated list of fully qualified names of fields. Example: `code,name,currency,type`
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiUpdatePriceListRequest
+	*/
+	UpdatePriceList(ctx context.Context) ApiUpdatePriceListRequest
+
+	// UpdatePriceListExecute executes the request
+	//  @return map[string]interface{}
+	UpdatePriceListExecute(r ApiUpdatePriceListRequest) (map[string]interface{}, *http.Response, error)
+}
 
 // PriceListAPIService PriceListAPI service
 type PriceListAPIService service
 
 type ApiCreatePriceListRequest struct {
-	ctx context.Context
-	ApiService *PriceListAPIService
-	body *PricelistCreatePriceListRequest
+	ctx        context.Context
+	ApiService PriceListAPI
+	body       *PricelistCreatePriceListRequest
 }
 
 func (r ApiCreatePriceListRequest) Body(body PricelistCreatePriceListRequest) ApiCreatePriceListRequest {
@@ -43,24 +211,25 @@ CreatePriceList Create new list
 
 Allows the creation of a new price list with specified details such as code, name, currency, and type.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreatePriceListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreatePriceListRequest
 */
 func (a *PriceListAPIService) CreatePriceList(ctx context.Context) ApiCreatePriceListRequest {
 	return ApiCreatePriceListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PricelistCreatePriceListResponse
+//
+//	@return PricelistCreatePriceListResponse
 func (a *PriceListAPIService) CreatePriceListExecute(r ApiCreatePriceListRequest) (*PricelistCreatePriceListResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PricelistCreatePriceListResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PricelistCreatePriceListResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PriceListAPIService.CreatePriceList")
@@ -139,8 +308,8 @@ func (a *PriceListAPIService) CreatePriceListExecute(r ApiCreatePriceListRequest
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -150,18 +319,18 @@ func (a *PriceListAPIService) CreatePriceListExecute(r ApiCreatePriceListRequest
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -178,9 +347,9 @@ func (a *PriceListAPIService) CreatePriceListExecute(r ApiCreatePriceListRequest
 }
 
 type ApiDeletePriceListItemsRequest struct {
-	ctx context.Context
-	ApiService *PriceListAPIService
-	body *PricelistDeletePriceListItemsRequest
+	ctx        context.Context
+	ApiService PriceListAPI
+	body       *PricelistDeletePriceListItemsRequest
 }
 
 func (r ApiDeletePriceListItemsRequest) Body(body PricelistDeletePriceListItemsRequest) ApiDeletePriceListItemsRequest {
@@ -197,24 +366,25 @@ DeletePriceListItems Get prices for items
 
 Deletes specified items from a price list based on their unique identifiers.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeletePriceListItemsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDeletePriceListItemsRequest
 */
 func (a *PriceListAPIService) DeletePriceListItems(ctx context.Context) ApiDeletePriceListItemsRequest {
 	return ApiDeletePriceListItemsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *PriceListAPIService) DeletePriceListItemsExecute(r ApiDeletePriceListItemsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue map[string]interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PriceListAPIService.DeletePriceListItems")
@@ -293,8 +463,8 @@ func (a *PriceListAPIService) DeletePriceListItemsExecute(r ApiDeletePriceListIt
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -304,18 +474,18 @@ func (a *PriceListAPIService) DeletePriceListItemsExecute(r ApiDeletePriceListIt
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -332,9 +502,9 @@ func (a *PriceListAPIService) DeletePriceListItemsExecute(r ApiDeletePriceListIt
 }
 
 type ApiGetFullPriceItemsByPricelistIdRequest struct {
-	ctx context.Context
-	ApiService *PriceListAPIService
-	body *PricelistGetFullPriceItemsRequest
+	ctx        context.Context
+	ApiService PriceListAPI
+	body       *PricelistGetFullPriceItemsRequest
 }
 
 func (r ApiGetFullPriceItemsByPricelistIdRequest) Body(body PricelistGetFullPriceItemsRequest) ApiGetFullPriceItemsByPricelistIdRequest {
@@ -351,24 +521,25 @@ GetFullPriceItemsByPricelistId List detailed items
 
 Fetches detailed information about items, including historical price data, for a specific price list.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetFullPriceItemsByPricelistIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetFullPriceItemsByPricelistIdRequest
 */
 func (a *PriceListAPIService) GetFullPriceItemsByPricelistId(ctx context.Context) ApiGetFullPriceItemsByPricelistIdRequest {
 	return ApiGetFullPriceItemsByPricelistIdRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PricelistGetFullPriceItemsResponse
+//
+//	@return PricelistGetFullPriceItemsResponse
 func (a *PriceListAPIService) GetFullPriceItemsByPricelistIdExecute(r ApiGetFullPriceItemsByPricelistIdRequest) (*PricelistGetFullPriceItemsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PricelistGetFullPriceItemsResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PricelistGetFullPriceItemsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PriceListAPIService.GetFullPriceItemsByPricelistId")
@@ -447,8 +618,8 @@ func (a *PriceListAPIService) GetFullPriceItemsByPricelistIdExecute(r ApiGetFull
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -458,18 +629,18 @@ func (a *PriceListAPIService) GetFullPriceItemsByPricelistIdExecute(r ApiGetFull
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -486,9 +657,9 @@ func (a *PriceListAPIService) GetFullPriceItemsByPricelistIdExecute(r ApiGetFull
 }
 
 type ApiGetPriceListRequest struct {
-	ctx context.Context
-	ApiService *PriceListAPIService
-	body *PricelistGetPriceListRequest
+	ctx        context.Context
+	ApiService PriceListAPI
+	body       *PricelistGetPriceListRequest
 }
 
 func (r ApiGetPriceListRequest) Body(body PricelistGetPriceListRequest) ApiGetPriceListRequest {
@@ -505,24 +676,25 @@ GetPriceList Get specific list
 
 Returns information about a particular price list identified by tenant ID and price list ID. The response includes details such as code, name, currency, and type.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPriceListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetPriceListRequest
 */
 func (a *PriceListAPIService) GetPriceList(ctx context.Context) ApiGetPriceListRequest {
 	return ApiGetPriceListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PricelistGetPriceListResponse
+//
+//	@return PricelistGetPriceListResponse
 func (a *PriceListAPIService) GetPriceListExecute(r ApiGetPriceListRequest) (*PricelistGetPriceListResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PricelistGetPriceListResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PricelistGetPriceListResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PriceListAPIService.GetPriceList")
@@ -601,8 +773,8 @@ func (a *PriceListAPIService) GetPriceListExecute(r ApiGetPriceListRequest) (*Pr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -612,18 +784,18 @@ func (a *PriceListAPIService) GetPriceListExecute(r ApiGetPriceListRequest) (*Pr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -640,9 +812,9 @@ func (a *PriceListAPIService) GetPriceListExecute(r ApiGetPriceListRequest) (*Pr
 }
 
 type ApiGetPriceListByCodeRequest struct {
-	ctx context.Context
-	ApiService *PriceListAPIService
-	body *PricelistGetPriceListByCodeRequest
+	ctx        context.Context
+	ApiService PriceListAPI
+	body       *PricelistGetPriceListByCodeRequest
 }
 
 func (r ApiGetPriceListByCodeRequest) Body(body PricelistGetPriceListByCodeRequest) ApiGetPriceListByCodeRequest {
@@ -659,24 +831,25 @@ GetPriceListByCode Get list by code
 
 Retrieves information about a specific price list using the unique code associated with it. The response includes details such as code, name, currency, and type.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPriceListByCodeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetPriceListByCodeRequest
 */
 func (a *PriceListAPIService) GetPriceListByCode(ctx context.Context) ApiGetPriceListByCodeRequest {
 	return ApiGetPriceListByCodeRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PricelistGetPriceListByCodeResponse
+//
+//	@return PricelistGetPriceListByCodeResponse
 func (a *PriceListAPIService) GetPriceListByCodeExecute(r ApiGetPriceListByCodeRequest) (*PricelistGetPriceListByCodeResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PricelistGetPriceListByCodeResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PricelistGetPriceListByCodeResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PriceListAPIService.GetPriceListByCode")
@@ -755,8 +928,8 @@ func (a *PriceListAPIService) GetPriceListByCodeExecute(r ApiGetPriceListByCodeR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -766,18 +939,18 @@ func (a *PriceListAPIService) GetPriceListByCodeExecute(r ApiGetPriceListByCodeR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -794,9 +967,9 @@ func (a *PriceListAPIService) GetPriceListByCodeExecute(r ApiGetPriceListByCodeR
 }
 
 type ApiGetPriceListItemsRequest struct {
-	ctx context.Context
-	ApiService *PriceListAPIService
-	body *PricelistGetPriceListItemsRequest
+	ctx        context.Context
+	ApiService PriceListAPI
+	body       *PricelistGetPriceListItemsRequest
 }
 
 func (r ApiGetPriceListItemsRequest) Body(body PricelistGetPriceListItemsRequest) ApiGetPriceListItemsRequest {
@@ -813,24 +986,25 @@ GetPriceListItems Get items in list
 
 Fetches a paginated list of items associated with a particular price list.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPriceListItemsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetPriceListItemsRequest
 */
 func (a *PriceListAPIService) GetPriceListItems(ctx context.Context) ApiGetPriceListItemsRequest {
 	return ApiGetPriceListItemsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PricelistGetPriceListItemsResponse
+//
+//	@return PricelistGetPriceListItemsResponse
 func (a *PriceListAPIService) GetPriceListItemsExecute(r ApiGetPriceListItemsRequest) (*PricelistGetPriceListItemsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PricelistGetPriceListItemsResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PricelistGetPriceListItemsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PriceListAPIService.GetPriceListItems")
@@ -909,8 +1083,8 @@ func (a *PriceListAPIService) GetPriceListItemsExecute(r ApiGetPriceListItemsReq
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -920,18 +1094,18 @@ func (a *PriceListAPIService) GetPriceListItemsExecute(r ApiGetPriceListItemsReq
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -948,9 +1122,9 @@ func (a *PriceListAPIService) GetPriceListItemsExecute(r ApiGetPriceListItemsReq
 }
 
 type ApiGetPricesItemsRequest struct {
-	ctx context.Context
-	ApiService *PriceListAPIService
-	body *PricelistGetPricesRequest
+	ctx        context.Context
+	ApiService PriceListAPI
+	body       *PricelistGetPricesRequest
 }
 
 func (r ApiGetPricesItemsRequest) Body(body PricelistGetPricesRequest) ApiGetPricesItemsRequest {
@@ -967,24 +1141,25 @@ GetPricesItems Get detailed items
 
 Retrieves the current prices of specified items considering the provided context, such as currency and market.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPricesItemsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetPricesItemsRequest
 */
 func (a *PriceListAPIService) GetPricesItems(ctx context.Context) ApiGetPricesItemsRequest {
 	return ApiGetPricesItemsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PricelistGetPricesResponse
+//
+//	@return PricelistGetPricesResponse
 func (a *PriceListAPIService) GetPricesItemsExecute(r ApiGetPricesItemsRequest) (*PricelistGetPricesResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PricelistGetPricesResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PricelistGetPricesResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PriceListAPIService.GetPricesItems")
@@ -1063,8 +1238,8 @@ func (a *PriceListAPIService) GetPricesItemsExecute(r ApiGetPricesItemsRequest) 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -1074,18 +1249,18 @@ func (a *PriceListAPIService) GetPricesItemsExecute(r ApiGetPricesItemsRequest) 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1102,9 +1277,9 @@ func (a *PriceListAPIService) GetPricesItemsExecute(r ApiGetPricesItemsRequest) 
 }
 
 type ApiListFullPriceItemsByPricelistIdRequest struct {
-	ctx context.Context
-	ApiService *PriceListAPIService
-	body *PricelistListFullPriceItemsRequest
+	ctx        context.Context
+	ApiService PriceListAPI
+	body       *PricelistListFullPriceItemsRequest
 }
 
 func (r ApiListFullPriceItemsByPricelistIdRequest) Body(body PricelistListFullPriceItemsRequest) ApiListFullPriceItemsByPricelistIdRequest {
@@ -1121,24 +1296,25 @@ ListFullPriceItemsByPricelistId List detailed price items for a specific price l
 
 Retrieves a paginated list of detailed price items, including historical data, for a specific price list.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListFullPriceItemsByPricelistIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListFullPriceItemsByPricelistIdRequest
 */
 func (a *PriceListAPIService) ListFullPriceItemsByPricelistId(ctx context.Context) ApiListFullPriceItemsByPricelistIdRequest {
 	return ApiListFullPriceItemsByPricelistIdRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PricelistListFullPriceItemsResponse
+//
+//	@return PricelistListFullPriceItemsResponse
 func (a *PriceListAPIService) ListFullPriceItemsByPricelistIdExecute(r ApiListFullPriceItemsByPricelistIdRequest) (*PricelistListFullPriceItemsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PricelistListFullPriceItemsResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PricelistListFullPriceItemsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PriceListAPIService.ListFullPriceItemsByPricelistId")
@@ -1217,8 +1393,8 @@ func (a *PriceListAPIService) ListFullPriceItemsByPricelistIdExecute(r ApiListFu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -1228,18 +1404,18 @@ func (a *PriceListAPIService) ListFullPriceItemsByPricelistIdExecute(r ApiListFu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1256,9 +1432,9 @@ func (a *PriceListAPIService) ListFullPriceItemsByPricelistIdExecute(r ApiListFu
 }
 
 type ApiListPriceListsRequest struct {
-	ctx context.Context
-	ApiService *PriceListAPIService
-	body *PricelistListPriceListsRequest
+	ctx        context.Context
+	ApiService PriceListAPI
+	body       *PricelistListPriceListsRequest
 }
 
 func (r ApiListPriceListsRequest) Body(body PricelistListPriceListsRequest) ApiListPriceListsRequest {
@@ -1275,24 +1451,25 @@ ListPriceLists List all price lists
 
 Retrieves a list of price lists based on optional filters such as name, code, and other attributes. The response includes details such as code, name, currency, and type.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListPriceListsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListPriceListsRequest
 */
 func (a *PriceListAPIService) ListPriceLists(ctx context.Context) ApiListPriceListsRequest {
 	return ApiListPriceListsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PricelistListPriceListsResponse
+//
+//	@return PricelistListPriceListsResponse
 func (a *PriceListAPIService) ListPriceListsExecute(r ApiListPriceListsRequest) (*PricelistListPriceListsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PricelistListPriceListsResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PricelistListPriceListsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PriceListAPIService.ListPriceLists")
@@ -1371,8 +1548,8 @@ func (a *PriceListAPIService) ListPriceListsExecute(r ApiListPriceListsRequest) 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -1382,18 +1559,18 @@ func (a *PriceListAPIService) ListPriceListsExecute(r ApiListPriceListsRequest) 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1410,9 +1587,9 @@ func (a *PriceListAPIService) ListPriceListsExecute(r ApiListPriceListsRequest) 
 }
 
 type ApiPriceListGetPriceItemsByPriceListItemIdsRequest struct {
-	ctx context.Context
-	ApiService *PriceListAPIService
-	body *PricelistGetPriceItemsByPriceListItemIdsRequest
+	ctx        context.Context
+	ApiService PriceListAPI
+	body       *PricelistGetPriceItemsByPriceListItemIdsRequest
 }
 
 func (r ApiPriceListGetPriceItemsByPriceListItemIdsRequest) Body(body PricelistGetPriceItemsByPriceListItemIdsRequest) ApiPriceListGetPriceItemsByPriceListItemIdsRequest {
@@ -1427,24 +1604,25 @@ func (r ApiPriceListGetPriceItemsByPriceListItemIdsRequest) Execute() (*Pricelis
 /*
 PriceListGetPriceItemsByPriceListItemIds Method for PriceListGetPriceItemsByPriceListItemIds
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPriceListGetPriceItemsByPriceListItemIdsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPriceListGetPriceItemsByPriceListItemIdsRequest
 */
 func (a *PriceListAPIService) PriceListGetPriceItemsByPriceListItemIds(ctx context.Context) ApiPriceListGetPriceItemsByPriceListItemIdsRequest {
 	return ApiPriceListGetPriceItemsByPriceListItemIdsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PricelistGetPriceItemsByPriceListItemIdsResponse
+//
+//	@return PricelistGetPriceItemsByPriceListItemIdsResponse
 func (a *PriceListAPIService) PriceListGetPriceItemsByPriceListItemIdsExecute(r ApiPriceListGetPriceItemsByPriceListItemIdsRequest) (*PricelistGetPriceItemsByPriceListItemIdsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PricelistGetPriceItemsByPriceListItemIdsResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PricelistGetPriceItemsByPriceListItemIdsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PriceListAPIService.PriceListGetPriceItemsByPriceListItemIds")
@@ -1516,14 +1694,14 @@ func (a *PriceListAPIService) PriceListGetPriceItemsByPriceListItemIdsExecute(r 
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1540,9 +1718,9 @@ func (a *PriceListAPIService) PriceListGetPriceItemsByPriceListItemIdsExecute(r 
 }
 
 type ApiSetPriceListItemsRequest struct {
-	ctx context.Context
-	ApiService *PriceListAPIService
-	body *PricelistSetPriceListItemsRequest
+	ctx        context.Context
+	ApiService PriceListAPI
+	body       *PricelistSetPriceListItemsRequest
 }
 
 func (r ApiSetPriceListItemsRequest) Body(body PricelistSetPriceListItemsRequest) ApiSetPriceListItemsRequest {
@@ -1559,24 +1737,25 @@ SetPriceListItems Set items in list
 
 Updates or creates items for a given price list, allowing bulk modifications.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSetPriceListItemsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSetPriceListItemsRequest
 */
 func (a *PriceListAPIService) SetPriceListItems(ctx context.Context) ApiSetPriceListItemsRequest {
 	return ApiSetPriceListItemsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PricelistSetPriceListItemsResponse
+//
+//	@return PricelistSetPriceListItemsResponse
 func (a *PriceListAPIService) SetPriceListItemsExecute(r ApiSetPriceListItemsRequest) (*PricelistSetPriceListItemsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PricelistSetPriceListItemsResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PricelistSetPriceListItemsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PriceListAPIService.SetPriceListItems")
@@ -1655,8 +1834,8 @@ func (a *PriceListAPIService) SetPriceListItemsExecute(r ApiSetPriceListItemsReq
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -1666,18 +1845,18 @@ func (a *PriceListAPIService) SetPriceListItemsExecute(r ApiSetPriceListItemsReq
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1694,9 +1873,9 @@ func (a *PriceListAPIService) SetPriceListItemsExecute(r ApiSetPriceListItemsReq
 }
 
 type ApiUpdatePriceListRequest struct {
-	ctx context.Context
-	ApiService *PriceListAPIService
-	body *PricelistUpdatePriceListRequest
+	ctx        context.Context
+	ApiService PriceListAPI
+	body       *PricelistUpdatePriceListRequest
 }
 
 func (r ApiUpdatePriceListRequest) Body(body PricelistUpdatePriceListRequest) ApiUpdatePriceListRequest {
@@ -1713,24 +1892,25 @@ UpdatePriceList Update list
 
 Modifies the attributes of an existing price list based on the provided payload and field mask. The field mask is used to specify which attributes of the price list are to be updated. The field mask is a comma-separated list of fully qualified names of fields. Example: `code,name,currency,type`
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUpdatePriceListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiUpdatePriceListRequest
 */
 func (a *PriceListAPIService) UpdatePriceList(ctx context.Context) ApiUpdatePriceListRequest {
 	return ApiUpdatePriceListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *PriceListAPIService) UpdatePriceListExecute(r ApiUpdatePriceListRequest) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue map[string]interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PriceListAPIService.UpdatePriceList")
@@ -1809,8 +1989,8 @@ func (a *PriceListAPIService) UpdatePriceListExecute(r ApiUpdatePriceListRequest
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -1820,18 +2000,18 @@ func (a *PriceListAPIService) UpdatePriceListExecute(r ApiUpdatePriceListRequest
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

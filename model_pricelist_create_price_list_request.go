@@ -20,20 +20,20 @@ var _ MappedNullable = &PricelistCreatePriceListRequest{}
 
 // PricelistCreatePriceListRequest struct for PricelistCreatePriceListRequest
 type PricelistCreatePriceListRequest struct {
-	TenantId *string `json:"tenantId,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	IsActive *bool `json:"isActive,omitempty"`
-	IsDefault *bool `json:"isDefault,omitempty"`
-	Currency *PricelistCurrency `json:"currency,omitempty"`
-	VatIncluded *bool `json:"vatIncluded,omitempty"`
-	DeliveredDutyPaid *bool `json:"deliveredDutyPaid,omitempty"`
-	Segments []string `json:"segments,omitempty"`
-	Markets []string `json:"markets,omitempty"`
-	Channels []string `json:"channels,omitempty"`
-	Type *PricelistPriceListType `json:"type,omitempty"`
-	IsSystem *bool `json:"isSystem,omitempty"`
+	TenantId             *string                 `json:"tenantId,omitempty"`
+	Code                 *string                 `json:"code,omitempty"`
+	Name                 *string                 `json:"name,omitempty"`
+	Description          *string                 `json:"description,omitempty"`
+	IsActive             *bool                   `json:"isActive,omitempty"`
+	IsDefault            *bool                   `json:"isDefault,omitempty"`
+	Currency             *PricelistCurrency      `json:"currency,omitempty"`
+	VatIncluded          *bool                   `json:"vatIncluded,omitempty"`
+	DeliveredDutyPaid    *bool                   `json:"deliveredDutyPaid,omitempty"`
+	Segments             []string                `json:"segments,omitempty"`
+	Markets              []string                `json:"markets,omitempty"`
+	Channels             []string                `json:"channels,omitempty"`
+	Type                 *PricelistPriceListType `json:"type,omitempty"`
+	IsSystem             *bool                   `json:"isSystem,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -513,7 +513,7 @@ func (o *PricelistCreatePriceListRequest) SetIsSystem(v bool) {
 }
 
 func (o PricelistCreatePriceListRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -608,22 +608,24 @@ func (o *PricelistCreatePriceListRequest) UnmarshalJSON(data []byte) (err error)
 
 // GetValue returns the value of well-known types
 func (o *PricelistCreatePriceListRequest) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
-// SetValue populate the value of well-known types
+
+// SetValue populates the value of well-known types
 func (o *PricelistCreatePriceListRequest) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullablePricelistCreatePriceListRequest struct {
 	value *PricelistCreatePriceListRequest
 	isSet bool
@@ -659,5 +661,3 @@ func (v *NullablePricelistCreatePriceListRequest) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

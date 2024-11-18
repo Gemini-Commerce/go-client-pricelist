@@ -20,19 +20,19 @@ var _ MappedNullable = &ListPriceListsRequestFilter{}
 
 // ListPriceListsRequestFilter struct for ListPriceListsRequestFilter
 type ListPriceListsRequestFilter struct {
-	Code *string `json:"code,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	IsActive *bool `json:"isActive,omitempty"`
-	IsDefault *bool `json:"isDefault,omitempty"`
-	CurrencyFilter *PricelistCurrencyFilter `json:"currencyFilter,omitempty"`
-	VatIncluded *bool `json:"vatIncluded,omitempty"`
-	DeliveredDutyPaid *bool `json:"deliveredDutyPaid,omitempty"`
-	SegmentsFilter *PricelistSegmentFilter `json:"segmentsFilter,omitempty"`
-	MarketsFilter *PricelistMarketFilter `json:"marketsFilter,omitempty"`
-	ChannelsFilter *PricelistChannelFilter `json:"channelsFilter,omitempty"`
-	TypeFilter *PricelistPriceListTypeFilter `json:"typeFilter,omitempty"`
-	IsSystem *bool `json:"isSystem,omitempty"`
+	Code                 *string                       `json:"code,omitempty"`
+	Name                 *string                       `json:"name,omitempty"`
+	Description          *string                       `json:"description,omitempty"`
+	IsActive             *bool                         `json:"isActive,omitempty"`
+	IsDefault            *bool                         `json:"isDefault,omitempty"`
+	CurrencyFilter       *PricelistCurrencyFilter      `json:"currencyFilter,omitempty"`
+	VatIncluded          *bool                         `json:"vatIncluded,omitempty"`
+	DeliveredDutyPaid    *bool                         `json:"deliveredDutyPaid,omitempty"`
+	SegmentsFilter       *PricelistSegmentFilter       `json:"segmentsFilter,omitempty"`
+	MarketsFilter        *PricelistMarketFilter        `json:"marketsFilter,omitempty"`
+	ChannelsFilter       *PricelistChannelFilter       `json:"channelsFilter,omitempty"`
+	TypeFilter           *PricelistPriceListTypeFilter `json:"typeFilter,omitempty"`
+	IsSystem             *bool                         `json:"isSystem,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -472,7 +472,7 @@ func (o *ListPriceListsRequestFilter) SetIsSystem(v bool) {
 }
 
 func (o ListPriceListsRequestFilter) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -563,22 +563,24 @@ func (o *ListPriceListsRequestFilter) UnmarshalJSON(data []byte) (err error) {
 
 // GetValue returns the value of well-known types
 func (o *ListPriceListsRequestFilter) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
-// SetValue populate the value of well-known types
+
+// SetValue populates the value of well-known types
 func (o *ListPriceListsRequestFilter) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableListPriceListsRequestFilter struct {
 	value *ListPriceListsRequestFilter
 	isSet bool
@@ -614,5 +616,3 @@ func (v *NullableListPriceListsRequestFilter) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

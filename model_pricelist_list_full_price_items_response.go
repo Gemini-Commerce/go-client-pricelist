@@ -20,8 +20,8 @@ var _ MappedNullable = &PricelistListFullPriceItemsResponse{}
 
 // PricelistListFullPriceItemsResponse struct for PricelistListFullPriceItemsResponse
 type PricelistListFullPriceItemsResponse struct {
-	Items []PricelistGetFullPriceItem `json:"items,omitempty"`
-	NextPageToken *string `json:"nextPageToken,omitempty"`
+	Items                []PricelistGetFullPriceItem `json:"items,omitempty"`
+	NextPageToken        *string                     `json:"nextPageToken,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -109,7 +109,7 @@ func (o *PricelistListFullPriceItemsResponse) SetNextPageToken(v string) {
 }
 
 func (o PricelistListFullPriceItemsResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -156,22 +156,24 @@ func (o *PricelistListFullPriceItemsResponse) UnmarshalJSON(data []byte) (err er
 
 // GetValue returns the value of well-known types
 func (o *PricelistListFullPriceItemsResponse) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
-// SetValue populate the value of well-known types
+
+// SetValue populates the value of well-known types
 func (o *PricelistListFullPriceItemsResponse) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullablePricelistListFullPriceItemsResponse struct {
 	value *PricelistListFullPriceItemsResponse
 	isSet bool
@@ -207,5 +209,3 @@ func (v *NullablePricelistListFullPriceItemsResponse) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

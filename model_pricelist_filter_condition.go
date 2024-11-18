@@ -21,7 +21,7 @@ type PricelistFilterCondition string
 
 // List of pricelistFilterCondition
 const (
-	PRICELISTFILTERCONDITION_IN PricelistFilterCondition = "IN"
+	PRICELISTFILTERCONDITION_IN     PricelistFilterCondition = "IN"
 	PRICELISTFILTERCONDITION_NOT_IN PricelistFilterCondition = "NOT_IN"
 )
 
@@ -109,4 +109,3 @@ func (v *NullablePricelistFilterCondition) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

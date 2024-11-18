@@ -21,8 +21,8 @@ type PricelistPriceListType string
 
 // List of pricelistPriceListType
 const (
-	PRICELISTPRICELISTTYPE_UNKNOWN PricelistPriceListType = "UNKNOWN"
-	PRICELISTPRICELISTTYPE_BASE PricelistPriceListType = "BASE"
+	PRICELISTPRICELISTTYPE_UNKNOWN           PricelistPriceListType = "UNKNOWN"
+	PRICELISTPRICELISTTYPE_BASE              PricelistPriceListType = "BASE"
 	PRICELISTPRICELISTTYPE_CATALOG_PROMOTION PricelistPriceListType = "CATALOG_PROMOTION"
 )
 
@@ -111,4 +111,3 @@ func (v *NullablePricelistPriceListType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

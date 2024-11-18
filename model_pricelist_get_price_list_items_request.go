@@ -20,10 +20,10 @@ var _ MappedNullable = &PricelistGetPriceListItemsRequest{}
 
 // PricelistGetPriceListItemsRequest struct for PricelistGetPriceListItemsRequest
 type PricelistGetPriceListItemsRequest struct {
-	TenantId *string `json:"tenantId,omitempty"`
-	Id *string `json:"id,omitempty"`
-	PageSize *int64 `json:"pageSize,omitempty"`
-	PageToken *string `json:"pageToken,omitempty"`
+	TenantId             *string `json:"tenantId,omitempty"`
+	Id                   *string `json:"id,omitempty"`
+	PageSize             *int64  `json:"pageSize,omitempty"`
+	PageToken            *string `json:"pageToken,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -175,7 +175,7 @@ func (o *PricelistGetPriceListItemsRequest) SetPageToken(v string) {
 }
 
 func (o PricelistGetPriceListItemsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -230,22 +230,24 @@ func (o *PricelistGetPriceListItemsRequest) UnmarshalJSON(data []byte) (err erro
 
 // GetValue returns the value of well-known types
 func (o *PricelistGetPriceListItemsRequest) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
-// SetValue populate the value of well-known types
+
+// SetValue populates the value of well-known types
 func (o *PricelistGetPriceListItemsRequest) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullablePricelistGetPriceListItemsRequest struct {
 	value *PricelistGetPriceListItemsRequest
 	isSet bool
@@ -281,5 +283,3 @@ func (v *NullablePricelistGetPriceListItemsRequest) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

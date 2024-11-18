@@ -20,18 +20,18 @@ var _ MappedNullable = &PricelistUpdatePriceListRequestPayload{}
 
 // PricelistUpdatePriceListRequestPayload struct for PricelistUpdatePriceListRequestPayload
 type PricelistUpdatePriceListRequestPayload struct {
-	IsActive *bool `json:"isActive,omitempty"`
-	IsDefault *bool `json:"isDefault,omitempty"`
-	Currency *PricelistCurrency `json:"currency,omitempty"`
-	VatIncluded *bool `json:"vatIncluded,omitempty"`
-	DeliveredDutyPaid *bool `json:"deliveredDutyPaid,omitempty"`
-	Segments []string `json:"segments,omitempty"`
-	Markets []string `json:"markets,omitempty"`
-	Channels []string `json:"channels,omitempty"`
-	Type *PricelistPriceListType `json:"type,omitempty"`
-	IsSystem *bool `json:"isSystem,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
+	IsActive             *bool                   `json:"isActive,omitempty"`
+	IsDefault            *bool                   `json:"isDefault,omitempty"`
+	Currency             *PricelistCurrency      `json:"currency,omitempty"`
+	VatIncluded          *bool                   `json:"vatIncluded,omitempty"`
+	DeliveredDutyPaid    *bool                   `json:"deliveredDutyPaid,omitempty"`
+	Segments             []string                `json:"segments,omitempty"`
+	Markets              []string                `json:"markets,omitempty"`
+	Channels             []string                `json:"channels,omitempty"`
+	Type                 *PricelistPriceListType `json:"type,omitempty"`
+	IsSystem             *bool                   `json:"isSystem,omitempty"`
+	Name                 *string                 `json:"name,omitempty"`
+	Description          *string                 `json:"description,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -447,7 +447,7 @@ func (o *PricelistUpdatePriceListRequestPayload) SetDescription(v string) {
 }
 
 func (o PricelistUpdatePriceListRequestPayload) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -534,22 +534,24 @@ func (o *PricelistUpdatePriceListRequestPayload) UnmarshalJSON(data []byte) (err
 
 // GetValue returns the value of well-known types
 func (o *PricelistUpdatePriceListRequestPayload) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
-// SetValue populate the value of well-known types
+
+// SetValue populates the value of well-known types
 func (o *PricelistUpdatePriceListRequestPayload) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullablePricelistUpdatePriceListRequestPayload struct {
 	value *PricelistUpdatePriceListRequestPayload
 	isSet bool
@@ -585,5 +587,3 @@ func (v *NullablePricelistUpdatePriceListRequestPayload) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

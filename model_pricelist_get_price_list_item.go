@@ -21,19 +21,19 @@ var _ MappedNullable = &PricelistGetPriceListItem{}
 
 // PricelistGetPriceListItem struct for PricelistGetPriceListItem
 type PricelistGetPriceListItem struct {
-	Id *string `json:"id,omitempty"`
-	Grn *string `json:"grn,omitempty"`
-	ItemGrn *string `json:"itemGrn,omitempty"`
-	Price *PricelistMoney `json:"price,omitempty"`
-	DoubleFormatPrice *float64 `json:"doubleFormatPrice,omitempty"`
-	EndDatePrice *time.Time `json:"endDatePrice,omitempty"`
-	BasePrice *PricelistMoney `json:"basePrice,omitempty"`
-	DoubleFormatBasePrice *float64 `json:"doubleFormatBasePrice,omitempty"`
-	Currency *PricelistCurrency `json:"currency,omitempty"`
-	HasTierPrices *bool `json:"hasTierPrices,omitempty"`
-	CreatedAt *time.Time `json:"createdAt,omitempty"`
-	UpdatedAt *time.Time `json:"updatedAt,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                    *string            `json:"id,omitempty"`
+	Grn                   *string            `json:"grn,omitempty"`
+	ItemGrn               *string            `json:"itemGrn,omitempty"`
+	Price                 *PricelistMoney    `json:"price,omitempty"`
+	DoubleFormatPrice     *float64           `json:"doubleFormatPrice,omitempty"`
+	EndDatePrice          *time.Time         `json:"endDatePrice,omitempty"`
+	BasePrice             *PricelistMoney    `json:"basePrice,omitempty"`
+	DoubleFormatBasePrice *float64           `json:"doubleFormatBasePrice,omitempty"`
+	Currency              *PricelistCurrency `json:"currency,omitempty"`
+	HasTierPrices         *bool              `json:"hasTierPrices,omitempty"`
+	CreatedAt             *time.Time         `json:"createdAt,omitempty"`
+	UpdatedAt             *time.Time         `json:"updatedAt,omitempty"`
+	AdditionalProperties  map[string]interface{}
 }
 
 type _PricelistGetPriceListItem PricelistGetPriceListItem
@@ -444,7 +444,7 @@ func (o *PricelistGetPriceListItem) SetUpdatedAt(v time.Time) {
 }
 
 func (o PricelistGetPriceListItem) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -531,22 +531,24 @@ func (o *PricelistGetPriceListItem) UnmarshalJSON(data []byte) (err error) {
 
 // GetValue returns the value of well-known types
 func (o *PricelistGetPriceListItem) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
-// SetValue populate the value of well-known types
+
+// SetValue populates the value of well-known types
 func (o *PricelistGetPriceListItem) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullablePricelistGetPriceListItem struct {
 	value *PricelistGetPriceListItem
 	isSet bool
@@ -582,5 +584,3 @@ func (v *NullablePricelistGetPriceListItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

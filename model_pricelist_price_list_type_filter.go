@@ -20,8 +20,8 @@ var _ MappedNullable = &PricelistPriceListTypeFilter{}
 
 // PricelistPriceListTypeFilter struct for PricelistPriceListTypeFilter
 type PricelistPriceListTypeFilter struct {
-	PricelistTypes []PricelistPriceListType `json:"pricelistTypes,omitempty"`
-	Condition *PricelistFilterCondition `json:"condition,omitempty"`
+	PricelistTypes       []PricelistPriceListType  `json:"pricelistTypes,omitempty"`
+	Condition            *PricelistFilterCondition `json:"condition,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -113,7 +113,7 @@ func (o *PricelistPriceListTypeFilter) SetCondition(v PricelistFilterCondition) 
 }
 
 func (o PricelistPriceListTypeFilter) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -160,22 +160,24 @@ func (o *PricelistPriceListTypeFilter) UnmarshalJSON(data []byte) (err error) {
 
 // GetValue returns the value of well-known types
 func (o *PricelistPriceListTypeFilter) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
-// SetValue populate the value of well-known types
+
+// SetValue populates the value of well-known types
 func (o *PricelistPriceListTypeFilter) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullablePricelistPriceListTypeFilter struct {
 	value *PricelistPriceListTypeFilter
 	isSet bool
@@ -211,5 +213,3 @@ func (v *NullablePricelistPriceListTypeFilter) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

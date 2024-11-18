@@ -20,10 +20,10 @@ var _ MappedNullable = &PricelistUpdatePriceListRequest{}
 
 // PricelistUpdatePriceListRequest struct for PricelistUpdatePriceListRequest
 type PricelistUpdatePriceListRequest struct {
-	TenantId *string `json:"tenantId,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Payload *PricelistUpdatePriceListRequestPayload `json:"payload,omitempty"`
-	PayloadMask *string `json:"payloadMask,omitempty"`
+	TenantId             *string                                 `json:"tenantId,omitempty"`
+	Id                   *string                                 `json:"id,omitempty"`
+	Payload              *PricelistUpdatePriceListRequestPayload `json:"payload,omitempty"`
+	PayloadMask          *string                                 `json:"payloadMask,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -175,7 +175,7 @@ func (o *PricelistUpdatePriceListRequest) SetPayloadMask(v string) {
 }
 
 func (o PricelistUpdatePriceListRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -230,22 +230,24 @@ func (o *PricelistUpdatePriceListRequest) UnmarshalJSON(data []byte) (err error)
 
 // GetValue returns the value of well-known types
 func (o *PricelistUpdatePriceListRequest) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
-// SetValue populate the value of well-known types
+
+// SetValue populates the value of well-known types
 func (o *PricelistUpdatePriceListRequest) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullablePricelistUpdatePriceListRequest struct {
 	value *PricelistUpdatePriceListRequest
 	isSet bool
@@ -281,5 +283,3 @@ func (v *NullablePricelistUpdatePriceListRequest) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-
