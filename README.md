@@ -23,7 +23,7 @@ go get golang.org/x/net/context
 Put the package under your project folder and add the following in import:
 
 ```go
-import pricelist "github.com/Gemini-Commerce/go-client-pricelist"
+import pricelist "github.com/Gemini-Commerce/go-client-pricelist/v2"
 ```
 
 To use a proxy, set the environment variable `HTTP_PROXY`:
@@ -79,18 +79,19 @@ All URIs are relative to *https://pricelist.api.gogemini.io*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*PriceListAPI* | [**CreatePriceList**](docs/PriceListAPI.md#createpricelist) | **Post** /pricelist.PriceList/CreatePriceList | Create new list
-*PriceListAPI* | [**DeletePriceListItems**](docs/PriceListAPI.md#deletepricelistitems) | **Post** /pricelist.PriceList/DeletePriceListItems | Get prices for items
-*PriceListAPI* | [**GetFullPriceItemsByPricelistId**](docs/PriceListAPI.md#getfullpriceitemsbypricelistid) | **Post** /pricelist.PriceList/GetFullPriceItemsByPricelistId | List detailed items
-*PriceListAPI* | [**GetPriceList**](docs/PriceListAPI.md#getpricelist) | **Post** /pricelist.PriceList/GetPriceList | Get specific list
-*PriceListAPI* | [**GetPriceListByCode**](docs/PriceListAPI.md#getpricelistbycode) | **Post** /pricelist.PriceList/GetPriceListByCode | Get list by code
-*PriceListAPI* | [**GetPriceListItems**](docs/PriceListAPI.md#getpricelistitems) | **Post** /pricelist.PriceList/GetPriceListItems | Get items in list
-*PriceListAPI* | [**GetPricesItems**](docs/PriceListAPI.md#getpricesitems) | **Post** /pricelist.PriceList/GetPricesItems | Get detailed items
-*PriceListAPI* | [**ListFullPriceItemsByPricelistId**](docs/PriceListAPI.md#listfullpriceitemsbypricelistid) | **Post** /pricelist.PriceList/ListFullPriceItemsByPricelistId | List detailed price items for a specific price list
-*PriceListAPI* | [**ListPriceLists**](docs/PriceListAPI.md#listpricelists) | **Post** /pricelist.PriceList/ListPriceLists | List all price lists
-*PriceListAPI* | [**PriceListGetPriceItemsByPriceListItemIds**](docs/PriceListAPI.md#pricelistgetpriceitemsbypricelistitemids) | **Post** /pricelist.PriceList/GetPriceItemsByPriceListItemIds | 
-*PriceListAPI* | [**SetPriceListItems**](docs/PriceListAPI.md#setpricelistitems) | **Post** /pricelist.PriceList/SetPriceListItems | Set items in list
-*PriceListAPI* | [**UpdatePriceList**](docs/PriceListAPI.md#updatepricelist) | **Post** /pricelist.PriceList/UpdatePriceList | Update list
+*PriceListAPI* | [**CreatePriceList**](docs/PriceListAPI.md#createpricelist) | **Post** /pricelist.PriceList/CreatePriceList | Create Price List
+*PriceListAPI* | [**DeletePriceListItems**](docs/PriceListAPI.md#deletepricelistitems) | **Post** /pricelist.PriceList/DeletePriceListItems | Delete Price List Items
+*PriceListAPI* | [**DeletePriceListItemsAcrossPriceLists**](docs/PriceListAPI.md#deletepricelistitemsacrosspricelists) | **Post** /pricelist.PriceList/DeletePriceListItemsAcrossPriceLists | Delete Price List Items Across Price Lists
+*PriceListAPI* | [**GetFullPriceItemsByPricelistId**](docs/PriceListAPI.md#getfullpriceitemsbypricelistid) | **Post** /pricelist.PriceList/GetFullPriceItemsByPricelistId | Get Full Price Items By Price List Id
+*PriceListAPI* | [**GetPriceItemsByPriceListItemIds**](docs/PriceListAPI.md#getpriceitemsbypricelistitemids) | **Post** /pricelist.PriceList/GetPriceItemsByPriceListItemIds | Get Prices Items By Items Ids
+*PriceListAPI* | [**GetPriceList**](docs/PriceListAPI.md#getpricelist) | **Post** /pricelist.PriceList/GetPriceList | Get Price List
+*PriceListAPI* | [**GetPriceListByCode**](docs/PriceListAPI.md#getpricelistbycode) | **Post** /pricelist.PriceList/GetPriceListByCode | Get Price List By Code
+*PriceListAPI* | [**GetPriceListItems**](docs/PriceListAPI.md#getpricelistitems) | **Post** /pricelist.PriceList/GetPriceListItems | Get Price List Items
+*PriceListAPI* | [**GetPricesItems**](docs/PriceListAPI.md#getpricesitems) | **Post** /pricelist.PriceList/GetPricesItems | Get Prices Items
+*PriceListAPI* | [**ListFullPriceItemsByPricelistId**](docs/PriceListAPI.md#listfullpriceitemsbypricelistid) | **Post** /pricelist.PriceList/ListFullPriceItemsByPricelistId | List Full Price Items By Price List Id
+*PriceListAPI* | [**ListPriceLists**](docs/PriceListAPI.md#listpricelists) | **Post** /pricelist.PriceList/ListPriceLists | List Price Lists
+*PriceListAPI* | [**SetPriceListItems**](docs/PriceListAPI.md#setpricelistitems) | **Post** /pricelist.PriceList/SetPriceListItems | Set Price List Items
+*PriceListAPI* | [**UpdatePriceList**](docs/PriceListAPI.md#updatepricelist) | **Post** /pricelist.PriceList/UpdatePriceList | Update Price List
 
 
 ## Documentation For Models
@@ -102,6 +103,7 @@ Class | Method | HTTP request | Description
  - [PricelistCreatePriceListResponse](docs/PricelistCreatePriceListResponse.md)
  - [PricelistCurrency](docs/PricelistCurrency.md)
  - [PricelistCurrencyFilter](docs/PricelistCurrencyFilter.md)
+ - [PricelistDeletePriceListItemsAcrossPriceListsRequest](docs/PricelistDeletePriceListItemsAcrossPriceListsRequest.md)
  - [PricelistDeletePriceListItemsRequest](docs/PricelistDeletePriceListItemsRequest.md)
  - [PricelistFilterCondition](docs/PricelistFilterCondition.md)
  - [PricelistGetFullPriceItem](docs/PricelistGetFullPriceItem.md)

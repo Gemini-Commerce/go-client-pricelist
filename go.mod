@@ -1,4 +1,4 @@
-module github.com/Gemini-Commerce/go-client-pricelist
+module github.com/Gemini-Commerce/go-client-pricelist/v2
 
 go 1.18
 

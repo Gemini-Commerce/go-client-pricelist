@@ -5,7 +5,7 @@ info:
     name: Gemini Team
   license:
     name: Gemini fair use license
-    url: https://gemini-commerce.com/api/fair-use-license
+    url: https://dev.gemini-commerce.com/docs/api/fair-user-license
   title: PriceList Service
   version: v1
 servers:
@@ -55,7 +55,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
-      summary: Create new list
+      summary: Create Price List
       tags:
       - PriceList
       x-codegen-request-body-name: body
@@ -96,7 +96,48 @@ paths:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
-      summary: Get prices for items
+      summary: Delete Price List Items
+      tags:
+      - PriceList
+      x-codegen-request-body-name: body
+  /pricelist.PriceList/DeletePriceListItemsAcrossPriceLists:
+    post:
+      description: Deletes specified items from all assigned price lists based on
+        their unique identifiers.
+      operationId: DeletePriceListItemsAcrossPriceLists
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/pricelistDeletePriceListItemsAcrossPriceListsRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/pricelistDeletePriceListItemsAcrossPriceListsResponse'
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Unauthorized
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Delete Price List Items Across Price Lists
       tags:
       - PriceList
       x-codegen-request-body-name: body
@@ -137,13 +178,14 @@ paths:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
-      summary: List detailed items
+      summary: Get Full Price Items By Price List Id
       tags:
       - PriceList
       x-codegen-request-body-name: body
   /pricelist.PriceList/GetPriceItemsByPriceListItemIds:
     post:
-      operationId: PriceList_GetPriceItemsByPriceListItemIds
+      description: Retrieves items by ids
+      operationId: GetPriceItemsByPriceListItemIds
       requestBody:
         content:
           application/json:
@@ -156,13 +198,27 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/pricelistGetPriceItemsByPriceListItemIdsResponse'
-          description: A successful response.
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Unauthorized
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
         default:
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      summary: Get Prices Items By Items Ids
       tags:
       - PriceList
       x-codegen-request-body-name: body
@@ -204,7 +260,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
-      summary: Get specific list
+      summary: Get Price List
       tags:
       - PriceList
       x-codegen-request-body-name: body
@@ -246,7 +302,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
-      summary: Get list by code
+      summary: Get Price List By Code
       tags:
       - PriceList
       x-codegen-request-body-name: body
@@ -287,7 +343,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
-      summary: Get items in list
+      summary: Get Price List Items
       tags:
       - PriceList
       x-codegen-request-body-name: body
@@ -328,7 +384,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
-      summary: Get detailed items
+      summary: Get Prices Items
       tags:
       - PriceList
       x-codegen-request-body-name: body
@@ -369,7 +425,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
-      summary: List detailed price items for a specific price list
+      summary: List Full Price Items By Price List Id
       tags:
       - PriceList
       x-codegen-request-body-name: body
@@ -411,7 +467,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
-      summary: List all price lists
+      summary: List Price Lists
       tags:
       - PriceList
       x-codegen-request-body-name: body
@@ -452,7 +508,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
-      summary: Set items in list
+      summary: Set Price List Items
       tags:
       - PriceList
       x-codegen-request-body-name: body
@@ -495,7 +551,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
-      summary: Update list
+      summary: Update Price List
       tags:
       - PriceList
       x-codegen-request-body-name: body
@@ -858,6 +914,17 @@ components:
           type: array
         condition:
           $ref: '#/components/schemas/pricelistFilterCondition'
+      type: object
+    pricelistDeletePriceListItemsAcrossPriceListsRequest:
+      properties:
+        tenantId:
+          type: string
+        itemsGrn:
+          items:
+            type: string
+          type: array
+      type: object
+    pricelistDeletePriceListItemsAcrossPriceListsResponse:
       type: object
     pricelistDeletePriceListItemsRequest:
       properties:

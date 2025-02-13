@@ -4,18 +4,19 @@ All URIs are relative to *https://pricelist.api.gogemini.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreatePriceList**](PriceListAPI.md#CreatePriceList) | **Post** /pricelist.PriceList/CreatePriceList | Create new list
-[**DeletePriceListItems**](PriceListAPI.md#DeletePriceListItems) | **Post** /pricelist.PriceList/DeletePriceListItems | Get prices for items
-[**GetFullPriceItemsByPricelistId**](PriceListAPI.md#GetFullPriceItemsByPricelistId) | **Post** /pricelist.PriceList/GetFullPriceItemsByPricelistId | List detailed items
-[**GetPriceList**](PriceListAPI.md#GetPriceList) | **Post** /pricelist.PriceList/GetPriceList | Get specific list
-[**GetPriceListByCode**](PriceListAPI.md#GetPriceListByCode) | **Post** /pricelist.PriceList/GetPriceListByCode | Get list by code
-[**GetPriceListItems**](PriceListAPI.md#GetPriceListItems) | **Post** /pricelist.PriceList/GetPriceListItems | Get items in list
-[**GetPricesItems**](PriceListAPI.md#GetPricesItems) | **Post** /pricelist.PriceList/GetPricesItems | Get detailed items
-[**ListFullPriceItemsByPricelistId**](PriceListAPI.md#ListFullPriceItemsByPricelistId) | **Post** /pricelist.PriceList/ListFullPriceItemsByPricelistId | List detailed price items for a specific price list
-[**ListPriceLists**](PriceListAPI.md#ListPriceLists) | **Post** /pricelist.PriceList/ListPriceLists | List all price lists
-[**PriceListGetPriceItemsByPriceListItemIds**](PriceListAPI.md#PriceListGetPriceItemsByPriceListItemIds) | **Post** /pricelist.PriceList/GetPriceItemsByPriceListItemIds | 
-[**SetPriceListItems**](PriceListAPI.md#SetPriceListItems) | **Post** /pricelist.PriceList/SetPriceListItems | Set items in list
-[**UpdatePriceList**](PriceListAPI.md#UpdatePriceList) | **Post** /pricelist.PriceList/UpdatePriceList | Update list
+[**CreatePriceList**](PriceListAPI.md#CreatePriceList) | **Post** /pricelist.PriceList/CreatePriceList | Create Price List
+[**DeletePriceListItems**](PriceListAPI.md#DeletePriceListItems) | **Post** /pricelist.PriceList/DeletePriceListItems | Delete Price List Items
+[**DeletePriceListItemsAcrossPriceLists**](PriceListAPI.md#DeletePriceListItemsAcrossPriceLists) | **Post** /pricelist.PriceList/DeletePriceListItemsAcrossPriceLists | Delete Price List Items Across Price Lists
+[**GetFullPriceItemsByPricelistId**](PriceListAPI.md#GetFullPriceItemsByPricelistId) | **Post** /pricelist.PriceList/GetFullPriceItemsByPricelistId | Get Full Price Items By Price List Id
+[**GetPriceItemsByPriceListItemIds**](PriceListAPI.md#GetPriceItemsByPriceListItemIds) | **Post** /pricelist.PriceList/GetPriceItemsByPriceListItemIds | Get Prices Items By Items Ids
+[**GetPriceList**](PriceListAPI.md#GetPriceList) | **Post** /pricelist.PriceList/GetPriceList | Get Price List
+[**GetPriceListByCode**](PriceListAPI.md#GetPriceListByCode) | **Post** /pricelist.PriceList/GetPriceListByCode | Get Price List By Code
+[**GetPriceListItems**](PriceListAPI.md#GetPriceListItems) | **Post** /pricelist.PriceList/GetPriceListItems | Get Price List Items
+[**GetPricesItems**](PriceListAPI.md#GetPricesItems) | **Post** /pricelist.PriceList/GetPricesItems | Get Prices Items
+[**ListFullPriceItemsByPricelistId**](PriceListAPI.md#ListFullPriceItemsByPricelistId) | **Post** /pricelist.PriceList/ListFullPriceItemsByPricelistId | List Full Price Items By Price List Id
+[**ListPriceLists**](PriceListAPI.md#ListPriceLists) | **Post** /pricelist.PriceList/ListPriceLists | List Price Lists
+[**SetPriceListItems**](PriceListAPI.md#SetPriceListItems) | **Post** /pricelist.PriceList/SetPriceListItems | Set Price List Items
+[**UpdatePriceList**](PriceListAPI.md#UpdatePriceList) | **Post** /pricelist.PriceList/UpdatePriceList | Update Price List
 
 
 
@@ -23,7 +24,7 @@ Method | HTTP request | Description
 
 > PricelistCreatePriceListResponse CreatePriceList(ctx).Body(body).Execute()
 
-Create new list
+Create Price List
 
 
 
@@ -36,7 +37,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/Gemini-Commerce/go-client-pricelist"
+	openapiclient "github.com/Gemini-Commerce/go-client-pricelist/v2"
 )
 
 func main() {
@@ -89,7 +90,7 @@ Name | Type | Description  | Notes
 
 > map[string]interface{} DeletePriceListItems(ctx).Body(body).Execute()
 
-Get prices for items
+Delete Price List Items
 
 
 
@@ -102,7 +103,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/Gemini-Commerce/go-client-pricelist"
+	openapiclient "github.com/Gemini-Commerce/go-client-pricelist/v2"
 )
 
 func main() {
@@ -151,11 +152,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetFullPriceItemsByPricelistId
+## DeletePriceListItemsAcrossPriceLists
 
-> PricelistGetFullPriceItemsResponse GetFullPriceItemsByPricelistId(ctx).Body(body).Execute()
+> map[string]interface{} DeletePriceListItemsAcrossPriceLists(ctx).Body(body).Execute()
 
-List detailed items
+Delete Price List Items Across Price Lists
 
 
 
@@ -168,7 +169,73 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/Gemini-Commerce/go-client-pricelist"
+	openapiclient "github.com/Gemini-Commerce/go-client-pricelist/v2"
+)
+
+func main() {
+	body := *openapiclient.NewPricelistDeletePriceListItemsAcrossPriceListsRequest() // PricelistDeletePriceListItemsAcrossPriceListsRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PriceListAPI.DeletePriceListItemsAcrossPriceLists(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PriceListAPI.DeletePriceListItemsAcrossPriceLists``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `DeletePriceListItemsAcrossPriceLists`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `PriceListAPI.DeletePriceListItemsAcrossPriceLists`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeletePriceListItemsAcrossPriceListsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**PricelistDeletePriceListItemsAcrossPriceListsRequest**](PricelistDeletePriceListItemsAcrossPriceListsRequest.md) |  | 
+
+### Return type
+
+**map[string]interface{}**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetFullPriceItemsByPricelistId
+
+> PricelistGetFullPriceItemsResponse GetFullPriceItemsByPricelistId(ctx).Body(body).Execute()
+
+Get Full Price Items By Price List Id
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Gemini-Commerce/go-client-pricelist/v2"
 )
 
 func main() {
@@ -217,11 +284,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetPriceList
+## GetPriceItemsByPriceListItemIds
 
-> PricelistGetPriceListResponse GetPriceList(ctx).Body(body).Execute()
+> PricelistGetPriceItemsByPriceListItemIdsResponse GetPriceItemsByPriceListItemIds(ctx).Body(body).Execute()
 
-Get specific list
+Get Prices Items By Items Ids
 
 
 
@@ -234,7 +301,73 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/Gemini-Commerce/go-client-pricelist"
+	openapiclient "github.com/Gemini-Commerce/go-client-pricelist/v2"
+)
+
+func main() {
+	body := *openapiclient.NewPricelistGetPriceItemsByPriceListItemIdsRequest() // PricelistGetPriceItemsByPriceListItemIdsRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PriceListAPI.GetPriceItemsByPriceListItemIds(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PriceListAPI.GetPriceItemsByPriceListItemIds``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetPriceItemsByPriceListItemIds`: PricelistGetPriceItemsByPriceListItemIdsResponse
+	fmt.Fprintf(os.Stdout, "Response from `PriceListAPI.GetPriceItemsByPriceListItemIds`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetPriceItemsByPriceListItemIdsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**PricelistGetPriceItemsByPriceListItemIdsRequest**](PricelistGetPriceItemsByPriceListItemIdsRequest.md) |  | 
+
+### Return type
+
+[**PricelistGetPriceItemsByPriceListItemIdsResponse**](PricelistGetPriceItemsByPriceListItemIdsResponse.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetPriceList
+
+> PricelistGetPriceListResponse GetPriceList(ctx).Body(body).Execute()
+
+Get Price List
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Gemini-Commerce/go-client-pricelist/v2"
 )
 
 func main() {
@@ -287,7 +420,7 @@ Name | Type | Description  | Notes
 
 > PricelistGetPriceListByCodeResponse GetPriceListByCode(ctx).Body(body).Execute()
 
-Get list by code
+Get Price List By Code
 
 
 
@@ -300,7 +433,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/Gemini-Commerce/go-client-pricelist"
+	openapiclient "github.com/Gemini-Commerce/go-client-pricelist/v2"
 )
 
 func main() {
@@ -353,7 +486,7 @@ Name | Type | Description  | Notes
 
 > PricelistGetPriceListItemsResponse GetPriceListItems(ctx).Body(body).Execute()
 
-Get items in list
+Get Price List Items
 
 
 
@@ -366,7 +499,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/Gemini-Commerce/go-client-pricelist"
+	openapiclient "github.com/Gemini-Commerce/go-client-pricelist/v2"
 )
 
 func main() {
@@ -419,7 +552,7 @@ Name | Type | Description  | Notes
 
 > PricelistGetPricesResponse GetPricesItems(ctx).Body(body).Execute()
 
-Get detailed items
+Get Prices Items
 
 
 
@@ -432,7 +565,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/Gemini-Commerce/go-client-pricelist"
+	openapiclient "github.com/Gemini-Commerce/go-client-pricelist/v2"
 )
 
 func main() {
@@ -485,7 +618,7 @@ Name | Type | Description  | Notes
 
 > PricelistListFullPriceItemsResponse ListFullPriceItemsByPricelistId(ctx).Body(body).Execute()
 
-List detailed price items for a specific price list
+List Full Price Items By Price List Id
 
 
 
@@ -498,7 +631,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/Gemini-Commerce/go-client-pricelist"
+	openapiclient "github.com/Gemini-Commerce/go-client-pricelist/v2"
 )
 
 func main() {
@@ -551,7 +684,7 @@ Name | Type | Description  | Notes
 
 > PricelistListPriceListsResponse ListPriceLists(ctx).Body(body).Execute()
 
-List all price lists
+List Price Lists
 
 
 
@@ -564,7 +697,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/Gemini-Commerce/go-client-pricelist"
+	openapiclient "github.com/Gemini-Commerce/go-client-pricelist/v2"
 )
 
 func main() {
@@ -613,75 +746,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PriceListGetPriceItemsByPriceListItemIds
-
-> PricelistGetPriceItemsByPriceListItemIdsResponse PriceListGetPriceItemsByPriceListItemIds(ctx).Body(body).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Gemini-Commerce/go-client-pricelist"
-)
-
-func main() {
-	body := *openapiclient.NewPricelistGetPriceItemsByPriceListItemIdsRequest() // PricelistGetPriceItemsByPriceListItemIdsRequest | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PriceListAPI.PriceListGetPriceItemsByPriceListItemIds(context.Background()).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `PriceListAPI.PriceListGetPriceItemsByPriceListItemIds``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `PriceListGetPriceItemsByPriceListItemIds`: PricelistGetPriceItemsByPriceListItemIdsResponse
-	fmt.Fprintf(os.Stdout, "Response from `PriceListAPI.PriceListGetPriceItemsByPriceListItemIds`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPriceListGetPriceItemsByPriceListItemIdsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**PricelistGetPriceItemsByPriceListItemIdsRequest**](PricelistGetPriceItemsByPriceListItemIdsRequest.md) |  | 
-
-### Return type
-
-[**PricelistGetPriceItemsByPriceListItemIdsResponse**](PricelistGetPriceItemsByPriceListItemIdsResponse.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## SetPriceListItems
 
 > PricelistSetPriceListItemsResponse SetPriceListItems(ctx).Body(body).Execute()
 
-Set items in list
+Set Price List Items
 
 
 
@@ -694,7 +763,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/Gemini-Commerce/go-client-pricelist"
+	openapiclient "github.com/Gemini-Commerce/go-client-pricelist/v2"
 )
 
 func main() {
@@ -747,7 +816,7 @@ Name | Type | Description  | Notes
 
 > map[string]interface{} UpdatePriceList(ctx).Body(body).Execute()
 
-Update list
+Update Price List
 
 
 
@@ -760,7 +829,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/Gemini-Commerce/go-client-pricelist"
+	openapiclient "github.com/Gemini-Commerce/go-client-pricelist/v2"
 )
 
 func main() {

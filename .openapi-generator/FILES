@@ -13,6 +13,7 @@ docs/PricelistCreatePriceListRequest.md
 docs/PricelistCreatePriceListResponse.md
 docs/PricelistCurrency.md
 docs/PricelistCurrencyFilter.md
+docs/PricelistDeletePriceListItemsAcrossPriceListsRequest.md
 docs/PricelistDeletePriceListItemsRequest.md
 docs/PricelistFilterCondition.md
 docs/PricelistGetFullPriceItem.md
@@ -60,6 +61,7 @@ model_pricelist_create_price_list_request.go
 model_pricelist_create_price_list_response.go
 model_pricelist_currency.go
 model_pricelist_currency_filter.go
+model_pricelist_delete_price_list_items_across_price_lists_request.go
 model_pricelist_delete_price_list_items_request.go
 model_pricelist_filter_condition.go
 model_pricelist_get_full_price_item.go
@@ -98,4 +100,5 @@ model_pricelist_update_price_list_request_payload.go
 model_protobuf_any.go
 model_rpc_status.go
 response.go
+test/api_price_list_test.go
 utils.go
